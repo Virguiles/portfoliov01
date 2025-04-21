@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="w-full bg-black dark:bg-black bg-gray-50 border-t border-gray-800 py-6 flex flex-row justify-center items-center gap-8 px-4">
       <div className="flex flex-row items-center gap-8">
         <Link
-          href="https://github.com/virgile-dev"
+          href="https://github.com/virguiles"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
