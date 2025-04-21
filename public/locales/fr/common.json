@@ -1,0 +1,76 @@
+{
+  "about": "À propos",
+  "projects": "mes projets",
+  "contact": "contact",
+  "developer": "DEVELOPPEUR / DESIGNER UI/UX",
+  "language_fr": "Français",
+  "language_en": "Anglais",
+  "hero_creative": "CREATIVE",
+  "hero_designer": "DESIGNER",
+  "hero_and": "&",
+  "hero_developer": "DÉVELOPPEUR",
+  "hero_web": "WEB",
+  "about_text": "Je m’appelle Virgile, développeur web et designer UI/UX basé en Guadeloupe 🏝️. J’accompagne les entreprises et entrepreneurs dans la création de sites internet performants et d’expériences digitales sur-mesure. Spécialisé en développement Fullstack et en design d’interface, je conçois des solutions innovantes, alliant esthétique, ergonomie et efficacité. Passionné par le web, je mets ma créativité et mon expertise technique au service de vos projets pour vous aider à vous démarquer en ligne.",
+  "competences": {
+    "title": "Mes compétences",
+    "ruby": {
+      "title": "Ruby",
+      "description": "Permet de développer rapidement des sites web dynamiques et des applications robustes, grâce à une syntaxe simple et intuitive. Utilisé notamment avec le framework Rails pour des plateformes web performantes."
+    },
+    "react": {
+      "title": "React",
+      "description": "Facilite la création d'interfaces utilisateur interactives et modernes pour le web, offrant des expériences rapides et réactives."
+    },
+    "tailwind": {
+      "title": "Tailwind",
+      "description": "Accélère la conception de sites responsives et modernes grâce à des classes utilitaires, permettant de personnaliser le design sans écrire beaucoup de CSS."
+    },
+    "wordpress": {
+      "title": "Wordpress",
+      "description": "Idéal pour créer et gérer facilement un site, un blog ou une boutique en ligne, même sans connaissances techniques avancées."
+    },
+    "figma": {
+      "title": "Figma",
+      "description": "Outil en ligne pour concevoir des maquettes, des prototypes et collaborer efficacement entre designers et développeurs."
+    },
+    "shopify": {
+      "title": "Shopify",
+      "description": "Solution clé en main pour lancer une boutique en ligne, gérer les paiements et le stock, sans compétences techniques requises."
+    }
+  },
+  "projets": {
+    "title": "Mes Projets",
+    "voir": "Voir le projet →",
+    "items": [
+      {
+        "titre": "Mobile-food.ch",
+        "description": "Mobile-food.ch est une plateforme innovante dédiée à la recherche de food trucks et traiteurs en Suisse. Elle facilite la mise en relation entre organisateurs d'événements et professionnels de la restauration mobile, offrant une solution pratique pour trouver rapidement des services culinaires adaptés à chaque occasion."
+      },
+      {
+        "titre": "CRM pour startup",
+        "description": "Développement d'un CRM sur-mesure pour une startup, permettant une gestion optimisée des leads, du suivi commercial et des opportunités de vente. Cette solution digitale améliore la productivité des équipes et centralise l'ensemble des données clients pour un pilotage efficace de l'activité."
+      }
+    ]
+  },
+  "contactform": {
+    "title": "Prendre contact ?",
+    "subtitle": "Je ferai de mon mieux pour vous répondre dès que possible.",
+    "location": "Guadeloupe (F.W.I), France",
+    "fields": {
+      "name": "Nom complet",
+      "email": "Email",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Votre nom",
+      "email": "votre@email.com",
+      "message": "Votre message..."
+    },
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success_title": "Message envoyé !",
+    "success_text": "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
+    "error": "Une erreur s'est produite lors de l'envoi",
+    "honeypot": "Ne pas remplir ce champ si vous êtes humain:"
+  }
+}

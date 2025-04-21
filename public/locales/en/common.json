@@ -1,0 +1,76 @@
+{
+  "about": "About",
+  "projects": "my projects",
+  "contact": "contact",
+  "developer": "DEVELOPER / UI/UX DESIGNER",
+  "language_fr": "French",
+  "language_en": "English",
+  "hero_creative": "CREATIVE",
+  "hero_designer": "DESIGNER",
+  "hero_and": "&",
+  "hero_developer": "DEVELOPER",
+  "hero_web": "WEB",
+  "about_text": "I'm Virgile, web developer and UI/UX designer based in Guadeloupe 🏝️. I help companies and entrepreneurs create high-performance websites and customized digital experiences. Specializing in Fullstack development and interface design, I create innovative solutions that combine aesthetics, ergonomics and efficiency. Passionate about the web, I put my creativity and technical expertise at the service of your projects to help you stand out online.",
+  "competences": {
+    "title": "My skills",
+    "ruby": {
+      "title": "Ruby",
+      "description": "Allows rapid development of dynamic websites and robust applications, thanks to a simple and intuitive syntax. Used especially with the Rails framework for high-performance web platforms."
+    },
+    "react": {
+      "title": "React",
+      "description": "Facilitates the creation of interactive and modern user interfaces for the web, offering fast and responsive experiences."
+    },
+    "tailwind": {
+      "title": "Tailwind",
+      "description": "Speeds up the design of responsive and modern sites thanks to utility classes, allowing you to customize the design without writing much CSS."
+    },
+    "wordpress": {
+      "title": "Wordpress",
+      "description": "Ideal for easily creating and managing a website, blog, or online store, even without advanced technical knowledge."
+    },
+    "figma": {
+      "title": "Figma",
+      "description": "Online tool for designing mockups, prototypes, and collaborating efficiently between designers and developers."
+    },
+    "shopify": {
+      "title": "Shopify",
+      "description": "Turnkey solution to launch an online store, manage payments and inventory, without requiring technical skills."
+    }
+  },
+  "projets": {
+    "title": "My Projects",
+    "voir": "See the project →",
+    "items": [
+      {
+        "titre": "Mobile-food.ch",
+        "description": "Platform for finding food trucks and caterers in Switzerland. Easily find mobile catering services for all types of events."
+      },
+      {
+        "titre": "CRM for startup",
+        "description": "A CRM for a startup that allows you to manage leads and sales opportunities."
+      }
+    ]
+  },
+  "contactform": {
+    "title": "Get in touch?",
+    "subtitle": "I will do my best to reply as soon as possible.",
+    "location": "Guadeloupe (F.W.I), France",
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "message": "Your message..."
+    },
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success_title": "Message sent!",
+    "success_text": "Thank you for your message. I will get back to you as soon as possible.",
+    "error": "An error occurred while sending",
+    "honeypot": "Do not fill this field if you are human:"
+  }
+}
