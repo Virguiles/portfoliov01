@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@netlify/plugin-nextjs": "^5.10.7",
     "@types/i18next-browser-languagedetector": "^2.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
