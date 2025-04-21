@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -20,6 +20,13 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: '#7c3aed', // Couleur violette pour correspondre au V
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Virgile – Développeur Web & SEO",
   description: "Portfolio de Virgile POPOTE, Développeur Web & Designer",
@@ -29,7 +36,6 @@ export const metadata: Metadata = {
     { rel: "apple-touch-icon", url: "/favicon.png" },
   ],
   manifest: '/site.webmanifest',
-  themeColor: '#7c3aed', // Couleur violette pour correspondre au V
   appleWebApp: {
     title: "Portfolio de Virgile",
     statusBarStyle: "black-translucent",

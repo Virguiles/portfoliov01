@@ -9,10 +9,23 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Configuration pour gérer les redirections côté client de Next.js
+# Forcer HTTPS
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Assurer que les routes de l'API sont correctement gérées
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/nextjs-api/:splat"
+  status = 200
+
+# Gestion des routes Next.js
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/nextjs"
   status = 200
 
 # Configuration pour gérer les en-têtes de sécurité

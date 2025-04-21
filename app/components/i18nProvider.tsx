@@ -1,25 +1,20 @@
 "use client"
 
-import { useEffect, useState, ReactNode } from 'react'
+import { useEffect, ReactNode } from 'react'
 
 interface I18nProviderProps {
   children: ReactNode
 }
 
 export default function I18nProvider({ children }: I18nProviderProps) {
-  const [isClient, setIsClient] = useState(false)
-
   useEffect(() => {
     // Initialisation de i18n uniquement côté client
-    import('@/i18n').then(() => {
-      setIsClient(true)
-    })
+    import('@/i18n')
+      .catch((error) => {
+        console.error("Erreur lors de l'initialisation de i18n:", error);
+      });
   }, [])
 
-  if (!isClient) {
-    // Afficher un placeholder ou rien pendant le chargement côté client
-    return null
-  }
-
-  return <>{children}</>
+  // Toujours retourner les enfants, même pendant le chargement
+  return <>{children}</>;
 }
