@@ -34,7 +34,7 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
-          "form-name": "contact",
+          "form-name": "Contact",
           ...formData,
         }).toString(),
       });
@@ -89,14 +89,14 @@ export default function ContactForm() {
             </div>
           ) : (
             <form
-              name="contact"
+              name="Contact"
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="space-y-6 sm:space-y-8"
             >
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="Contact" />
               <div className="hidden">
                 <label>
                   {t("contactform.honeypot")}

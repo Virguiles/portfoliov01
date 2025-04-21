@@ -24,6 +24,13 @@ export default function Home() {
           <Projets />
         </section>
         <section id="contact" className="py-20 px-4">
+          {/* Formulaire caché pour Netlify Forms (détection build) */}
+          <form name="Contact" data-netlify="true" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message"></textarea>
+            <input name="bot-field" />
+          </form>
           <ContactForm />
         </section>
         <Footer />
