@@ -9,6 +9,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Règle pour permettre l'accès aux fichiers de traduction
+[[redirects]]
+  from = "/locales/*"
+  to = "/locales/:splat"
+  status = 200
+
+# Règle générale pour les autres chemins
 [[redirects]]
   from = "/*"
   to = "/index.html"
