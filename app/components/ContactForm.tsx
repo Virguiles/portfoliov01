@@ -85,7 +85,7 @@ export default function ContactForm() {
               <p className="text-gray-300 text-sm sm:text-base">
                 {t("contactform.success_text")}
               </p>
-              <ConfettiSideCannons />
+              <ConfettiSideCannons autoFire />
             </div>
           ) : (
             <form

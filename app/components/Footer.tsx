@@ -8,9 +8,7 @@ const emailIconClass =
   "w-8 h-8 text-gray-400 hover:text-purple-500 transition-colors duration-200";
 
 export default function Footer() {
-  // Obtenir l'année actuelle
-  const currentYear = new Date().getFullYear();
-
+  const annee = new Date().getFullYear();
   return (
     <footer className="w-full bg-black dark:bg-black bg-gray-50 border-t border-gray-800 py-6 flex flex-row justify-center items-center gap-8 px-4">
       <div className="flex flex-row items-center gap-8">
@@ -71,7 +69,7 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex flex-col items-center">
-        <span className="text-black dark:text-gray-500 text-sm font-[var(--font-jetbrains-mono)] text-center"> © {currentYear} This footer is made with {'💜'} by me</span>
+        <span className="text-black dark:text-gray-500 text-sm font-[var(--font-jetbrains-mono)] text-center"> © {annee} This footer is made with {'💜'} by me</span>
       </div>
     </footer>
   );

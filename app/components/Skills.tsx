@@ -94,15 +94,15 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                 </h2>
             </div>
 
-            <div className="max-w-3xl mx-auto px-8">
+            <div className="max-w-3xl mx-auto px-4 md:px-8">
                 {/* Onglets */}
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <div className="flex flex-nowrap overflow-x-auto w-full justify-center gap-4 mb-8 scrollbar-thin scrollbar-thumb-purple-300/40 scrollbar-track-transparent">
                     {skills.map((skill, idx) => (
                         <button
                             key={skill.title}
                             onClick={() => setActiveTab(idx)}
                             className={clsx(
-                                "flex flex-col items-center px-4 py-2 rounded-lg border transition-all",
+                                "flex flex-col items-center px-4 py-2 rounded-lg border transition-all min-w-[80px]",
                                 idx === activeTab
                                     ? "bg-purple-500/20 border-purple-500 text-purple-700 dark:text-purple-300"
                                     : "bg-white/10 dark:bg-black/30 border-transparent text-gray-700 dark:text-gray-300 hover:bg-purple-500/10"
@@ -121,10 +121,10 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                 </div>
                 {/* Contenu de l'onglet actif */}
                 <div
-                    className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/10 dark:bg-black/50 border border-purple-500/20 dark:border-white/[0.2] shadow-lg h-44 overflow-hidden"
+                    className="flex flex-col items-center text-center p-4 md:p-6 rounded-2xl bg-white/10 dark:bg-black/50 border border-purple-500/20 dark:border-white/[0.2] shadow-lg min-h-44 overflow-hidden"
                 >
-                    <h2 className="text-xl md:text-2xl font-bold mb-2 text-black dark:text-white">{skills[activeTab].title}</h2>
-                    <p className="text-gray-700 dark:text-gray-300 max-w-xl">{skills[activeTab].description}</p>
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-black dark:text-white">{skills[activeTab].title}</h2>
+                    <p className="text-gray-700 dark:text-gray-300 max-w-xl text-sm sm:text-base">{skills[activeTab].description}</p>
                 </div>
             </div>
         </div>
