@@ -48,7 +48,7 @@ const resources = {
       },
       "projets": {
         "title": "Mes Projets",
-        "voir": "Voir le projet",
+        "voir": "Website",
         "items": [
           {
             "titre": "Mobile-food.ch",
@@ -128,7 +128,7 @@ const resources = {
       },
       "projets": {
         "title": "My Projects",
-        "voir": "See the project",
+        "voir": "Website",
         "items": [
           {
             "titre": "Mobile-food.ch",

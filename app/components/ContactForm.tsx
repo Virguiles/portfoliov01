@@ -60,7 +60,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gray-50 dark:bg-black">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gray-50/60 dark:bg-black/60">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-start">
         {/* Colonne gauche : présentation et infos */}
         <div className="mb-10 md:mb-0 min-w-0 w-full">

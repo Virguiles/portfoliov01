@@ -24,7 +24,7 @@ export default function Projets() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-black">
+    <section className="py-16">
       <div className="max-w-4xl mx-auto px-4 flex flex-col items-center">
         <div className="flex items-center justify-center gap-4 mb-10 w-full">
           <h2 className="text-purple-500 text-3xl md:text-4xl font-bold mb-6 text-left w-full max-w-2xl text-black dark:text-purple-500">
@@ -62,7 +62,7 @@ export default function Projets() {
                   <p className="text-black dark:text-gray-300 text-sm mb-4">{projet.description}</p>
                   {isLienValide && (
                     <InteractiveHoverButton className="mt-2">
-                      {t("projets.voir", "Voir le projet")}
+                      {t("projets.voir", "Website")}
                     </InteractiveHoverButton>
                   )}
                 </CardComponent>

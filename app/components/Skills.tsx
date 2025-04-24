@@ -13,7 +13,7 @@ export default function Competences() {
         setMounted(true);
     }, []);
 
-    if (!mounted) return <div className="py-10 relative bg-black dark:bg-black bg-gray-50"></div>;
+    if (!mounted) return <div className="py-10 relative"></div>;
 
     const skills = [
         {
@@ -87,7 +87,7 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
     ];
 
     return (
-        <div className="py-10 relative bg-black dark:bg-black bg-gray-50">
+        <div className="py-10 relative">
             <div className="flex items-center justify-center gap-4 mb-10">
                 <h2 className="text-purple-500 text-3xl md:text-4xl font-bold mb-6 text-left w-full max-w-2xl text-black dark:text-purple-500">
                     {t("competences.title")}
@@ -105,7 +105,7 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                                 "flex flex-col items-center px-4 py-2 rounded-lg border transition-all min-w-[80px]",
                                 idx === activeTab
                                     ? "bg-purple-500/20 border-purple-500 text-purple-700 dark:text-purple-300"
-                                    : "bg-white/10 dark:bg-black/30 border-transparent text-gray-700 dark:text-gray-300 hover:bg-purple-500/10"
+                                    : "bg-white/10 dark:bg-black/30 border-transparent text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-500/20"
                             )}
                         >
                             <span

@@ -10,7 +10,7 @@ const emailIconClass =
 export default function Footer() {
   const annee = new Date().getFullYear();
   return (
-    <footer className="w-full bg-black dark:bg-black bg-gray-50 border-t border-gray-800 py-6 flex flex-row justify-center items-center gap-8 px-4">
+    <footer className="w-full border-t border-gray-800 py-6 flex flex-row justify-center items-center gap-8 px-4">
       <div className="flex flex-row items-center gap-8">
         <Link
           href="https://github.com/virguiles"
@@ -27,7 +27,7 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
-          href="https://bsky.app/profile/virgile.bsky.social"
+          href="https://bsky.app/profile/virgilepop.bsky.social"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Bluesky"

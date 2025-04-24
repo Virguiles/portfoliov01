@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import I18nProvider from "./components/i18nProvider";
 import Favicon from "./components/Favicon";
+import MouseHalo from "./components/MouseHalo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,9 +54,10 @@ export default function RootLayout({
         <Favicon />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased bg-black dark:bg-black bg-gray-50`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased bg-white dark:bg-black`}
         suppressHydrationWarning
       >
+        <MouseHalo />
         <div className="flex flex-col min-h-screen">
         <ThemeProvider
             attribute="class"
