@@ -124,7 +124,7 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                     className="flex flex-col items-center text-center p-4 md:p-6 rounded-2xl bg-white/10 dark:bg-black/50 border border-purple-500/20 dark:border-white/[0.2] shadow-lg min-h-44 overflow-hidden"
                 >
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-black dark:text-white">{skills[activeTab].title}</h2>
-                    <p className="text-gray-700 dark:text-gray-300 max-w-xl text-sm sm:text-base">{skills[activeTab].description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 max-w-xl text-sm sm:text-base min-h-[120px] flex items-center justify-center">{skills[activeTab].description}</p>
                 </div>
             </div>
         </div>
