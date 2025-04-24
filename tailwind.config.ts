@@ -9,9 +9,10 @@ export default {
   ],
   theme: {
   	extend: {
-		
   		animation: {
-  			move: 'move 5s linear infinite'
+  			move: 'move 5s linear infinite',
+  			aurora: 'aurora 10s linear infinite',
+  			shine: "shine var(--duration) infinite linear",
   		},
   		keyframes: {
   			move: {
@@ -21,7 +22,29 @@ export default {
   				'100%': {
   					transform: 'translateX(200px)'
   				}
-  			}
+  			},
+  			aurora: {
+  				'0%': {
+  					backgroundPosition: '0% 50%'
+  				},
+  				'50%': {
+  					backgroundPosition: '100% 50%'
+  				},
+  				'100%': {
+  					backgroundPosition: '0% 50%'
+  				}
+  			},
+  			shine: {
+  				"0%": {
+  					"background-position": "0% 0%",
+  				},
+  				"50%": {
+  					"background-position": "100% 100%",
+  				},
+  				to: {
+  					"background-position": "0% 0%",
+  				},
+  			},
   		},
   		colors: {
   			background: 'hsl(var(--background))',
@@ -71,8 +94,7 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		backgroundImage: {
-  			'grid-pattern': "url('/grid.svg')",
-  			'grid-pattern-light': "url('/grid-light.svg')"
+  			'shine-size': '200% 200%'
   		}
   	}
   },

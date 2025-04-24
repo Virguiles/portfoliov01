@@ -4,6 +4,9 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
 import { ConfettiSideCannons } from "@/components/magicui/ConfettiSideCannons";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { WordRotate } from "@/components/magicui/word-rotate";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 export default function ContactForm() {
   const { t } = useTranslation();
@@ -57,17 +60,19 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-black">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gray-50 dark:bg-black">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-start">
         {/* Colonne gauche : présentation et infos */}
-        <div className="mb-8 md:mb-0">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-black dark:text-white" style={{textShadow:'2px 2px 0 #a78bfa, 4px 4px 0 #232228'}}>
-            {t("contactform.title")} <span className="inline-block align-middle">👍</span>
+        <div className="mb-10 md:mb-0 min-w-0 w-full">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8 leading-tight text-black dark:text-white max-w-full break-words whitespace-normal text-left">
+            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+              {t("contactform.title_start")} <AuroraText colors={["#0516FC","#7928CA", "#0070F3", "#783BB1"]} speed={2}>{t("contactform.title_highlight")}</AuroraText><WordRotate words={["\uD83D\uDC4D", "😊", "👋"]} />
+            </span>
           </h2>
-          <p className="text-gray-400 mb-8 text-sm sm:text-base md:text-lg">
+          <p className="text-gray-400 mb-8 sm:mb-10 text-sm sm:text-base md:text-lg max-w-prose">
             {t("contactform.subtitle")}
           </p>
-          <ul className="space-y-3 text-black dark:text-gray-200 text-sm sm:text-base">
+          <ul className="space-y-4 text-black dark:text-gray-200 text-sm sm:text-base">
             <li className="flex items-center gap-3">
               <span className="text-purple-400">
                 {/* Icône localisation */}
@@ -78,15 +83,23 @@ export default function ContactForm() {
           </ul>
         </div>
         {/* Colonne droite : formulaire */}
-        <div>
+        <div className="w-full">
           {submitted ? (
-            <div className="p-6 sm:p-8 rounded-2xl bg-white/10 border border-purple-500/20 shadow-lg text-center">
-              <h3 className="text-xl sm:text-2xl font-bold mb-2 text-black dark:text-white">{t("contactform.success_title")}</h3>
-              <p className="text-gray-300 text-sm sm:text-base">
-                {t("contactform.success_text")}
-              </p>
-              <ConfettiSideCannons autoFire />
-            </div>
+            <ShineBorder
+              className="p-0"
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+              borderWidth={2}
+              duration={8}
+              borderRadius={16}
+            >
+              <div className="p-4 sm:p-6 md:p-8 bg-white/10 border border-purple-500/20 shadow-lg text-center">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 text-black dark:text-white">{t("contactform.success_title")}</h3>
+                <p className="text-gray-300 text-sm sm:text-base">
+                  {t("contactform.success_text")}
+                </p>
+                <ConfettiSideCannons autoFire />
+              </div>
+            </ShineBorder>
           ) : (
             <form
               name="Contact"
@@ -115,7 +128,7 @@ export default function ContactForm() {
                   autoComplete="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200"
+                  className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-black dark:text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200"
                   placeholder={t("contactform.placeholders.name")}
                 />
               </div>
@@ -131,7 +144,7 @@ export default function ContactForm() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200"
+                  className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-black dark:text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200"
                   placeholder={t("contactform.placeholders.email")}
                 />
               </div>
@@ -146,7 +159,7 @@ export default function ContactForm() {
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200 resize-none"
+                  className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-black dark:text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200 resize-none"
                   placeholder={t("contactform.placeholders.message")}
                 />
               </div>
@@ -158,9 +171,23 @@ export default function ContactForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gray-700 hover:bg-purple-700 text-white py-3 px-4 rounded-md transition-colors duration-200 font-bold tracking-widest text-base flex items-center justify-center gap-2 uppercase"
+                className="w-full bg-gradient-to-r from-purple-700 via-blue-600 to-purple-400 hover:from-purple-600 hover:to-blue-500 text-white py-3 sm:py-4 px-5 rounded-xl transition-all duration-200 font-bold tracking-widest text-sm sm:text-base flex items-center justify-center gap-3 uppercase shadow-lg hover:shadow-purple-500/40 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:outline-none transform hover:scale-105 relative overflow-hidden group"
               >
-                {isSubmitting ? t("contactform.submitting") : <><span>{t("contactform.submit")}</span> <span aria-hidden>→</span></>}
+                {isSubmitting ? (
+                  t("contactform.submitting")
+                ) : (
+                  <>
+                    <span>{t("contactform.submit")}</span>
+                    <span
+                      aria-hidden
+                      className="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white drop-shadow-[0_0_6px_rgba(124,58,237,0.7)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </>
+                )}
               </Button>
             </form>
           )}

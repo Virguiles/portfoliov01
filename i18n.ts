@@ -61,7 +61,9 @@ const resources = {
         ]
       },
       "contactform": {
-        "title": "Prendre contact ?",
+        "title": "Prendre contact",
+        "title_start": "Prendre",
+        "title_highlight": "contact",
         "subtitle": "Je ferai de mon mieux pour vous répondre dès que possible.",
         "location": "Guadeloupe (F.W.I), France",
         "fields": {
@@ -139,7 +141,9 @@ const resources = {
         ]
       },
       "contactform": {
-        "title": "Get in touch?",
+        "title": "Get in touch",
+        "title_start": "Get in",
+        "title_highlight": "touch",
         "subtitle": "I will do my best to reply as soon as possible.",
         "location": "Guadeloupe (F.W.I), France",
         "fields": {
