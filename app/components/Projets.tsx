@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 export default function Projets() {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ export default function Projets() {
     {
       titre: t("projets.items.0.titre"),
       description: t("projets.items.0.description"),
-      lien: "https://mobile-food.ch",
+      lien: "https://www.mobile-food.ch/fr",
       image: "/images/mobile-food-ch.png",
     },
     {
@@ -60,9 +61,9 @@ export default function Projets() {
                   <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">{projet.titre}</h3>
                   <p className="text-black dark:text-gray-300 text-sm mb-4">{projet.description}</p>
                   {isLienValide && (
-                    <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-black dark:bg-purple-500/30 dark:text-purple-200 text-xs font-semibold mt-2 transition-colors duration-200">
-                      {t("projets.voir", "Voir le projet →")}
-                    </span>
+                    <InteractiveHoverButton className="mt-2">
+                      {t("projets.voir", "Voir le projet")}
+                    </InteractiveHoverButton>
                   )}
                 </CardComponent>
               );

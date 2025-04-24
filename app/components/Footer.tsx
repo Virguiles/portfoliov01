@@ -55,7 +55,7 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
-          href="mailto:contact@virgile.dev"
+          href="mailto:virgilepopote@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Email"
@@ -69,7 +69,7 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex flex-col items-center">
-        <span className="text-black dark:text-gray-500 text-sm font-[var(--font-jetbrains-mono)] text-center"> © {annee} This footer is made with {'💜'} by me</span>
+        <span className="text-black dark:text-gray-500 text-sm font-[var(--font-jetbrains-mono)] text-center"> © {annee} This website is made with {'💜'} by me</span>
       </div>
     </footer>
   );
