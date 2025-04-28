@@ -13,6 +13,30 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const dropdownRef = useRef<HTMLLIElement>(null);
     const { t } = useTranslation();
+    // Préchargement du texte pour améliorer le LCP
+    const developerText = t("developer");
+
+    // Optimisation du LCP - Charger les polices de manière préemptive
+    useEffect(() => {
+        // Précharger les ressources critiques
+        if (typeof window !== 'undefined') {
+            // Force le premier rendu avant même le scroll
+            setIsScrolled(window.scrollY > 10);
+
+            // Préchargement critique de la police JetBrains Mono
+            const preloadLink = document.createElement('link');
+            preloadLink.href = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap';
+            preloadLink.rel = 'preload';
+            preloadLink.as = 'style';
+            document.head.appendChild(preloadLink);
+
+            // Application immédiate de la police
+            const fontLink = document.createElement('link');
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap';
+            fontLink.rel = 'stylesheet';
+            document.head.appendChild(fontLink);
+        }
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -56,8 +80,12 @@ export default function Header() {
                     >
                         Virgile
                     </Link>
-                    <span className="text-sm font-[var(--font-jetbrains-mono)] text-white-600">
-                        {t("developer")}
+                    <span
+                        className="text-sm font-[var(--font-jetbrains-mono)] text-white-600 font-display-swap"
+                        aria-label={developerText}
+                        id="developer-title"
+                    >
+                        {developerText}
                     </span>
                 </div>
                 <button

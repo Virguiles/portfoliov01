@@ -13,7 +13,8 @@ export default function Projets() {
       titre: t("projets.items.0.titre"),
       description: t("projets.items.0.description"),
       lien: "https://www.mobile-food.ch/fr",
-      image: "/images/mobile-food-ch.png",
+      image: "/images/mobile-food-ch.webp",
+      fallbackImage: "/images/mobile-food-ch.png",
       technologies: ["Ruby on Rails", "TailwindCSS"],
     },
     {
@@ -52,6 +53,12 @@ export default function Projets() {
                       width={192}
                       height={140}
                       className="rounded-md w-full h-36 object-contain border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+                      onError={(e) => {
+                        // Fallback vers l'image PNG si WebP n'est pas supporté ou le fichier n'existe pas
+                        if (projet.fallbackImage && e.currentTarget.src !== projet.fallbackImage) {
+                          e.currentTarget.src = projet.fallbackImage;
+                        }
+                      }}
                     />
                   </div>
                 )}

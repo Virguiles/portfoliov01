@@ -25,7 +25,8 @@ export const viewport: Viewport = {
   themeColor: '#7c3aed', // Couleur violette pour correspondre au V
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export const metadata: Metadata = {
