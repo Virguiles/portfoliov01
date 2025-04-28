@@ -102,6 +102,7 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                         <button
                             key={skill.title}
                             onClick={() => setActiveTab(idx)}
+                            aria-label={skill.title}
                             className={clsx(
                                 "flex flex-col items-center px-4 py-2 rounded-lg border transition-all min-w-[80px]",
                                 idx === activeTab
