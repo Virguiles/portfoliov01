@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const iconClass =
-  "w-6 h-6 fill-gray-400 hover:fill-purple-500 transition-colors duration-200";
+  "w-6 h-6 fill-gray-400 hover:fill-black dark:hover:fill-purple-500 transition-colors duration-200";
 
 // Classe spécifique pour l'icône d'email qui utilise des contours au lieu du remplissage
 const emailIconClass =
-  "w-8 h-8 text-gray-400 hover:text-purple-500 transition-colors duration-200";
+  "w-8 h-8 text-gray-400 hover:text-black dark:hover:text-purple-500 transition-colors duration-200";
 
 export default function Footer() {
   const annee = new Date().getFullYear();

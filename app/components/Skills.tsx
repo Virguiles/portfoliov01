@@ -87,16 +87,17 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
     ];
 
     return (
-        <div className="py-10 relative">
-            <div className="flex items-center justify-center gap-4 mb-10">
-                <h2 className="text-purple-500 text-3xl md:text-4xl font-bold mb-6 text-left w-full max-w-2xl text-black dark:text-purple-500">
-                    {t("competences.title")}
-                </h2>
-            </div>
-
-            <div className="max-w-3xl mx-auto px-4 md:px-8">
+        <section className="py-16 px-4 sm:px-6 bg-white/10 dark:bg-black/60">
+            <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
+                {/* Titre centré avec accent visuel */}
+                <div className="w-full flex flex-col items-center">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center text-black dark:text-white tracking-tight">
+                        {t("competences.title")}
+                    </h2>
+                    <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4" />
+                </div>
                 {/* Onglets */}
-                <div className="flex flex-nowrap overflow-x-auto w-full justify-center gap-4 mb-8 scrollbar-thin scrollbar-thumb-purple-300/40 scrollbar-track-transparent">
+                <div className="w-full flex flex-nowrap overflow-x-auto justify-center gap-4 mb-1 scrollbar-thin scrollbar-thumb-purple-300/40 scrollbar-track-transparent">
                     {skills.map((skill, idx) => (
                         <button
                             key={skill.title}
@@ -105,7 +106,7 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                                 "flex flex-col items-center px-4 py-2 rounded-lg border transition-all min-w-[80px]",
                                 idx === activeTab
                                     ? "bg-purple-500/20 border-purple-500 text-purple-700 dark:text-purple-300"
-                                    : "bg-white/10 dark:bg-black/30 border-transparent text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-500/20"
+                                    : "bg-white/10 dark:bg-black/30 border-transparent text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-500/10"
                             )}
                         >
                             <span
@@ -119,14 +120,16 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                         </button>
                     ))}
                 </div>
-                {/* Contenu de l'onglet actif */}
-                <div
-                    className="flex flex-col items-center text-center p-4 md:p-6 rounded-2xl bg-white/10 dark:bg-black/50 border border-purple-500/20 dark:border-white/[0.2] shadow-lg min-h-44 overflow-hidden"
-                >
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-black dark:text-white">{skills[activeTab].title}</h2>
-                    <p className="text-gray-700 dark:text-gray-300 max-w-xl text-sm sm:text-base min-h-[120px] flex items-center justify-center">{skills[activeTab].description}</p>
+                {/* Carte de présentation de la compétence */}
+                <div className="w-full dark:bg-black/70 rounded-xl p-4 md:p-6 h-[160px] flex flex-col justify-start">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-0 text-black dark:text-white text-center min-h-[40px] flex items-center justify-center">
+                        {skills[activeTab].title}
+                    </h2>
+                    <p className="text-gray-700 dark:text-gray-200 max-w-xl text-base md:text-lg text-center leading-relaxed mx-auto">
+                        {skills[activeTab].description}
+                    </p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

@@ -20,7 +20,7 @@ const resources = {
       "hero_web": "WEB",
       "about_text": "Je m'appelle Virgile, développeur web et designer UI/UX basé en Guadeloupe 🏝️. J'accompagne les entreprises et entrepreneurs dans la création de sites internet performants et d'expériences digitales sur-mesure. Spécialisé en développement Fullstack et en design d'interface, je conçois des solutions innovantes, alliant esthétique, ergonomie et efficacité. Passionné par le web, je mets ma créativité et mon expertise technique au service de vos projets pour vous aider à vous démarquer en ligne.",
       "competences": {
-        "title": "Mes compétences",
+        "title": "Compétences",
         "ruby": {
           "title": "Ruby",
           "description": "Permet de développer rapidement des sites web dynamiques et des applications robustes, grâce à une syntaxe simple et intuitive. Utilisé notamment avec le framework Rails pour des plateformes web performantes."
@@ -132,11 +132,11 @@ const resources = {
         "items": [
           {
             "titre": "Mobile-food.ch",
-            "description": "Platform for finding food trucks and caterers in Switzerland. Easily find mobile catering services for all types of events."
+            "description": "Mobile-food.ch is an innovative platform dedicated to finding food trucks and caterers in Switzerland. It facilitates contact between event organizers and mobile catering professionals, offering a practical solution for quickly finding the right culinary services for every occasion."
           },
           {
             "titre": "CRM for startup",
-            "description": "A CRM for a startup that allows you to manage leads and sales opportunities."
+            "description": "Development of a customized CRM for a startup, enabling optimized management of leads, sales follow-up and sales opportunities. This digital solution improves team productivity and centralizes all customer data for effective business management."
           }
         ]
       },

@@ -117,7 +117,7 @@ export default function ContactForm() {
                 </label>
               </div>
               <div>
-                <label htmlFor="name" className="block text-xs font-bold text-purple-400 tracking-widest mb-2 uppercase">
+                <label htmlFor="name" className="block text-xs font-bold text-black dark:text-purple-400 tracking-widest mb-2 uppercase">
                   {t("contactform.fields.name")}
                 </label>
                 <input
@@ -133,7 +133,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs font-bold text-purple-400 tracking-widest mb-2 uppercase">
+                <label htmlFor="email" className="block text-xs font-bold text-black dark:text-purple-400 tracking-widest mb-2 uppercase">
                   {t("contactform.fields.email")}
                 </label>
                 <input
@@ -149,7 +149,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-xs font-bold text-purple-400 tracking-widest mb-2 uppercase">
+                <label htmlFor="message" className="block text-xs font-bold text-black dark:text-purple-400 tracking-widest mb-2 uppercase">
                   {t("contactform.fields.message")}
                 </label>
                 <textarea
@@ -170,6 +170,7 @@ export default function ContactForm() {
               )}
               <Button
                 type="submit"
+                aria-label={t("contactform.submit_aria")}
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-purple-700 via-blue-600 to-purple-400 hover:from-purple-600 hover:to-blue-500 text-white py-3 sm:py-4 px-5 rounded-xl transition-all duration-200 font-bold tracking-widest text-sm sm:text-base flex items-center justify-center gap-3 uppercase shadow-lg hover:shadow-purple-500/40 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:outline-none transform hover:scale-105 relative overflow-hidden group"
               >
