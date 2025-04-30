@@ -5,7 +5,6 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projets from "./components/Projets";
 import ContactForm from "./components/ContactForm";
-import Footer from "./components/Footer";
 import Header from "./components/Navbar";
 
 export default function Home() {
@@ -33,7 +32,6 @@ export default function Home() {
           </form>
           <ContactForm />
         </section>
-        <Footer />
       </div>
     </>
   );

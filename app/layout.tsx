@@ -5,6 +5,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import I18nProvider from "./components/i18nProvider";
 import Favicon from "./components/Favicon";
 import MouseHalo from "./components/MouseHalo";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Création site internet Guadeloupe – Virgile Popote, développeur freelance",
-  description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur mesure. Besoin d'un site internet ? Contactez-moi.",
+  title: "Création site internet Guadeloupe – Virgile Popote, développeur web freelance",
+  description: "Développeur web freelance en Guadeloupe. Création de sites vitrines, e-commerce et sur-mesure pour entreprises et entrepreneurs. Contactez-moi pour booster votre présence en ligne.",
   icons: [
     { rel: "icon", url: "/favicon.ico", sizes: "any" },
     { rel: "icon", url: "/favicon.png", type: "image/png", sizes: "200x200" },
@@ -50,11 +51,50 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <Favicon />
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" as="style" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" />
+        {/* Balises Open Graph */}
+        <meta property="og:title" content="Création site internet Guadeloupe – Virgile Popote, développeur web freelance" />
+        <meta property="og:description" content="Développeur web freelance en Guadeloupe. Création de sites vitrines, e-commerce et sur-mesure pour entreprises et entrepreneurs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://virgile.site/" />
+        <meta property="og:image" content="https://virgile.site/og-image.jpg" />
+
+
+        {/* Liens sociaux pour SEO */}
+        <link rel="me" href="https://github.com/virguiles" />
+        <link rel="me" href="https://bsky.app/profile/virgilepop.bsky.social" />
+        <link rel="me" href="https://www.instagram.com/virgilepop.up/" />
+        <link rel="me" href="mailto:virgilepopote@gmail.com" />
+        <link rel="contact" href="mailto:virgilepopote@gmail.com" />
+
+        {/* Données structurées JSON-LD */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: `
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Virgile Popote",
+            "jobTitle": "Développeur Web Freelance",
+            "url": "https://virgile.site/",
+            "image": "https://virgile.site/og-image.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Guadeloupe",
+              "addressCountry": "FR"
+            },
+            "description": "Développeur web freelance en Guadeloupe. Création de sites internet pour entreprises et entrepreneurs.",
+            "email": "virgilepopote@gmail.com",
+            "sameAs": [
+              "https://github.com/virguiles",
+              "https://bsky.app/profile/virgilepop.bsky.social",
+              "https://www.instagram.com/virgilepop.up/",
+              "mailto:virgilepopote@gmail.com"
+            ]
+          }
+          `
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased bg-white dark:bg-black`}
@@ -71,6 +111,7 @@ export default function RootLayout({
             <I18nProvider>
               {children}
             </I18nProvider>
+            <Footer />
           </ThemeProvider>
         </div>
       </body>
