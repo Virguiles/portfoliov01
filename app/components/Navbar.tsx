@@ -22,19 +22,6 @@ export default function Header() {
         if (typeof window !== 'undefined') {
             // Force le premier rendu avant même le scroll
             setIsScrolled(window.scrollY > 10);
-
-            // Préchargement critique de la police JetBrains Mono
-            const preloadLink = document.createElement('link');
-            preloadLink.href = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap';
-            preloadLink.rel = 'preload';
-            preloadLink.as = 'style';
-            document.head.appendChild(preloadLink);
-
-            // Application immédiate de la police
-            const fontLink = document.createElement('link');
-            fontLink.href = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap';
-            fontLink.rel = 'stylesheet';
-            document.head.appendChild(fontLink);
         }
     }, []);
 

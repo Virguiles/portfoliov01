@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Création site internet Guadeloupe – Virgile Popote, développeur freelance",
-  description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur mesure. Besoin d’un site internet ? Contactez-moi.",
+  description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur mesure. Besoin d'un site internet ? Contactez-moi.",
   icons: [
     { rel: "icon", url: "/favicon.ico", sizes: "any" },
     { rel: "icon", url: "/favicon.png", type: "image/png", sizes: "200x200" },
@@ -53,6 +53,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Favicon />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" as="style" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased bg-white dark:bg-black`}
@@ -60,7 +62,7 @@ export default function RootLayout({
       >
         <MouseHalo />
         <div className="flex flex-col min-h-screen">
-        <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
