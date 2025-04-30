@@ -97,7 +97,7 @@ x2="-235.869" y1="-311.851" y2="-311.935"><stop offset="0" stopColor="#fff"/><st
                     <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4" />
                 </div>
                 {/* Onglets */}
-                <div className="w-full flex flex-nowrap overflow-x-auto justify-center gap-4 mb-1 scrollbar-thin scrollbar-thumb-purple-300/40 scrollbar-track-transparent">
+                <div className="w-full grid grid-cols-3 gap-2 mb-1 sm:flex sm:flex-nowrap sm:overflow-x-auto sm:justify-center sm:gap-4 sm:scrollbar-thin sm:scrollbar-thumb-purple-300/40 sm:scrollbar-track-transparent">
                     {skills.map((skill, idx) => (
                         <button
                             key={skill.title}

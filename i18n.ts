@@ -7,7 +7,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   fr: {
     common: {
-      "about": "À propos",
+      "about": "à propos",
       "projects": "mes projets",
       "contact": "contact",
       "developer": "DEVELOPPEUR - DESIGNER UI/UX",
@@ -20,7 +20,7 @@ const resources = {
       "hero_web": "WEB",
       "about_text": "Je m'appelle Virgile, développeur web et designer UI/UX basé en Guadeloupe 🏝️. J'accompagne les entreprises et entrepreneurs dans la création de sites internet performants et d'expériences digitales sur-mesure. Spécialisé en développement Fullstack et en design d'interface, je conçois des solutions innovantes, alliant esthétique, ergonomie et efficacité. Passionné par le web, je mets ma créativité et mon expertise technique au service de vos projets pour vous aider à vous démarquer en ligne.",
       "competences": {
-        "title": "Compétences",
+        "title": "mes compétences",
         "ruby": {
           "title": "Ruby",
           "description": "Permet de développer rapidement des sites web dynamiques et des applications robustes, grâce à une syntaxe simple et intuitive. Utilisé notamment avec le framework Rails pour des plateformes web performantes."
@@ -47,7 +47,7 @@ const resources = {
         }
       },
       "projets": {
-        "title": "Mes Projets",
+        "title": "mes projets",
         "voir": "Website",
         "items": [
           {
@@ -87,7 +87,7 @@ const resources = {
   },
   en: {
     common: {
-      "about": "About",
+      "about": "about",
       "projects": "my projects",
       "contact": "contact",
       "developer": "DEVELOPER - UI/UX DESIGNER",
@@ -100,7 +100,7 @@ const resources = {
       "hero_web": "WEB",
       "about_text": "I'm Virgile, web developer and UI/UX designer based in Guadeloupe 🏝️. I help companies and entrepreneurs create high-performance websites and customized digital experiences. Specializing in Fullstack development and interface design, I create innovative solutions that combine aesthetics, ergonomics and efficiency. Passionate about the web, I put my creativity and technical expertise at the service of your projects to help you stand out online.",
       "competences": {
-        "title": "My skills",
+        "title": "my skills",
         "ruby": {
           "title": "Ruby",
           "description": "Allows rapid development of dynamic websites and robust applications, thanks to a simple and intuitive syntax. Used especially with the Rails framework for high-performance web platforms."
@@ -127,7 +127,7 @@ const resources = {
         }
       },
       "projets": {
-        "title": "My Projects",
+        "title": "my projects",
         "voir": "Website",
         "items": [
           {

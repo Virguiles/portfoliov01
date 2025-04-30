@@ -30,8 +30,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Virgile – Développeur Web & SEO",
-  description: "Portfolio de Virgile POPOTE, Développeur Web & Designer",
+  title: "Création site internet Guadeloupe – Virgile Popote, développeur freelance",
+  description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur mesure. Besoin d’un site internet ? Contactez-moi.",
   icons: [
     { rel: "icon", url: "/favicon.ico", sizes: "any" },
     { rel: "icon", url: "/favicon.png", type: "image/png", sizes: "200x200" },
