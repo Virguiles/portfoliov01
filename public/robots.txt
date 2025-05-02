@@ -2,9 +2,17 @@
 User-agent: *
 Allow: /
 
+# Interdire certains dossiers ou fichiers spécifiques si nécessaire
+Disallow: /.next/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+
 # Host
 Host: https://virgilepopote.com
 
 # Sitemaps
 Sitemap: https://virgilepopote.com/sitemap.xml
-Sitemap: https://virgile.site/sitemap.xml
+Sitemap: https://virgilepopote.com/server-sitemap.xml
