@@ -89,6 +89,19 @@ export default function RootLayout({
           `}
         </Script>
         {/* End Google Tag Manager */}
+
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-SX2M7CKH0L" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SX2M7CKH0L');
+          `}
+        </Script>
+        {/* End Google Analytics */}
+
         {/* Balises Open Graph */}
         <meta property="og:title" content="Création site internet Guadeloupe – Virgile Popote, développeur web freelance" />
         <meta property="og:description" content="Développeur web freelance en Guadeloupe. Création de sites vitrines, e-commerce et sur-mesure pour entreprises et entrepreneurs." />
