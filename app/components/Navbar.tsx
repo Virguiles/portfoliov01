@@ -90,6 +90,7 @@ export default function Header() {
                             <Link
                                 href="/#about"
                                 className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
+                                onClick={() => setMobileMenuOpen(false)}
                             >
                                 {t("about")}
                             </Link>
@@ -98,6 +99,7 @@ export default function Header() {
                             <Link
                                 href="/#projets"
                                 className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
+                                onClick={() => setMobileMenuOpen(false)}
                             >
                                 {t("projects")}
                             </Link>
@@ -106,6 +108,7 @@ export default function Header() {
                             <Link
                                 href="/#contact"
                                 className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
+                                onClick={() => setMobileMenuOpen(false)}
                             >
                                 {t("contact")}
                             </Link>
