@@ -11,8 +11,7 @@ Disallow: /*.ts$
 Disallow: /*.tsx$
 
 # Host
-Host: https://virgilepopote.com
+Host: https://virgile.site
 
 # Sitemaps
-Sitemap: https://virgilepopote.com/sitemap.xml
-Sitemap: https://virgilepopote.com/server-sitemap.xml
+Sitemap: https://virgile.site/sitemap.xml
