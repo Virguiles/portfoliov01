@@ -68,7 +68,7 @@ export default function Header() {
                         Virgile
                     </Link>
                     <span
-                        className="text-sm font-[var(--font-jetbrains-mono)] text-white-600 font-display-swap"
+                        className="text-sm font-[var(--font-jetbrains-mono)] text-white-600"
                         aria-label={developerText}
                         id="developer-title"
                     >
