@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && npm run copy-locales",
+    "postbuild": "next-sitemap",
     "prebuild": "npm run convert-images",
     "start": "next start",
     "lint": "next lint",

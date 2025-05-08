@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://virgilepopote.com',
+  siteUrl: 'https://virgile.site',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'weekly',
@@ -7,7 +7,6 @@ module.exports = {
   exclude: ['/404', '/404.html', '/not-found'],
   robotsTxtOptions: {
     additionalSitemaps: [
-      'https://virgilepopote.com/sitemap.xml',
       'https://virgile.site/sitemap.xml',
     ],
   },

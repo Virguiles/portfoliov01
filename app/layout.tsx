@@ -35,10 +35,10 @@ export const metadata: Metadata = {
   title: "Création site internet Guadeloupe – Virgile Popote, développeur web freelance",
   description: "Développeur web freelance en Guadeloupe. Création de sites vitrines, e-commerce et sur-mesure pour entreprises et entrepreneurs. Contactez-moi pour booster votre présence en ligne.",
   keywords: "développeur web, freelance, Guadeloupe, création site internet, site vitrine, e-commerce, next.js, développeur frontend",
-  authors: [{ name: "Virgile Popote", url: "https://virgilepopote.com" }],
+  authors: [{ name: "Virgile Popote", url: "https://virgile.site" }],
   creator: "Virgile Popote",
   publisher: "Virgile Popote",
-  metadataBase: new URL("https://virgilepopote.com"),
+  metadataBase: new URL("https://virgile.site"),
   alternates: {
     canonical: '/',
     languages: {

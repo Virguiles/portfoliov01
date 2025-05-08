@@ -2,14 +2,6 @@
 User-agent: *
 Allow: /
 
-# Interdire certains dossiers ou fichiers spécifiques si nécessaire
-Disallow: /.next/
-Disallow: /node_modules/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.ts$
-Disallow: /*.tsx$
-
 # Host
 Host: https://virgile.site
 
