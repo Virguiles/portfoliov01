@@ -17,8 +17,32 @@
 
 # Règle générale pour les autres chemins
 [[redirects]]
+  from = "https://virgilepopote.com/*"
+  to = "https://virgile.site/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://virgilepopote.com/*"
+  to = "https://virgile.site/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.virgilepopote.com/*"
+  to = "https://virgile.site/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.virgilepopote.com/*"
+  to = "https://virgile.site/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/nextjs"
   status = 200
 
 [[headers]]
