@@ -7,7 +7,6 @@ module.exports = {
   exclude: ['/404', '/404.html', '/not-found'],
   robotsTxtOptions: {
     additionalSitemaps: [
-      'https://virgile.site/sitemap.xml',
     ],
   },
 };
