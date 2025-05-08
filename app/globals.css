@@ -7,6 +7,13 @@ html, body {
   font-family: var(--font-jetbrains-mono), Arial, Helvetica, sans-serif;
 }
 
+/* Optimisation pour le LCP */
+#developer-title {
+  content-visibility: auto;
+  contain-intrinsic-size: auto;
+  text-rendering: optimizeSpeed;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

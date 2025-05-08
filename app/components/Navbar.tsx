@@ -16,12 +16,21 @@ export default function Header() {
     // Préchargement du texte pour améliorer le LCP
     const developerText = t("developer");
 
-    // Optimisation du LCP - Charger les polices de manière préemptive
+    // Optimisation du LCP - Préchargement et optimisation
     useEffect(() => {
         // Précharger les ressources critiques
         if (typeof window !== 'undefined') {
             // Force le premier rendu avant même le scroll
             setIsScrolled(window.scrollY > 10);
+
+            // Indique au navigateur que cet élément est prioritaire
+            if (document.getElementById('developer-title')) {
+                // @ts-expect-error - La propriété importance n'est pas reconnue par TypeScript
+                if ('importance' in document.getElementById('developer-title')) {
+                    // @ts-expect-error - La propriété importance n'est pas reconnue par TypeScript
+                    document.getElementById('developer-title').importance = 'high';
+                }
+            }
         }
     }, []);
 
@@ -71,6 +80,8 @@ export default function Header() {
                         className="text-sm font-[var(--font-jetbrains-mono)] text-white-600"
                         aria-label={developerText}
                         id="developer-title"
+                        style={{ fontOpticalSizing: 'auto' }}
+                        data-priority="high"
                     >
                         {developerText}
                     </span>

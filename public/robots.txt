@@ -2,5 +2,8 @@
 User-agent: *
 Allow: /
 
+# Host
+Host: https://virgile.site
+
 # Sitemaps
 Sitemap: https://virgile.site/sitemap.xml
