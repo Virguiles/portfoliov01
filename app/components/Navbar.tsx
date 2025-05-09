@@ -96,7 +96,6 @@ export default function Header() {
                         aria-label={developerText}
                         id="developer-title"
                         style={{ fontOpticalSizing: 'auto' }}
-                        data-priority="high"
                     >
                         {developerText}
                     </span>

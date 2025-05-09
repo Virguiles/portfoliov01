@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
   preload: true,
   fallback: ['system-ui', 'sans-serif'],
 });
