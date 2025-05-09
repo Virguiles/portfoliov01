@@ -193,17 +193,20 @@ if (typeof window === 'undefined') {
 }
 // Initialisation côté client avec backend HTTP
 else {
-  i18n
-    .use(HttpBackend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-      ...i18nConfig,
-      backend: {
-        loadPath: '/locales/{{lng}}/common.json',
-      },
-      resources, // Inclure également les ressources par défaut pour éviter des erreurs de rendu
-    });
+  if (!i18n.isInitialized) {
+    i18n
+      .use(HttpBackend)
+      .use(LanguageDetector)
+      .use(initReactI18next)
+      .init({
+        ...i18nConfig,
+        lng: 'fr',
+        resources,
+        backend: {
+          loadPath: '/locales/{{lng}}/common.json',
+        },
+      });
+  }
 }
 
 export default i18n;

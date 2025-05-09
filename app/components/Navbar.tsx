@@ -13,8 +13,24 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const dropdownRef = useRef<HTMLLIElement>(null);
     const { t } = useTranslation();
-    // Préchargement du texte pour améliorer le LCP
-    const developerText = t("developer");
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Textes pour SSR et premier rendu client (français)
+    const ssrDeveloperText = "DEVELOPPEUR - DESIGNER UI/UX";
+    const ssrAboutText = "à propos";
+    const ssrProjectsText = "mes projets";
+    const ssrContactText = "contact";
+
+    // Le developerText utilisé pour le rendu et l'aria-label
+    // Si pas monté, utilise la version SSR. Si monté, utilise la traduction dynamique.
+    const developerText = isMounted ? t("developer") : ssrDeveloperText;
+    const aboutText = isMounted ? t("about") : ssrAboutText;
+    const projectsText = isMounted ? t("projects") : ssrProjectsText;
+    const contactText = isMounted ? t("contact") : ssrContactText;
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     // Optimisation du LCP - Préchargement et optimisation
     useEffect(() => {
@@ -24,13 +40,12 @@ export default function Header() {
             setIsScrolled(window.scrollY > 10);
 
             // Indique au navigateur que cet élément est prioritaire
-            if (document.getElementById('developer-title')) {
-                // @ts-expect-error - La propriété importance n'est pas reconnue par TypeScript
-                if ('importance' in document.getElementById('developer-title')) {
-                    // @ts-expect-error - La propriété importance n'est pas reconnue par TypeScript
-                    document.getElementById('developer-title').importance = 'high';
-                }
-            }
+            // const devTitleElement = document.getElementById('developer-title');
+            // if (devTitleElement) {
+            //     if ('importance' in devTitleElement && typeof (devTitleElement as any).importance !== 'undefined') {
+            //         (devTitleElement as any).importance = 'high';
+            //     }
+            // }
         }
     }, []);
 
@@ -103,7 +118,7 @@ export default function Header() {
                                 className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                {t("about")}
+                                {aboutText}
                             </Link>
                         </li>
                         <li>
@@ -112,7 +127,7 @@ export default function Header() {
                                 className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                {t("projects")}
+                                {projectsText}
                             </Link>
                         </li>
                         <li>
@@ -121,7 +136,7 @@ export default function Header() {
                                 className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                {t("contact")}
+                                {contactText}
                             </Link>
                         </li>
                         <li>
@@ -170,7 +185,7 @@ export default function Header() {
                                     className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500 transition-colors duration-200"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {t("about")}
+                                    {aboutText}
                                 </Link>
                             </li>
                             <li>
@@ -179,7 +194,7 @@ export default function Header() {
                                     className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500 transition-colors duration-200"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {t("projects")}
+                                    {projectsText}
                                 </Link>
                             </li>
                             <li>
@@ -188,7 +203,7 @@ export default function Header() {
                                     className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500 transition-colors duration-200"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {t("contact")}
+                                    {contactText}
                                 </Link>
                             </li>
                             <li>
