@@ -136,23 +136,25 @@ export default function RootLayout({
           __html: `
           {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Virgile Popote",
-            "jobTitle": "Développeur Web Freelance",
+            "@type": "ProfessionalService",
+            "name": "Virgile Popote – Développeur web freelance",
             "url": "https://virgile.site/",
             "image": "https://virgile.site/og-image.jpg",
+            "description": "Développeur web freelance en Guadeloupe. Création de sites vitrines, e‑commerce et sur‑mesure.",
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Guadeloupe"
+            },
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Guadeloupe",
               "addressCountry": "FR"
             },
-            "description": "Développeur web freelance en Guadeloupe. Création de sites internet pour entreprises et entrepreneurs.",
-            "email": "virgilepopote@gmail.com",
+            "email": "mailto:virgilepopote@gmail.com",
             "sameAs": [
               "https://github.com/virguiles",
               "https://bsky.app/profile/virgilepop.bsky.social",
-              "https://www.instagram.com/virgilepop.up/",
-              "mailto:virgilepopote@gmail.com"
+              "https://www.instagram.com/virgilepop.up/"
             ]
           }
           `

@@ -68,6 +68,12 @@ export default function Footer() {
           </svg>
         </Link>
       </div>
+      <Link
+        href="/guadeloupe"
+        className="text-sm text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors"
+      >
+        Création site internet en Guadeloupe
+      </Link>
       <div className="flex flex-col items-center">
         <span className="text-black dark:text-gray-300 text-sm font-[var(--font-jetbrains-mono)] text-center"> © {annee} This website is made with {'💜'} by me</span>
       </div>

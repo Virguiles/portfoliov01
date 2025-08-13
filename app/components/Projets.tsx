@@ -52,11 +52,13 @@ export default function Projets() {
                       alt={projet.titre}
                       width={192}
                       height={140}
+                      sizes="(max-width: 768px) 100vw, 192px"
                       className="rounded-md w-full h-36 object-contain border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+                      loading="lazy"
                       onError={(e) => {
-                        // Fallback vers l'image PNG si WebP n'est pas supporté ou le fichier n'existe pas
-                        if (projet.fallbackImage && e.currentTarget.src !== projet.fallbackImage) {
-                          e.currentTarget.src = projet.fallbackImage;
+                        const target = e.currentTarget as HTMLImageElement;
+                        if (projet.fallbackImage && target.src !== projet.fallbackImage) {
+                          target.src = projet.fallbackImage;
                         }
                       }}
                     />

@@ -79,7 +79,7 @@ export default function Header() {
         <header
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${
                 isScrolled
-                ? "bg-white/05 dark:bg-black/05 shadow-md backdrop-blur-md"
+                ? "bg-white/5 dark:bg-black/5 shadow-md backdrop-blur-md"
                 : "bg-transparent"
             }`}
         >
@@ -101,20 +101,21 @@ export default function Header() {
                     </span>
                 </div>
                 <button
-                    className="md:hidden flex flex-col justify-center items-center w-10 h-10 text-white focus:outline-none"
+                    className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Ouvrir le menu"
+                    aria-expanded={mobileMenuOpen}
                 >
-                    <span className={`block w-6 h-0.5 bg-white mb-1 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                    <span className={`block w-6 h-0.5 bg-white mb-1 transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`block w-6 h-0.5 bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                    <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white mb-1 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                    <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white mb-1 transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                    <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
                 </button>
-                <nav>
+                <nav role="navigation" aria-label="Navigation principale">
                     <ul className="hidden md:flex items-center space-x-8">
                         <li>
                             <Link
                                 href="/#about"
-                                className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
+                                className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {aboutText}
@@ -123,7 +124,7 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/#projets"
-                                className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
+                                className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {projectsText}
@@ -132,7 +133,7 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/#contact"
-                                className="text-base font-[var(--font-jetbrains-mono)] text-white-700 hover:text-purple-500 transition-colors duration-200"
+                                className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {contactText}
