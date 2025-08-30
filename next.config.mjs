@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export', // Commenté pour permettre le développement local
-  distDir: '.next',
+  output: 'export',
+  // distDir: 'out', // Default for static export
   reactStrictMode: true,
   // Optimisations de performance
   experimental: {
