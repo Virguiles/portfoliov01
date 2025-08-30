@@ -132,6 +132,15 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
+                                href="/blog"
+                                className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500 transition-colors duration-200"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                blog
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
                                 href="/#contact"
                                 className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500 transition-colors duration-200"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -195,6 +204,15 @@ export default function Header() {
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {projectsText}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/blog"
+                                    className="text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500 transition-colors duration-200"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    blog
                                 </Link>
                             </li>
                             <li>

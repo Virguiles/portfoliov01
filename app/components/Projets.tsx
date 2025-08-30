@@ -1,25 +1,49 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function Projets() {
-  const { t } = useTranslation();
+  const { t, ready } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Attendre que les traductions soient prêtes et que le composant soit monté côté client
+  if (!ready || !mounted) {
+    return (
+      <section className="py-16 px-4 sm:px-6 bg-white/10 dark:bg-black/60">
+        <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
+          <div className="w-full flex flex-col items-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 mt-4 text-center text-black dark:text-white tracking-tight">
+              Mes Projets
+            </h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4" />
+          </div>
+          <div className="w-full flex flex-col items-center">
+            <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 w-full rounded-xl"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const projects = [
     {
-      titre: t("projets.items.0.titre"),
-      description: t("projets.items.0.description"),
+      titre: t("projets.items.0.titre", "Mobile-food.ch"),
+      description: t("projets.items.0.description", "Plateforme innovante dédiée à la recherche de food trucks et traiteurs en Suisse."),
       lien: "https://www.mobile-food.ch/fr",
       image: "/images/mobile-food-ch.webp",
       fallbackImage: "/images/mobile-food-ch.png",
       technologies: ["Ruby on Rails", "TailwindCSS"],
     },
     {
-      titre: t("projets.items.1.titre"),
-      description: t("projets.items.1.description"),
+      titre: t("projets.items.1.titre", "CRM pour startup"),
+      description: t("projets.items.1.description", "Développement d'un CRM sur-mesure pour une startup."),
       lien: "#",
       image: "/images/logo-mobilefoodch-inline.svg",
       technologies: ["Ruby on Rails", "TailwindCSS"],
@@ -90,6 +114,16 @@ export default function Projets() {
                       </span>
                     ))}
                   </div>
+                  {isLienValide && (
+                    <a
+                      href={projet.lien}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-3 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium transition-colors"
+                    >
+                      {t("projets.voir")}
+                    </a>
+                  )}
                 </div>
               </div>
             );

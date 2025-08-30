@@ -7,6 +7,9 @@ const nextConfig = {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
+    domains: [
+      "api.microlink.io", // Microlink Image Preview
+    ],
   },
   trailingSlash: true
 };

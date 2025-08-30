@@ -10,7 +10,13 @@
   "hero_and": "&",
   "hero_developer": "DÉVELOPPEUR",
   "hero_web": "WEB",
-  "about_text": "Je m'appelle Virgile, développeur web et designer UI/UX basé en Guadeloupe 🏝️. J'accompagne les entreprises et entrepreneurs dans la création de sites internet performants et d'expériences digitales sur-mesure. Spécialisé en développement Fullstack et en design d'interface, je conçois des solutions innovantes, alliant esthétique, ergonomie et efficacité. Passionné par le web, je mets ma créativité et mon expertise technique au service de vos projets pour vous aider à vous démarquer en ligne.",
+  "about_text": "Je suis Virgile Popote, développeur web freelance en Guadeloupe, spécialisé dans la création de sites internet modernes et performants.\n\nMon rôle : concevoir des sites vitrines et applications web sur-mesure, pensés pour être esthétiques, rapides et optimisés SEO.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui mettent en valeur votre marque et transforment vos visiteurs en clients.\n\nPassionné par le digital, j'accompagne entrepreneurs, associations et startups pour développer leur présence en ligne et se démarquer de la concurrence.\n\n👉 Vous cherchez un partenaire fiable pour votre projet web ? Contactez-moi et donnons vie à votre idée.",
+  "tech_links": {
+    "ruby_on_rails": "https://rubyonrails.org/",
+    "react": "https://react.dev/",
+    "javascript": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+    "tailwind_css": "https://tailwindcss.com/"
+  },
   "competences": {
     "title": "mes compétences",
     "ruby": {
@@ -44,16 +50,18 @@
     "items": [
       {
         "titre": "Mobile-food.ch",
-        "description": "Mobile-food.ch est une plateforme innovante dédiée à la recherche de food trucks et traiteurs en Suisse. Elle facilite la mise en relation entre organisateurs d'événements et professionnels de la restauration mobile, offrant une solution pratique pour trouver rapidement des services culinaires adaptés à chaque occasion."
+        "description": "Plateforme pour trouver des food trucks et traiteurs en Suisse. Trouvez facilement des services de restauration mobile pour tous types d'événements."
       },
       {
         "titre": "CRM pour startup",
-        "description": "Développement d'un CRM sur-mesure pour une startup, permettant une gestion optimisée des leads, du suivi commercial et des opportunités de vente. Cette solution digitale améliore la productivité des équipes et centralise l'ensemble des données clients pour un pilotage efficace de l'activité."
+        "description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente."
       }
     ]
   },
   "contactform": {
     "title": "Prendre contact ?",
+    "title_start": "Prendre",
+    "title_highlight": "contact",
     "subtitle": "Je ferai de mon mieux pour vous répondre dès que possible.",
     "location": "Guadeloupe (F.W.I), France",
     "fields": {

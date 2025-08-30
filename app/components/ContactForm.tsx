@@ -66,7 +66,7 @@ export default function ContactForm() {
         <div className="mb-10 md:mb-0 min-w-0 w-full">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8 leading-tight text-black dark:text-white max-w-full break-words whitespace-normal text-left">
             <span className="inline-flex items-center gap-2 whitespace-nowrap">
-              {t("contactform.title_start")} <AuroraText colors={["#0516FC","#7928CA", "#0070F3", "#783BB1"]} speed={2}>{t("contactform.title_highlight")}</AuroraText><WordRotate words={["\uD83D\uDC4D", "😊", "👋"]} />
+              {t("contactform.title_start")} <AuroraText colors={["#0516FC","#7928CA", "#0070F3", "#783BB1"]} speed={2}>{t("contactform.title_highlight")}</AuroraText> <WordRotate words={["\uD83D\uDC4D", "😊", "👋"]} />
             </span>
           </h2>
           <p className="text-gray-400 mb-8 sm:mb-10 text-sm sm:text-base md:text-lg max-w-prose">
