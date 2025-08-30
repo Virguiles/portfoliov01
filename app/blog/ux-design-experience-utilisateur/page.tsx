@@ -23,11 +23,11 @@ export default function ArticleUXDesign() {
           {/* En-tête de l'article */}
           <header className="mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
-              UX Design : pourquoi l'expérience utilisateur est la clé d'un site internet efficace
+              UX Design : pourquoi l&apos;expérience utilisateur est la clé d&apos;un site internet efficace
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              L'UX design n'est pas qu'une tendance, c'est un facteur clé de succès pour votre site web.
+              L&apos;UX design n&apos;est pas qu&apos;une tendance, c&apos;est un facteur clé de succès pour votre site web.
               Découvrez comment une bonne expérience utilisateur peut transformer vos conversions et fidéliser vos clients.
             </p>
 
@@ -56,17 +56,17 @@ export default function ArticleUXDesign() {
               </h3>
               <p className="text-purple-700 dark:text-purple-200 m-0">
                 Un site web avec une UX optimisée peut augmenter vos conversions de 400% et réduire
-                votre taux de rebond de 60%. L'expérience utilisateur n'est pas un détail, c'est votre avantage concurrentiel.
+                votre taux de rebond de 60%. L&apos;expérience utilisateur n&apos;est pas un détail, c&apos;est votre avantage concurrentiel.
               </p>
             </div>
 
             <h2 className="text-3xl font-bold text-black dark:text-white mb-6 mt-12">
-              Qu'est-ce que l'UX Design ?
+              Qu&apos;est-ce que l&apos;UX Design ?
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              L'UX Design (User Experience Design) est l'art de concevoir des interfaces qui offrent
-              une expérience fluide, intuitive et agréable aux utilisateurs. C'est la science qui fait
+              L&apos;UX Design (User Experience Design) est l&apos;art de concevoir des interfaces qui offrent
+              une expérience fluide, intuitive et agréable aux utilisateurs. C&apos;est la science qui fait
               que votre site web est facile à utiliser et efficace.
             </p>
 
@@ -77,7 +77,7 @@ export default function ArticleUXDesign() {
                   UX ≠ UI
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  L'UX se concentre sur l'expérience globale, l'UI sur l'apparence visuelle.
+                  L&apos;UX se concentre sur l&apos;expérience globale, l&apos;UI sur l&apos;apparence visuelle.
                   Les deux sont complémentaires mais différents.
                 </p>
               </div>
@@ -87,43 +87,43 @@ export default function ArticleUXDesign() {
                   Centré utilisateur
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  L'UX design place l'utilisateur au centre de la conception, pas la technologie
+                  L&apos;UX design place l&apos;utilisateur au centre de la conception, pas la technologie
                   ou les préférences du développeur.
                 </p>
               </div>
             </div>
 
             <h2 className="text-3xl font-bold text-black dark:text-white mb-6 mt-12">
-              L'impact de l'UX sur vos conversions
+              L&apos;impact de l&apos;UX sur vos conversions
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Une bonne UX n'est pas juste "sympa à avoir", elle a un impact direct sur vos résultats commerciaux :
+              Une bonne UX n&apos;est pas juste &quot;sympa à avoir&quot;, elle a un impact direct sur vos résultats commerciaux :
             </p>
 
             <ul className="space-y-3 mb-8">
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Augmentation des conversions :</strong> +400% en moyenne pour les sites optimisés UX
+                  <strong>Augmentation des conversions :</strong> +400% en moyenne pour les sites optimisés UX.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Réduction du taux de rebond :</strong> -60% grâce à une navigation intuitive
+                  <strong>Réduction du taux de rebond :</strong> -60% grâce à une navigation intuitive.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Amélioration de la fidélisation :</strong> Les utilisateurs reviennent sur des sites faciles à utiliser
+                  <strong>Amélioration de la fidélisation :</strong> Les utilisateurs reviennent sur des sites faciles à utiliser.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Réduction des coûts support :</strong> Moins de questions = moins de temps passé à aider les clients
+                  <strong>Réduction des coûts support :</strong> Moins de questions = moins de temps passé à aider les clients.
                 </span>
               </li>
             </ul>
@@ -133,7 +133,7 @@ export default function ArticleUXDesign() {
                 📊 Exemple concret
               </h3>
               <p className="text-blue-700 dark:text-blue-200 m-0">
-                Un site e-commerce qui améliore son processus de commande (moins d'étapes, formulaires plus clairs)
+                            Un site e-commerce qui améliore son processus de commande (moins d&apos;étapes, formulaires plus clairs)
                 peut voir son taux de conversion passer de 2% à 8% en quelques semaines.
               </p>
             </div>
@@ -174,7 +174,7 @@ export default function ArticleUXDesign() {
               <div className="text-center p-4 bg-white dark:bg-black/60 rounded-lg border border-gray-200 dark:border-gray-800">
                 <FiSmartphone className="w-8 h-8 text-purple-500 mx-auto mb-2" />
                 <h5 className="font-semibold text-black dark:text-white">Responsive</h5>
-                <p className="text-sm text-gray-600 dark:text-gray-400">S'adapte à tous les écrans</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">S&apos;adapte à tous les écrans</p>
               </div>
               <div className="text-center p-4 bg-white dark:bg-black/60 rounded-lg border border-gray-200 dark:border-gray-800">
                 <FiZap className="w-8 h-8 text-blue-500 mx-auto mb-2" />
@@ -200,15 +200,15 @@ export default function ArticleUXDesign() {
               4. Navigation intuitive
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              L'utilisateur doit toujours savoir où il est et comment aller où il veut.
-              Menu clair, fil d'Ariane, boutons d'action visibles.
+              L&apos;utilisateur doit toujours savoir où il est et comment aller où il veut.
+              Menu clair, fil d&apos;Ariane, boutons d&apos;action visibles.
             </p>
 
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4 mt-8">
               5. Feedback et micro-interactions
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Donnez des retours visuels à vos utilisateurs : boutons qui changent d'état,
+              Donnez des retours visuels à vos utilisateurs : boutons qui changent d&apos;état,
               animations subtiles, messages de confirmation.
             </p>
 
@@ -223,11 +223,11 @@ export default function ArticleUXDesign() {
             </div>
 
             <h2 className="text-3xl font-bold text-black dark:text-white mb-6 mt-12">
-              Comment tester et améliorer l'UX de votre site
+              Comment tester et améliorer l&apos;UX de votre site
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              L'UX design est un processus continu. Voici comment l'améliorer :
+              L&apos;UX design est un processus continu. Voici comment l&apos;améliorer :
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -241,7 +241,7 @@ export default function ArticleUXDesign() {
                 </ul>
               </div>
               <div className="bg-white dark:bg-black/60 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
-                <h4 className="text-lg font-semibold text-black dark:text-white mb-3">Outils d'analyse</h4>
+                <h4 className="text-lg font-semibold text-black dark:text-white mb-3">Outils d&apos;analyse</h4>
                 <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2">
                   <li>• Google Analytics (comportement)</li>
                   <li>• Hotjar (heatmaps)</li>
@@ -256,12 +256,12 @@ export default function ArticleUXDesign() {
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              L'UX design n'est pas un luxe, c'est un investissement qui se rentabilise rapidement.
+              L&apos;UX design n&apos;est pas un luxe, c&apos;est un investissement qui se rentabilise rapidement.
               Un site avec une bonne expérience utilisateur convertit mieux, fidélise plus et coûte moins cher à maintenir.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              N'oubliez pas : l'UX se mesure. Testez, analysez, améliorez.
+                N&apos;oubliez pas : l&apos;UX se mesure. Testez, analysez, améliorez.
               Votre site web est un produit vivant qui doit évoluer avec vos utilisateurs.
             </p>
           </article>

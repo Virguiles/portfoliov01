@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiMapPin, FiSearch, FiStar, FiTrendingUp } from "react-icons/fi";
+import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiStar, FiTrendingUp } from "react-icons/fi";
 import Header from "../../components/Navbar";
 
 export default function ArticleSEOLocal() {
@@ -28,7 +28,7 @@ export default function ArticleSEOLocal() {
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
               Être visible localement en Guadeloupe est crucial pour votre business. Découvrez comment
-              optimiser votre site pour apparaître dans les recherches "près de moi" et attirer des clients locaux.
+              optimiser votre site pour apparaître dans les recherches &quot;près de moi&quot; et attirer des clients locaux.
             </p>
 
             {/* Métadonnées */}
@@ -55,8 +55,8 @@ export default function ArticleSEOLocal() {
                 🌴 Pourquoi le SEO local en Guadeloupe ?
               </h3>
               <p className="text-orange-700 dark:text-orange-200 m-0">
-                En Guadeloupe, les recherches locales représentent 80% du trafic web. Quand quelqu'un cherche
-                "coiffeur Basse-Terre" ou "restaurant Pointe-à-Pitre", vous voulez être en première position !
+                En Guadeloupe, les recherches locales représentent 80% du trafic web. Quand quelqu&apos;un cherche
+                &quot;coiffeur Basse-Terre&quot; ou &quot;restaurant Pointe-à-Pitre&quot;, vous voulez être en première position !
               </p>
             </div>
 
@@ -72,13 +72,13 @@ export default function ArticleSEOLocal() {
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Recherches "près de moi" :</strong> 80% des utilisateurs mobiles font des recherches locales
+                  <strong>Recherches &quot;près de moi&quot; :</strong> 80% des utilisateurs mobiles font des recherches locales
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Concurrence locale :</strong> Moins de concurrence qu'au niveau national, plus de chances de se démarquer
+                  <strong>Concurrence locale :</strong> Moins de concurrence qu&apos;au niveau national, plus de chances de se démarquer
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -90,7 +90,7 @@ export default function ArticleSEOLocal() {
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">
-                  <strong>Territoire limité :</strong> Plus facile de dominer un marché local qu'un marché national
+                  <strong>Territoire limité :</strong> Plus facile de dominer un marché local qu&apos;un marché national
                 </span>
               </li>
             </ul>
@@ -101,7 +101,7 @@ export default function ArticleSEOLocal() {
               </h3>
               <p className="text-blue-700 dark:text-blue-200 m-0">
                 Un restaurant à Sainte-Anne qui optimise son SEO local peut apparaître en première position
-                quand quelqu'un cherche "restaurant Sainte-Anne Guadeloupe" ou "manger près de la plage".
+                quand quelqu&apos;un cherche &quot;restaurant Sainte-Anne Guadeloupe&quot; ou &quot;manger près de la plage&quot;.
               </p>
             </div>
 
@@ -113,7 +113,7 @@ export default function ArticleSEOLocal() {
               1. Google Business Profile (anciennement Google My Business)
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              C'est l'outil le plus important pour le SEO local. Votre profil Google Business Profile apparaît
+              C&apos;est l&apos;outil le plus important pour le SEO local. Votre profil Google Business Profile apparaît
               dans les résultats de recherche et Google Maps.
             </p>
 
@@ -124,7 +124,7 @@ export default function ArticleSEOLocal() {
               <ul className="text-yellow-700 dark:text-yellow-200 text-sm space-y-2">
                 <li>• Informations complètes et à jour (horaires, téléphone, adresse)</li>
                 <li>• Photos professionnelles de votre établissement</li>
-                <li>• Catégorie d'activité précise</li>
+                <li>• Catégorie d&apos;activité précise</li>
                 <li>• Réponses aux avis clients</li>
                 <li>• Publications régulières (actualités, offres)</li>
               </ul>
@@ -134,7 +134,7 @@ export default function ArticleSEOLocal() {
               2. Avis clients et réputation en ligne
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Les avis Google ont un impact direct sur votre positionnement local. Plus vous avez d'avis positifs,
+              Les avis Google ont un impact direct sur votre positionnement local. Plus vous avez d&apos;avis positifs,
               plus Google vous fait confiance.
             </p>
 
@@ -147,8 +147,8 @@ export default function ArticleSEOLocal() {
                 <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2">
                   <li>• Demander des avis à vos clients satisfaits</li>
                   <li>• Répondre à tous les avis (positifs et négatifs)</li>
-                  <li>• Utiliser des outils de gestion d'avis</li>
-                  <li>• Intégrer les avis sur votre site web</li>
+                  <li>• Utiliser des outils de gestion d&apos;avis</li>
+                  <li>• Intégrer les avis sur votre site web.</li>
                 </ul>
               </div>
               <div className="bg-white dark:bg-black/60 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
@@ -160,7 +160,7 @@ export default function ArticleSEOLocal() {
                   <li>• Améliore votre positionnement local</li>
                   <li>• Augmente votre taux de clic</li>
                   <li>• Renforce la confiance des clients</li>
-                  <li>• Plus d'apparitions dans les résultats</li>
+                  <li>• Plus d&apos;apparitions dans les résultats</li>
                 </ul>
               </div>
             </div>
@@ -241,10 +241,10 @@ export default function ArticleSEOLocal() {
                 💡 Idées de contenu local
               </h3>
               <ul className="text-purple-700 dark:text-purple-200 space-y-2">
-                <li>• "Les meilleurs endroits pour [votre activité] en Guadeloupe"</li>
-                <li>• "Guide complet de [votre ville] : où manger, dormir, visiter"</li>
-                <li>• "Spécificités de la Guadeloupe pour [votre domaine]"</li>
-                <li>• "Événements et festivals en Guadeloupe"</li>
+                <li>•&quot;Les meilleurs endroits pour [votre activité] en Guadeloupe&quot;</li>
+                <li>• &quot;Guide complet de [votre ville] : où manger, dormir, visiter&quot;</li>
+                <li>• &quot;Spécificités de la Guadeloupe pour [votre domaine]&quot;</li>
+                <li>• &quot;Événements et festivals en Guadeloupe&quot;</li>
               </ul>
             </div>
 
@@ -261,14 +261,14 @@ export default function ArticleSEOLocal() {
                 <h4 className="text-lg font-semibold text-black dark:text-white mb-3">Métriques à surveiller</h4>
                 <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2">
                   <li>• Position dans les résultats locaux</li>
-                  <li>• Nombre d'impressions locales</li>
+                  <li>• Nombre d&apos;impressions locales</li>
                   <li>• Taux de clic local</li>
                   <li>• Trafic depuis Google Maps</li>
                   <li>• Avis et notes Google</li>
                 </ul>
               </div>
               <div className="bg-white dark:bg-black/60 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
-                <h4 className="text-lg font-semibold text-black dark:text-white mb-3">Outils d'analyse</h4>
+                <h4 className="text-lg font-semibold text-black dark:text-white mb-3">Outils d&apos;analyse</h4>
                 <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2">
                   <li>• Google Search Console</li>
                   <li>• Google Analytics</li>
@@ -290,7 +290,7 @@ export default function ArticleSEOLocal() {
               <ul className="text-red-700 dark:text-red-200 space-y-2">
                 <li>• Adresses incohérentes entre votre site et Google Business Profile</li>
                 <li>• Numéros de téléphone différents selon les sources</li>
-                <li>• Horaires d'ouverture non mis à jour</li>
+                <li>• Horaires d&apos;ouverture non mis à jour</li>
                 <li>• Pas de contenu local sur votre site</li>
                 <li>• Ignorer les avis clients négatifs</li>
                 <li>• Ne pas optimiser pour mobile</li>
@@ -329,7 +329,7 @@ export default function ArticleSEOLocal() {
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
               Le SEO local en Guadeloupe est une opportunité en or pour les entreprises locales.
-              Avec moins de concurrence qu'au niveau national et un trafic local qualifié,
+              Avec moins de concurrence qu&apos;au niveau national et un trafic local qualifié,
               vous pouvez rapidement vous démarquer et attirer de nouveaux clients.
             </p>
 
@@ -345,7 +345,7 @@ export default function ArticleSEOLocal() {
               Vous voulez améliorer votre visibilité en Guadeloupe ?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Je peux vous accompagner dans l'optimisation de votre SEO local et vous aider à apparaître
+              Je peux vous accompagner dans l&apos;optimisation de votre SEO local et vous aider à apparaître
               en première position quand vos clients vous cherchent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

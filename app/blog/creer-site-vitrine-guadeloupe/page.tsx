@@ -33,8 +33,8 @@ export default function ArticleSiteVitrine() {
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              En 2025, avoir un site vitrine professionnel n'est plus une option pour les entreprises en Guadeloupe.
-              C'est un outil essentiel pour attirer de nouveaux clients et développer votre activité locale.
+              En 2025, avoir un site vitrine professionnel n&apos;est plus une option pour les entreprises en Guadeloupe.
+              C&apos;est un outil essentiel pour attirer de nouveaux clients et développer votre activité locale.
             </p>
 
             {/* Métadonnées */}
@@ -61,8 +61,8 @@ export default function ArticleSiteVitrine() {
                 💡 Pourquoi cet article ?
               </h3>
               <p className="text-blue-700 dark:text-blue-200 m-0">
-                En tant que développeur web freelance en Guadeloupe, je vois trop d'entreprises locales
-                qui passent à côté d'opportunités commerciales faute d'une présence en ligne efficace.
+                En tant que développeur web freelance en Guadeloupe, je vois trop d&apos;entreprises locales
+                qui passent à côté d&apos;opportunités commerciales faute d&apos;une présence en ligne efficace.
               </p>
             </div>
 
@@ -123,14 +123,14 @@ export default function ArticleSiteVitrine() {
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Privilégiez la simplicité. Un design épuré avec une navigation claire est plus efficace
-              qu'un site surchargé d'animations. Votre message doit passer en moins de 5 secondes.
+              qu&apos;un site surchargé d&apos;animations. Votre message doit passer en moins de 5 secondes.
             </p>
 
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4 mt-8">
               Conseil n°2 : Navigation intuitive
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Vos visiteurs doivent trouver l'information en maximum 3 clics. Organisez votre contenu
+              Vos visiteurs doivent trouver l&apos;information en maximum 3 clics. Organisez votre contenu
               de manière logique : Accueil, Services, À propos, Contact.
             </p>
 
@@ -138,8 +138,8 @@ export default function ArticleSiteVitrine() {
               Conseil n°3 : SEO local optimisé
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Intégrez des mots-clés locaux (votre ville, "Guadeloupe", "Antilles") et créez des
-              pages dédiées à vos zones d'intervention. Google My Business est votre ami !
+              Intégrez des mots-clés locaux (votre ville, &quot;Guadeloupe&quot;, &quot;Antilles&quot;) et créez des
+              pages dédiées à vos zones d&apos;intervention. Google My Business est votre ami !
             </p>
 
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4 mt-8">
@@ -147,14 +147,14 @@ export default function ArticleSiteVitrine() {
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Chaque page doit avoir un objectif clair. Que voulez-vous que vos visiteurs fassent ?
-              Appeler ? Prendre rendez-vous ? Demander un devis ? Guidez-les !
+              Appeler ? Prendre rendez-vous ? Demander un devis ? Guidez-les !.
             </p>
 
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4 mt-8">
               Conseil n°5 : Hébergement fiable
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Choisissez un hébergeur avec une bonne disponibilité (99,9% minimum) et des serveurs
+              Choisissez un hébergeur avec une bonne disponibilité (99,9% minimum) et des serveurs.
               en France ou en Europe pour de meilleures performances en Guadeloupe.
             </p>
 
@@ -163,7 +163,7 @@ export default function ArticleSiteVitrine() {
                 🎯 Exemple concret
               </h3>
               <p className="text-green-700 dark:text-green-200 m-0">
-                Un restaurant en Guadeloupe qui optimise son site pour "restaurant [ville] Guadeloupe"
+                Un restaurant en Guadeloupe qui optimise son site pour &quot;restaurant [ville] Guadeloupe&quot;
                 peut voir son trafic local augmenter de 200% en quelques mois.
               </p>
             </div>
@@ -200,23 +200,23 @@ export default function ArticleSiteVitrine() {
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
               Un site vitrine bien conçu est un investissement rentable pour votre entreprise en Guadeloupe.
-              Il vous permet d'être visible 24h/24, d'attirer de nouveaux clients et de renforcer votre image de marque.
+              Il vous permet d&apos;être visible 24h/24, d&apos;attirer de nouveaux clients et de renforcer votre image de marque.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              N'oubliez pas : la qualité prime sur la quantité. Mieux vaut un site simple mais efficace
-              qu'un site complexe qui ne fonctionne pas.
+              N&apos;oubliez pas : la qualité prime sur la quantité. Mieux vaut un site simple mais efficace
+              qu&apos;un site complexe qui ne fonctionne pas.
             </p>
           </article>
 
           {/* Call to action */}
           <div className="mt-16 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-8 border border-purple-200 dark:border-purple-800 text-center">
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
-              Besoin d'un site vitrine adapté à votre activité en Guadeloupe ?
+              Besoin d&apos;un site vitrine adapté à votre activité en Guadeloupe ?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Je peux vous accompagner dans la création d'un site professionnel qui respecte tous ces principes
-              et vous permet d'être visible sur le web.
+                Je peux vous accompagner dans la création d&apos;un site professionnel qui respecte tous ces principes
+              et vous permet d&apos;être visible sur le web.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
