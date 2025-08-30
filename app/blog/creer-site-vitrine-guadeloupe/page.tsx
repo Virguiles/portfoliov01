@@ -168,31 +168,6 @@ export default function ArticleSiteVitrine() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold text-black dark:text-white mb-6 mt-12">
-              Combien coûte un site vitrine en Guadeloupe ?
-            </h2>
-
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Les prix varient selon la complexité, mais voici une fourchette réaliste :
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white dark:bg-black/60 border border-gray-200 dark:border-gray-800 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-bold text-black dark:text-white mb-2">Site simple</h4>
-                <p className="text-3xl font-bold text-purple-600 mb-2">800€ - 1500€</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">1-5 pages, design basique</p>
-              </div>
-              <div className="bg-white dark:bg-black/60 border-2 border-purple-500 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-bold text-black dark:text-white mb-2">Site professionnel</h4>
-                <p className="text-3xl font-bold text-purple-600 mb-2">1500€ - 3000€</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">5-10 pages, design personnalisé</p>
-              </div>
-              <div className="bg-white dark:bg-black/60 border border-gray-200 dark:border-gray-800 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-bold text-black dark:text-white mb-2">Site sur-mesure</h4>
-                <p className="text-3xl font-bold text-purple-600 mb-2">3000€+</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">Fonctionnalités avancées</p>
-              </div>
-            </div>
 
             <h2 className="text-3xl font-bold text-black dark:text-white mb-6 mt-12">
               Conclusion
