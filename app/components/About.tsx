@@ -1,21 +1,19 @@
 "use client"
 
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
 import { LinkPreview } from "./ui/link-preview";
+import { SectionHeader } from "./ui/section-header";
+import { SectionWrapper } from "./ui/section-wrapper";
+import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
 
 export default function TextPresentation() {
-  const { t } = useTranslation();
-  const [isMounted, setIsMounted] = useState(false);
+  const fallbackValues = {
+    "about": "à propos",
+    "about_text": "Je suis Virgile Popote, développeur web freelance en Guadeloupe, spécialisé dans la création de sites internet modernes et performants.\n\nMon rôle : concevoir des sites vitrines et applications web sur-mesure, pensés pour être esthétiques, rapides et optimisés SEO.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui mettent en valeur votre marque et transforment vos visiteurs en clients.\n\nPassionné par le digital, j'accompagne entrepreneurs, associations et startups pour développer leur présence en ligne et se démarquer de la concurrence.\n\n👉 Vous cherchez un partenaire fiable pour votre projet web ? Contactez-moi et donnons vie à votre idée."
+  };
 
-  // Textes pour SSR et premier rendu client (français)
-  const ssrAboutText = "à propos";
-  const ssrAboutTextContent = "Je suis Virgile Popote, développeur web freelance en Guadeloupe, spécialisé dans la création de sites internet modernes et performants.\n\nMon rôle : concevoir des sites vitrines et applications web sur-mesure, pensés pour être esthétiques, rapides et optimisés SEO.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui mettent en valeur votre marque et transforment vos visiteurs en clients.\n\nPassionné par le digital, j'accompagne entrepreneurs, associations et startups pour développer leur présence en ligne et se démarquer de la concurrence.\n\n👉 Vous cherchez un partenaire fiable pour votre projet web ? Contactez-moi et donnons vie à votre idée.";
-
-  // Le texte utilisé pour le rendu
-  // Si pas monté, utilise la version SSR. Si monté, utilise la traduction dynamique.
-  const aboutText = isMounted ? t("about") : ssrAboutText;
-  const aboutTextContent = isMounted ? t("about_text") : ssrAboutTextContent;
+  const { t, isMounted } = useSSRTranslation(fallbackValues);
+  const aboutText = t("about");
+  const aboutTextContent = t("about_text");
 
   // Fonction pour rendre le texte avec les liens interactifs
   const renderTextWithLinks = (text: string) => {
@@ -32,6 +30,7 @@ export default function TextPresentation() {
     return text.split('\n\n').map((paragraph, index) => {
       // Mots-clés à transformer en liens
       const techKeywords = [
+        { key: 'Virgile Popote', linkKey: 'linkedin' },
         { key: 'Ruby on Rails', linkKey: 'ruby_on_rails' },
         { key: 'React', linkKey: 'react' },
         { key: 'JavaScript', linkKey: 'javascript' },
@@ -91,27 +90,15 @@ export default function TextPresentation() {
     });
   };
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
-    <section className="py-16 px-4 sm:px-6 dark:bg-black/60">
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
-        {/* Titre centré avec accent visuel */}
-        <div className="w-full flex flex-col items-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center text-black dark:text-white tracking-tight">
-            {aboutText}
-          </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4" />
-        </div>
+    <SectionWrapper background="dark:bg-black/60">
+      <SectionHeader title={aboutText} />
         {/* Carte de présentation */}
         <div className="w-full dark:bg-black/70 rounded-xl p-6 md:p-10">
           <div className="text-base md:text-lg text-gray-700 dark:text-gray-200 text-center md:text-left leading-relaxed">
             {renderTextWithLinks(aboutTextContent)}
           </div>
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }

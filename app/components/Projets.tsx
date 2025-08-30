@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { FiExternalLink } from "react-icons/fi";
+import { SectionHeader } from "./ui/section-header";
+import { SectionWrapper } from "./ui/section-wrapper";
 
 export default function Projets() {
   const { t, ready } = useTranslation();
@@ -51,15 +53,8 @@ export default function Projets() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 bg-white/10 dark:bg-black/60">
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
-        {/* Titre centré avec accent visuel */}
-        <div className="w-full flex flex-col items-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 mt-4 text-center text-black dark:text-white tracking-tight">
-            {t("projets.title", "Mes Projets")}
-          </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4" />
-        </div>
+    <SectionWrapper>
+      <SectionHeader title={t("projets.title", "Mes Projets")} />
         {/* Liste des projets */}
         <div className="w-full flex flex-col">
           {projects.map((projet, idx) => {
@@ -129,7 +124,6 @@ export default function Projets() {
             );
           })}
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }

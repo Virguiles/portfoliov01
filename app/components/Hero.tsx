@@ -2,45 +2,24 @@
 
 import { HeroParticle } from "../../components/HeroParticle";
 import { GradualSpacing } from "@/app/components/ui/gradual-spacing";
-import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
 
 export default function HeroSection() {
-    const { t, i18n } = useTranslation();
-    const [isMounted, setIsMounted] = useState(false);
-    const [isI18nReady, setIsI18nReady] = useState(false);
+    const fallbackValues = {
+        "hero_creative": "CREATIVE",
+        "hero_designer": "DESIGNER",
+        "hero_and": "&",
+        "hero_developer": "DÉVELOPPEUR",
+        "hero_web": "WEB"
+    };
 
-    useEffect(() => {
-        setIsMounted(true);
+    const { t } = useSSRTranslation(fallbackValues);
 
-        // Vérifier que i18n est prêt
-        if (i18n.isInitialized) {
-            setIsI18nReady(true);
-        } else {
-            const checkI18n = () => {
-                if (i18n.isInitialized) {
-                    setIsI18nReady(true);
-                } else {
-                    setTimeout(checkI18n, 100);
-                }
-            };
-            checkI18n();
-        }
-    }, [i18n.isInitialized]);
-
-    // Textes pour SSR et premier rendu client (français)
-    const ssrHeroCreativeText = "CREATIVE";
-    const ssrHeroDesignerText = "DESIGNER";
-    const ssrHeroAndText = "&";
-    const ssrHeroDeveloperText = "DÉVELOPPEUR";
-    const ssrHeroWebText = "WEB";
-
-    // Textes conditionnels - attendre que i18n soit prêt
-    const heroCreativeText = (isMounted && isI18nReady) ? t("hero_creative") : ssrHeroCreativeText;
-    const heroDesignerText = (isMounted && isI18nReady) ? t("hero_designer") : ssrHeroDesignerText;
-    const heroAndText = (isMounted && isI18nReady) ? t("hero_and") : ssrHeroAndText;
-    const heroDeveloperText = (isMounted && isI18nReady) ? t("hero_developer") : ssrHeroDeveloperText;
-    const heroWebText = (isMounted && isI18nReady) ? t("hero_web") : ssrHeroWebText;
+    const heroCreativeText = t("hero_creative");
+    const heroDesignerText = t("hero_designer");
+    const heroAndText = t("hero_and");
+    const heroDeveloperText = t("hero_developer");
+    const heroWebText = t("hero_web");
 
     return (
         <div className="relative min-h-[100svh] h-[100svh] w-full">

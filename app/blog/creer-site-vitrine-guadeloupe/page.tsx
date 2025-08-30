@@ -3,12 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiAlertTriangle, FiExternalLink } from "react-icons/fi";
-import Header from "../../components/Navbar";
 
 export default function ArticleSiteVitrine() {
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}

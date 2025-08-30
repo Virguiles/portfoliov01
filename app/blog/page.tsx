@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiCalendar, FiClock, FiUser } from "react-icons/fi";
-import Header from "../components/Navbar";
 
 export default function BlogPage() {
   const { ready } = useTranslation();
@@ -58,7 +57,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Breadcrumb navigation */}
@@ -66,12 +64,12 @@ export default function BlogPage() {
             <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Accueil
+                  accueil
                 </Link>
               </li>
               <li className="flex items-center">
                 <span className="mx-2">/</span>
-                <span className="text-gray-800 dark:text-gray-300 font-medium">Blog</span>
+                <span className="text-gray-800 dark:text-gray-300 font-medium">blog</span>
               </li>
             </ol>
           </nav>
@@ -79,7 +77,7 @@ export default function BlogPage() {
           {/* En-tête du blog - style harmonisé avec le reste de l'app */}
           <div className="text-center mb-16">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 mt-4 text-center text-black dark:text-white tracking-tight">
-              Blog & Conseils
+              blog & conseils
             </h1>
             <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mx-auto mb-6" />
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -99,7 +97,7 @@ export default function BlogPage() {
               >
                 {article.featured && (
                   <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    ⭐ Article recommandé
+                    ⭐ article recommandé
                   </div>
                 )}
 

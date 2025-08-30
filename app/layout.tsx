@@ -6,6 +6,7 @@ import I18nProvider from "./components/i18nProvider";
 import Favicon from "./components/Favicon";
 import MouseHalo from "./components/MouseHalo";
 import Footer from "./components/Footer";
+import Header from "./components/Navbar";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -24,6 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
   preload: true,
   fallback: ['system-ui', 'sans-serif'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const viewport: Viewport = {
@@ -81,9 +83,10 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <Favicon />
-        {/* Optimisations pour le LCP */}
+        {/* Optimisations pour le LCP et les polices */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         {/* Préchargement des ressources critiques */}
         <link
           rel="preload"
@@ -92,7 +95,7 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Configuration unifiée pour éviter la duplication */}
         <Script id="google-tag-manager" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -102,19 +105,6 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-5VTGKQFS');
           `}
         </Script>
-        {/* End Google Tag Manager */}
-
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-SX2M7CKH0L" strategy="lazyOnload" />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-SX2M7CKH0L');
-          `}
-        </Script>
-        {/* End Google Analytics */}
 
         {/* Balises Open Graph */}
         <meta property="og:title" content="Création site internet Guadeloupe – Virgile Popote, développeur web freelance" />
@@ -179,6 +169,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <I18nProvider>
+              <Header />
               {children}
             </I18nProvider>
             <Footer />

@@ -5,13 +5,11 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projets from "./components/Projets";
 import ContactForm from "./components/ContactForm";
-import Header from "./components/Navbar";
 
 export default function Home() {
   return (
     <>
       <div className="relative z-10 pt-16 bg-gray-50 dark:bg-black">
-        <Header />
         <section id="hero" className="scroll-mt-20">
           <HeroSection />
           <section id="about" className="scroll-mt-20">
