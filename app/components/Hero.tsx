@@ -1,7 +1,9 @@
 "use client"
 
-import { HeroParticle } from "../../components/HeroParticle";
 import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
+import { lazy, Suspense } from "react";
+
+const HeroParticle = lazy(() => import("../../components/HeroParticle").then(m => ({ default: m.HeroParticle })));
 
 export default function HeroSection() {
     const fallbackValues = {
@@ -23,7 +25,9 @@ export default function HeroSection() {
     return (
         <div className="relative min-h-[100svh] h-[100svh] w-full" style={{ contain: 'layout style paint' }}>
             <div className="absolute inset-0">
-                <HeroParticle />
+                <Suspense fallback={null}>
+                    <HeroParticle />
+                </Suspense>
             </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 sm:gap-2">
                 <div className="w-full max-w-4xl px-4 sm:px-2">

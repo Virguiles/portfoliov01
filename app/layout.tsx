@@ -149,97 +149,95 @@ export default function RootLayout({
         <link rel="contact" href="mailto:virgilepopote@gmail.com" />
 
         {/* Données structurées JSON-LD */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: `
-          {
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "Virgile Popote – Développeur web freelance",
-            "url": "https://virgile.site/",
-            "image": "https://virgile.site/og-image.jpg",
-            "description": "Développeur web freelance en Guadeloupe. Création de sites vitrines, e‑commerce et sur‑mesure.",
-            "areaServed": {
-              "@type": "AdministrativeArea",
-              "name": "Guadeloupe",
-              "addressCountry": "FR"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Guadeloupe",
-              "addressCountry": "FR"
-            },
-            "email": "mailto:virgilepopote@gmail.com",
-            "telephone": "+590 690 XX XX XX",
-            "priceRange": "€€",
-            "sameAs": [
-              "https://github.com/virguiles",
-              "https://bsky.app/profile/virgilepop.bsky.social",
-              "https://www.instagram.com/virgilepop.up/"
-            ],
-            "serviceType": "Création de sites internet",
-            "knowsAbout": [
-              "Développement web",
-              "SEO local Guadeloupe",
-              "Sites vitrines",
-              "React",
-              "Next.js",
-              "Ruby on Rails"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Services de développement web",
-              "itemListElement": [
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Création site vitrine Guadeloupe",
-                    "description": "Site internet professionnel pour entreprises en Guadeloupe"
-                  }
+                  "@type": "ProfessionalService",
+                  name: "Virgile Popote – Développeur web freelance",
+                  url: "https://virgile.site/",
+                  image: "https://virgile.site/og-image.jpg",
+                  description: "Développeur web freelance en Guadeloupe. Création de sites vitrines, e‑commerce et sur‑mesure.",
+                  areaServed: {
+                    "@type": "AdministrativeArea",
+                    name: "Guadeloupe",
+                    addressCountry: "FR",
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Guadeloupe",
+                    addressCountry: "FR",
+                  },
+                  email: "mailto:virgilepopote@gmail.com",
+                  telephone: "+590 690 XX XX XX",
+                  priceRange: "€€",
+                  sameAs: [
+                    "https://github.com/virguiles",
+                    "https://bsky.app/profile/virgilepop.bsky.social",
+                    "https://www.instagram.com/virgilepop.up/",
+                  ],
+                  serviceType: "Création de sites internet",
+                  knowsAbout: [
+                    "Développement web",
+                    "SEO local Guadeloupe",
+                    "Sites vitrines",
+                    "React",
+                    "Next.js",
+                    "Ruby on Rails",
+                  ],
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Services de développement web",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Création site vitrine Guadeloupe",
+                          description: "Site internet professionnel pour entreprises en Guadeloupe",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "SEO local Guadeloupe",
+                          description: "Optimisation pour les recherches locales en Guadeloupe",
+                        },
+                      },
+                    ],
+                  },
                 },
                 {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "SEO local Guadeloupe",
-                    "description": "Optimisation pour les recherches locales en Guadeloupe"
-                  }
-                }
-              ]
-            }
-          }
-          `
-        }} />
-
-        {/* Données structurées supplémentaires pour SEO local */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: `
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Virgile Popote - Création site internet Guadeloupe",
-            "url": "https://virgile.site",
-            "description": "Développeur web freelance en Guadeloupe spécialisé dans la création de sites vitrines et d'applications web. Services SEO local et développement moderne.",
-            "inLanguage": "fr-FR",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Virgile Popote",
-              "url": "https://virgile.site",
-              "logo": "https://virgile.site/favicon.png"
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://virgile.site/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            },
-            "mainEntity": {
-              "@type": "ItemList",
-              "name": "Services de développement web Guadeloupe",
-              "description": "Services complets de création de sites internet pour entreprises en Guadeloupe"
-            }
-          }
-          `
-        }} />
+                  "@type": "WebSite",
+                  name: "Virgile Popote - Création site internet Guadeloupe",
+                  url: "https://virgile.site",
+                  description: "Développeur web freelance en Guadeloupe spécialisé dans la création de sites vitrines et d'applications web. Services SEO local et développement moderne.",
+                  inLanguage: "fr-FR",
+                  publisher: {
+                    "@type": "Organization",
+                    name: "Virgile Popote",
+                    url: "https://virgile.site",
+                    logo: "https://virgile.site/favicon.png",
+                  },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: "https://virgile.site/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string",
+                  },
+                  mainEntity: {
+                    "@type": "ItemList",
+                    name: "Services de développement web Guadeloupe",
+                    description: "Services complets de création de sites internet pour entreprises en Guadeloupe",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased bg-white dark:bg-black`}
