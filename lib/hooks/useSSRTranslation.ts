@@ -2,37 +2,46 @@ import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 
 export function useSSRTranslation(fallbackValues: Record<string, string> = {}) {
-  const { t, i18n } = useTranslation();
+  const { t, i18n, ready } = useTranslation();
   const [isMounted, setIsMounted] = useState(false);
   const [isI18nReady, setIsI18nReady] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
 
-    // Vérifier que i18n est prêt
+    // Utiliser l'événement 'initialized' d'i18n pour une meilleure gestion
+    const handleInitialized = () => {
+      setIsI18nReady(true);
+    };
+
     if (i18n.isInitialized) {
       setIsI18nReady(true);
     } else {
-      const checkI18n = () => {
-        if (i18n.isInitialized) {
-          setIsI18nReady(true);
-        } else {
-          setTimeout(checkI18n, 100);
-        }
-      };
-      checkI18n();
+      i18n.on('initialized', handleInitialized);
     }
-  }, [i18n.isInitialized]);
+
+    return () => {
+      i18n.off('initialized', handleInitialized);
+    };
+  }, [i18n]);
 
   const getTranslatedValue = (key: string, fallback?: string) => {
     const fallbackValue = fallback || fallbackValues[key] || key;
-    return (isMounted && isI18nReady) ? t(key) : fallbackValue;
+
+    // Utiliser ready de react-i18next qui est plus fiable
+    if (ready && isMounted) {
+      const translated = t(key);
+      // Vérifier si la traduction existe et n'est pas la clé elle-même
+      return (translated && translated !== key) ? translated : fallbackValue;
+    }
+
+    return fallbackValue;
   };
 
   return {
     t: getTranslatedValue,
     isMounted,
-    isI18nReady,
+    isI18nReady: ready && isI18nReady,
     i18n
   };
 }

@@ -14,14 +14,12 @@ export function HeroParticle() {
   }, [resolvedTheme]);
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden">
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={150}
-        ease={50}
-        color={color}
-        refresh
-      />
-    </div>
+    <Particles
+      className="absolute inset-0 z-0"
+      quantity={50}
+      ease={80}
+      color={color}
+      refresh={false}
+    />
   );
 }

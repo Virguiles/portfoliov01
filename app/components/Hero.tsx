@@ -13,7 +13,7 @@ export default function HeroSection() {
         "hero_web": "WEB"
     };
 
-    const { t } = useSSRTranslation(fallbackValues);
+    const { t, isI18nReady } = useSSRTranslation(fallbackValues);
 
     const heroCreativeText = t("hero_creative");
     const heroDesignerText = t("hero_designer");
@@ -22,38 +22,32 @@ export default function HeroSection() {
     const heroWebText = t("hero_web");
 
     return (
-        <div className="relative min-h-[100svh] h-[100svh] w-full">
+        <div className="relative min-h-[100svh] h-[100svh] w-full" style={{ contain: 'layout style paint' }}>
             <div className="absolute inset-0">
                 <HeroParticle />
             </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 sm:gap-2">
                 <div className="w-full max-w-4xl px-4 sm:px-2">
 					<h1 className="sr-only">Développeur web freelance en Guadeloupe</h1>
-                    <GradualSpacing
-                        className="font-display text-left text-xl sm:text-2xl md:text-4xl font-serif -tracking-widest text-black dark:text-white"
-                        text={heroCreativeText}
-                        key={`creative-${heroCreativeText}`}
-                    />
-                    <GradualSpacing
-                        className="font-display text-left text-4xl sm:text-5xl md:text-8xl font-bold -tracking-widest text-black dark:text-white"
-                        text={heroDesignerText}
-                        key={`designer-${heroDesignerText}`}
-                    />
-                    <GradualSpacing
-                        className="font-display text-left text-xl sm:text-2xl md:text-4xl font-serif -tracking-widest text-black dark:text-white"
-                        text={heroAndText}
-                        key={`and-${heroAndText}`}
-                    />
-                    <GradualSpacing
-                        className="font-display text-left text-4xl sm:text-5xl md:text-8xl font-bold -tracking-widest text-black dark:text-white"
-                        text={heroDeveloperText}
-                        key={`developer-${heroDeveloperText}`}
-                    />
-                    <GradualSpacing
-                        className="font-display text-left text-xl sm:text-2xl md:text-4xl font-serif -tracking-widest text-black dark:text-white"
-                        text={heroWebText}
-                        key={`web-${heroWebText}`}
-                    />
+                    {isI18nReady ? (
+                        <div style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <GradualSpacing
+                                text={`${heroCreativeText}\n${heroDesignerText}\n${heroAndText}\n${heroDeveloperText}\n${heroWebText}`}
+                                duration={0.3}
+                                delayMultiple={0.02}
+                                key="hero-text"
+                            />
+                        </div>
+                    ) : (
+                        // Skeleton loader avec dimensions prédéfinies
+                        <div className="flex flex-col items-center gap-4" style={{ minHeight: '200px' }}>
+                            <div className="animate-pulse bg-gray-300 dark:bg-gray-700 h-8 w-32 rounded" style={{ width: '128px', height: '32px' }}></div>
+                            <div className="animate-pulse bg-gray-300 dark:bg-gray-700 h-16 w-64 rounded" style={{ width: '256px', height: '64px' }}></div>
+                            <div className="animate-pulse bg-gray-300 dark:bg-gray-700 h-8 w-8 rounded" style={{ width: '32px', height: '32px' }}></div>
+                            <div className="animate-pulse bg-gray-300 dark:bg-gray-700 h-16 w-80 rounded" style={{ width: '320px', height: '64px' }}></div>
+                            <div className="animate-pulse bg-gray-300 dark:bg-gray-700 h-8 w-16 rounded" style={{ width: '64px', height: '32px' }}></div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

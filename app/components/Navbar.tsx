@@ -180,6 +180,7 @@ export default function Header() {
                         aria-label={developerText}
                         id="developer-title"
                         style={{ fontOpticalSizing: 'auto' }}
+                        suppressHydrationWarning
                     >
                         {developerText}
                     </span>
@@ -201,6 +202,7 @@ export default function Header() {
                                 href="/#about"
                                 className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500"
                                 onClick={handleNavigation}
+                                suppressHydrationWarning
                             >
                                 {aboutText}
                             </Link>
@@ -210,6 +212,7 @@ export default function Header() {
                                 href="/#projets"
                                 className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500"
                                 onClick={handleNavigation}
+                                suppressHydrationWarning
                             >
                                 {projectsText}
                             </Link>
@@ -228,6 +231,7 @@ export default function Header() {
                                 href="/#contact"
                                 className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500"
                                 onClick={handleNavigation}
+                                suppressHydrationWarning
                             >
                                 {contactText}
                             </Link>
@@ -239,33 +243,36 @@ export default function Header() {
                             <button
                                 type="button"
                                 onClick={toggleDropdown}
-                                className="navbar-button flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-purple-500/20"
+                                className="navbar-button group flex items-center justify-center w-10 h-10 rounded-full hover:bg-gradient-to-br hover:from-purple-500/20 hover:to-pink-500/20 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 ease-out transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
                                 aria-label="Changer de langue"
                             >
-                                <Globe className="w-6 h-6 text-gray-900 dark:text-white" />
+                                <Globe className="w-5 h-5 text-gray-700 dark:text-gray-200 group-hover:text-purple-400 transition-colors duration-300" />
                             </button>
                             {dropdownOpen && (
-                                <div className="z-50 absolute right-0 mt-2 w-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700">
-                                    <ul className="py-2 font-medium flex flex-col items-center" role="none">
-                                        <li>
+                                <div className="z-50 absolute right-0 mt-3 w-48 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 border border-gray-200/20 dark:border-gray-700/20 rounded-xl shadow-2xl shadow-purple-500/10 overflow-hidden transform transition-all duration-300 ease-out">
+                                    <div className="p-2">
+                                        <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 px-3">
+                                            Choisir la langue
+                                        </div>
+                                        <div className="space-y-1">
                                             <button
                                                 onClick={() => changeLanguage("fr")}
-                                                className="block w-full text-2xl text-center px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                                                className="group flex items-center w-full px-3 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-500/10 hover:text-purple-400 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                                                 aria-label="Français"
                                             >
-                                                🇫🇷
+                                                <span className="text-xl mr-3">🇫🇷</span>
+                                                <span className="group-hover:translate-x-1 transition-transform duration-200">Français</span>
                                             </button>
-                                        </li>
-                                        <li>
                                             <button
                                                 onClick={() => changeLanguage("en")}
-                                                className="block w-full text-2xl text-center px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                                                className="group flex items-center w-full px-3 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-500/10 hover:text-purple-400 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                                                 aria-label="English"
                                             >
-                                                🇬🇧
+                                                <span className="text-xl mr-3">🇬🇧</span>
+                                                <span className="group-hover:translate-x-1 transition-transform duration-200">English</span>
                                             </button>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             )}
                         </li>
@@ -277,6 +284,7 @@ export default function Header() {
                                     href="/#about"
                                     className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500"
                                     onClick={handleNavigation}
+                                    suppressHydrationWarning
                                 >
                                     {aboutText}
                                 </Link>
@@ -286,6 +294,7 @@ export default function Header() {
                                     href="/#projets"
                                     className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500"
                                     onClick={handleNavigation}
+                                    suppressHydrationWarning
                                 >
                                     {projectsText}
                                 </Link>
@@ -304,6 +313,7 @@ export default function Header() {
                                     href="/#contact"
                                     className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500"
                                     onClick={handleNavigation}
+                                    suppressHydrationWarning
                                 >
                                     {contactText}
                                 </Link>
@@ -315,33 +325,36 @@ export default function Header() {
                                 <button
                                     type="button"
                                     onClick={toggleDropdown}
-                                    className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-purple-500/20 transition-colors"
+                                    className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-gradient-to-br hover:from-purple-500/20 hover:to-pink-500/20 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 ease-out transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
                                     aria-label="Changer de langue"
                                 >
-                                    <Globe className="w-6 h-6 text-gray-900 dark:text-white" />
+                                    <Globe className="w-5 h-5 text-gray-700 dark:text-gray-200 group-hover:text-purple-400 transition-colors duration-300" />
                                 </button>
                                 {dropdownOpen && (
-                                    <div className="z-50 absolute right-0 mt-2 w-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700">
-                                        <ul className="py-2 font-medium flex flex-col items-center" role="none">
-                                            <li>
+                                    <div className="z-50 absolute right-0 mt-3 w-48 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 border border-gray-200/20 dark:border-gray-700/20 rounded-xl shadow-2xl shadow-purple-500/10 overflow-hidden transform transition-all duration-300 ease-out">
+                                        <div className="p-2">
+                                            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 px-3">
+                                                Choisir la langue
+                                            </div>
+                                            <div className="space-y-1">
                                                 <button
                                                     onClick={() => closeMobileMenuAndChangeLanguage("fr")}
-                                                    className="block w-full text-2xl text-center px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                                                    className="group flex items-center w-full px-3 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-500/10 hover:text-purple-400 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                                                     aria-label="Français"
                                                 >
-                                                    🇫🇷
+                                                    <span className="text-xl mr-3">🇫🇷</span>
+                                                    <span className="group-hover:translate-x-1 transition-transform duration-200">Français</span>
                                                 </button>
-                                            </li>
-                                            <li>
                                                 <button
                                                     onClick={() => closeMobileMenuAndChangeLanguage("en")}
-                                                    className="block w-full text-2xl text-center px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                                                    className="group flex items-center w-full px-3 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-pink-500/10 hover:text-purple-400 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                                                     aria-label="English"
                                                 >
-                                                    🇬🇧
+                                                    <span className="text-xl mr-3">🇬🇧</span>
+                                                    <span className="group-hover:translate-x-1 transition-transform duration-200">English</span>
                                                 </button>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
                             </li>

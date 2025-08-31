@@ -1,24 +1,42 @@
 "use client";
 
-import HeroSection from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projets from "./components/Projets";
-import ContactForm from "./components/ContactForm";
+import { lazy, Suspense } from "react";
+
+// Lazy loading des composants lourds
+const HeroSection = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projets = lazy(() => import("./components/Projets"));
+const ContactForm = lazy(() => import("./components/ContactForm"));
+
+// Composant de chargement optimisé
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+  </div>
+);
 
 export default function Home() {
   return (
     <>
       <div className="relative z-10 pt-16 bg-gray-50 dark:bg-black">
         <section id="hero" className="scroll-mt-20">
-          <HeroSection />
+          <Suspense fallback={<LoadingFallback />}>
+            <HeroSection />
+          </Suspense>
           <section id="about" className="scroll-mt-20">
-            <About />
+            <Suspense fallback={<LoadingFallback />}>
+              <About />
+            </Suspense>
           </section>
         </section>
-        <Skills />
+        <Suspense fallback={<LoadingFallback />}>
+          <Skills />
+        </Suspense>
         <section id="projets" className="scroll-mt-20">
-          <Projets />
+          <Suspense fallback={<LoadingFallback />}>
+            <Projets />
+          </Suspense>
         </section>
         <section id="blog" className="py-20 px-4 scroll-mt-20">
           <div className="max-w-3xl mx-auto text-center">
@@ -46,7 +64,9 @@ export default function Home() {
             <textarea name="message"></textarea>
             <input name="bot-field" />
           </form>
-          <ContactForm />
+          <Suspense fallback={<LoadingFallback />}>
+            <ContactForm />
+          </Suspense>
         </section>
       </div>
     </>

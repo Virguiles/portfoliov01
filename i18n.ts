@@ -41,7 +41,8 @@ if (typeof window === 'undefined') {
 }
 // Initialisation côté client avec backend HTTP
 else {
-  if (!i18n.isInitialized) {
+  // Vérification plus robuste de l'initialisation
+  if (!i18n.isInitialized || !i18n.services) {
     i18n
       .use(HttpBackend)
       .use(LanguageDetector)
@@ -55,8 +56,15 @@ else {
         // Amélioration de la gestion des erreurs
         fallbackLng: 'fr',
         load: 'languageOnly',
-        // Préchargement des ressources
+        // Préchargement des ressources pour éviter les problèmes d'hydratation
         preload: ['fr', 'en'],
+        // Synchronisation des traductions
+        initImmediate: false,
+        // Gestion des erreurs plus robuste
+        missingKeyHandler: (lngs, namespace, key) => {
+          console.warn(`Missing translation key: ${key} for languages: ${lngs.join(', ')}`);
+          return key; // Retourner la clé si la traduction est manquante
+        },
       });
   }
 }

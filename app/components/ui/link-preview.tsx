@@ -9,6 +9,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type LinkPreviewProps = {
   children: React.ReactNode;
@@ -69,11 +70,12 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <span className="hidden">
-          <img
+          <Image
             src={src}
             width={width}
             height={height}
             alt="hidden image"
+            unoptimized
           />
         </span>
       ) : null}
@@ -128,12 +130,13 @@ export const LinkPreview = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src={isStatic ? imageSrc : src}
                     width={width}
                     height={height}
                     className="rounded-lg"
                     alt="preview image"
+                    unoptimized
                   />
                 </a>
               </motion.div>

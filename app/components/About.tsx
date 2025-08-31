@@ -92,13 +92,15 @@ export default function TextPresentation() {
 
   return (
     <SectionWrapper background="dark:bg-black/60">
-      <SectionHeader title={aboutText} />
+      <div id="about">
+        <SectionHeader title={aboutText} />
         {/* Carte de présentation */}
         <div className="w-full dark:bg-black/70 rounded-xl p-6 md:p-10">
           <div className="text-base md:text-lg text-gray-700 dark:text-gray-200 text-center md:text-left leading-relaxed">
             {renderTextWithLinks(aboutTextContent)}
           </div>
         </div>
+      </div>
     </SectionWrapper>
   );
 }

@@ -2,6 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Optimisations pour réduire le CLS (Cumulative Layout Shift) */
+* {
+  /* Prévenir les layout shifts inattendus */
+  box-sizing: border-box;
+}
+
+img {
+  /* Prévenir les layout shifts pour les images */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles pour les composants avec contenu dynamique */
+.hero-container {
+  /* Réserve l'espace pour éviter les layout shifts */
+  min-height: 100vh;
+  contain: layout style paint;
+}
+
+.loading-skeleton {
+  /* Dimensions prédéfinies pour les skeletons */
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Optimisations pour les animations */
+.gradual-spacing {
+  /* Préserver l'espace pendant l'animation */
+  display: inline-block;
+  white-space: pre;
+}
+
+/* Améliorer les performances des animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 html, body {
   background-color: black;
   font-family: var(--font-jetbrains-mono), Arial, Helvetica, sans-serif;

@@ -26,6 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
   preload: true,
   fallback: ['system-ui', 'sans-serif'],
   weight: ['400', '500', '600', '700'],
+  adjustFontFallback: false, // Désactiver pour éviter les layout shifts
 });
 
 export const viewport: Viewport = {
@@ -94,6 +95,16 @@ export default function RootLayout({
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+          fetchPriority="high"
+        />
+        {/* Précharger les polices Geist aussi */}
+        <link
+          rel="preload"
+          href="/_next/static/media/Geist-Regular-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+          fetchPriority="high"
         />
         {/* Google Tag Manager - Configuration unifiée pour éviter la duplication */}
         <Script id="google-tag-manager" strategy="lazyOnload">
@@ -103,6 +114,23 @@ export default function RootLayout({
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-5VTGKQFS');
+          `}
+        </Script>
+
+        {/* Service Worker pour le caching offline */}
+        <Script id="register-sw" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(function(registration) {
+                    console.log('SW registered: ', registration);
+                  })
+                  .catch(function(registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                  });
+              });
+            }
           `}
         </Script>
 
