@@ -305,7 +305,7 @@ export const Particles: React.FC<ParticlesProps> = ({
 
   return (
     <div
-      className={cn("pointer-events-none", className)}
+      className={cn("pointer-events-none will-change-transform", className)}
       ref={canvasContainerRef}
       aria-hidden="true"
       {...props}
