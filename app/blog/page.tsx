@@ -10,20 +10,29 @@ export default function BlogPage() {
 
   const articles = [
     {
+      slug: "faire-site-internet-guadeloupe",
+      title: "Faire un site internet en Guadeloupe : Guide complet 2025",
+      excerpt: "Guide complet pour faire un site internet en Guadeloupe. Découvrez les étapes, coûts et conseils pour créer un site web professionnel qui attire des clients locaux.",
+      readTime: "8 min",
+      date: "2025-03-12",
+      keywords: ["faire site internet", "Guadeloupe", "guide complet", "développeur web freelance", "coût site web"],
+      featured: true
+    },
+    {
       slug: "creer-site-vitrine-guadeloupe",
       title: "Créer un site vitrine en Guadeloupe : 5 conseils pour réussir votre présence en ligne",
       excerpt: "Découvrez les étapes essentielles pour créer un site vitrine efficace qui vous permettra d&apos;être visible et de développer votre activité en Guadeloupe.",
       readTime: "5 min",
-      date: "2025-01-15",
+      date: "2025-04-28",
       keywords: ["site vitrine", "Guadeloupe", "création site internet", "développeur web"],
-      featured: true
+      featured: false
     },
     {
       slug: "ux-design-experience-utilisateur",
       title: "UX Design : pourquoi l&apos;expérience utilisateur est la clé d&apos;un site internet efficace",
       excerpt: "L&apos;UX design n&apos;est pas qu&apos;une tendance, c&apos;est un facteur clé de succès pour votre site web. Apprenez pourquoi et comment l&apos;optimiser.",
       readTime: "6 min",
-      date: "2025-01-10",
+      date: "2025-02-08",
       keywords: ["UX design", "expérience utilisateur", "site web intuitif", "conversion"],
       featured: false
     },
@@ -32,7 +41,7 @@ export default function BlogPage() {
       title: "SEO local en Guadeloupe : comment apparaître sur Google quand vos clients vous cherchent",
       excerpt: "Optimisez votre visibilité locale en Guadeloupe avec des techniques SEO adaptées à votre territoire et à vos clients.",
       readTime: "7 min",
-      date: "2025-01-05",
+      date: "2025-05-15",
       keywords: ["SEO Guadeloupe", "référencement local", "Google My Business", "visibilité locale"],
       featured: false
     }

@@ -1,7 +1,6 @@
 "use client"
 
 import { HeroParticle } from "../../components/HeroParticle";
-import { GradualSpacing } from "@/app/components/ui/gradual-spacing";
 import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
 
 export default function HeroSection() {
@@ -31,12 +30,9 @@ export default function HeroSection() {
 					<h1 className="sr-only">Développeur web freelance en Guadeloupe</h1>
                     {isI18nReady ? (
                         <div style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <GradualSpacing
-                                text={`${heroCreativeText}\n${heroDesignerText}\n${heroAndText}\n${heroDeveloperText}\n${heroWebText}`}
-                                duration={0.3}
-                                delayMultiple={0.02}
-                                key="hero-text"
-                            />
+                            <h2 className="text-center text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight whitespace-pre-line">
+                                {`${heroCreativeText}\n${heroDesignerText}\n${heroAndText}\n${heroDeveloperText}\n${heroWebText}`}
+                            </h2>
                         </div>
                     ) : (
                         // Skeleton loader avec dimensions prédéfinies

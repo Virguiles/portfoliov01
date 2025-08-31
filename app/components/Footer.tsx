@@ -87,8 +87,7 @@ export default function Footer() {
             © {annee} This website is made with {'💜'} by{' '}
             <Link
               href="/#about"
-
->
+            >
               me
             </Link>
           </span>

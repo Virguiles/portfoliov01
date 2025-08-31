@@ -43,7 +43,7 @@ export default function ArticleSiteVitrine() {
               </div>
               <div className="flex items-center gap-2">
                 <FiCalendar className="w-4 h-4" />
-                <span>15 janvier 2025</span>
+                <span>28 avril 2025</span>
               </div>
               <div className="flex items-center gap-2">
                 <FiClock className="w-4 h-4" />
@@ -208,22 +208,33 @@ export default function ArticleSiteVitrine() {
             </div>
           </div>
 
-          {/* Navigation entre articles */}
+          {/* Liens vers d'autres articles */}
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
-            <div className="flex flex-col sm:flex-row justify-between gap-4">
+            <h3 className="text-xl font-bold text-black dark:text-white mb-6">
+              Articles complémentaires
+            </h3>
+            <div className="grid gap-4 md:grid-cols-2">
               <Link
                 href="/blog/seo-local-guadeloupe"
-                className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
+                className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
-                <FiArrowLeft className="w-4 h-4" />
-                Article précédent : SEO local en Guadeloupe
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  SEO local en Guadeloupe
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Optimisez votre visibilité sur Google en Guadeloupe
+                </p>
               </Link>
               <Link
-                href="/blog/ux-design-experience-utilisateur"
-                className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
+                href="/blog/faire-site-internet-guadeloupe"
+                className="block p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors border border-purple-200 dark:border-purple-800"
               >
-                Article suivant : UX Design et expérience utilisateur
-                <FiArrowLeft className="w-4 h-4 rotate-180" />
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  Guide complet : Faire un site internet en Guadeloupe
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Les 7 étapes pour créer votre site web professionnel
+                </p>
               </Link>
             </div>
           </div>

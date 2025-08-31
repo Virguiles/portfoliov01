@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import I18nProvider from "./components/i18nProvider";
 import Favicon from "./components/Favicon";
-import MouseHalo from "./components/MouseHalo";
 import Footer from "./components/Footer";
 import Header from "./components/Navbar";
 import Script from "next/script";
@@ -161,7 +160,8 @@ export default function RootLayout({
             "description": "Développeur web freelance en Guadeloupe. Création de sites vitrines, e‑commerce et sur‑mesure.",
             "areaServed": {
               "@type": "AdministrativeArea",
-              "name": "Guadeloupe"
+              "name": "Guadeloupe",
+              "addressCountry": "FR"
             },
             "address": {
               "@type": "PostalAddress",
@@ -169,11 +169,74 @@ export default function RootLayout({
               "addressCountry": "FR"
             },
             "email": "mailto:virgilepopote@gmail.com",
+            "telephone": "+590 690 XX XX XX",
+            "priceRange": "€€",
             "sameAs": [
               "https://github.com/virguiles",
               "https://bsky.app/profile/virgilepop.bsky.social",
               "https://www.instagram.com/virgilepop.up/"
-            ]
+            ],
+            "serviceType": "Création de sites internet",
+            "knowsAbout": [
+              "Développement web",
+              "SEO local Guadeloupe",
+              "Sites vitrines",
+              "React",
+              "Next.js",
+              "Ruby on Rails"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services de développement web",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Création site vitrine Guadeloupe",
+                    "description": "Site internet professionnel pour entreprises en Guadeloupe"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SEO local Guadeloupe",
+                    "description": "Optimisation pour les recherches locales en Guadeloupe"
+                  }
+                }
+              ]
+            }
+          }
+          `
+        }} />
+
+        {/* Données structurées supplémentaires pour SEO local */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: `
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Virgile Popote - Création site internet Guadeloupe",
+            "url": "https://virgile.site",
+            "description": "Développeur web freelance en Guadeloupe spécialisé dans la création de sites vitrines et d'applications web. Services SEO local et développement moderne.",
+            "inLanguage": "fr-FR",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Virgile Popote",
+              "url": "https://virgile.site",
+              "logo": "https://virgile.site/favicon.png"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://virgile.site/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "mainEntity": {
+              "@type": "ItemList",
+              "name": "Services de développement web Guadeloupe",
+              "description": "Services complets de création de sites internet pour entreprises en Guadeloupe"
+            }
           }
           `
         }} />
@@ -188,7 +251,6 @@ export default function RootLayout({
           height="0" width="0" style="display:none;visibility:hidden"></iframe>
         `}} />
         {/* End Google Tag Manager (noscript) */}
-        <MouseHalo />
         <div className="flex flex-col min-h-screen">
           <ThemeProvider
             attribute="class"
