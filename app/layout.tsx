@@ -83,28 +83,14 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <Favicon />
-        {/* Optimisations pour le LCP et les polices */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        {/* Préchargement des ressources critiques */}
-        <link
-          rel="preload"
-          href="/_next/static/media/JetBrainsMono-Regular-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-          fetchPriority="high"
-        />
-        {/* Précharger les polices Geist aussi */}
-        <link
-          rel="preload"
-          href="/_next/static/media/Geist-Regular-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-          fetchPriority="high"
-        />
+        {/*
+          Optimisations des connexions et des polices.
+          - Pré-connexion à l'API Microlink pour accélérer le chargement des aperçus de liens.
+          - Les pré-connexions à Google Fonts et les préchargements manuels de polices ont été supprimés.
+            `next/font` gère automatiquement l'optimisation des polices auto-hébergées,
+            rendant ces optimisations manuelles inutiles et potentiellement contre-productives.
+        */}
+        <link rel="preconnect" href="https://api.microlink.io" crossOrigin="anonymous" />
         {/* Google Tag Manager - Configuration unifiée pour éviter la duplication */}
         <Script id="google-tag-manager" strategy="lazyOnload">
           {`
