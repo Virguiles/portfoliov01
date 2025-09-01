@@ -29,8 +29,8 @@ export default function BlogPage() {
     },
     {
       slug: "ux-design-experience-utilisateur",
-      title: "UX Design : pourquoi l&apos;expérience utilisateur est la clé d&apos;un site internet efficace",
-      excerpt: "L&apos;UX design n&apos;est pas qu&apos;une tendance, c&apos;est un facteur clé de succès pour votre site web. Apprenez pourquoi et comment l&apos;optimiser.",
+      title: "UX Design : pourquoi l'expérience utilisateur est la clé d'un site internet efficace",
+      excerpt: "L'UX design n'est pas qu'une tendance, c'est un facteur clé de succès pour votre site web. Apprenez pourquoi et comment l'optimiser.",
       readTime: "6 min",
       date: "2025-02-08",
       keywords: ["UX design", "expérience utilisateur", "site web intuitif", "conversion"],
@@ -100,7 +100,7 @@ export default function BlogPage() {
             {articles.map((article) => (
               <article
                 key={article.slug}
-                className={`bg-white dark:bg-black/60 rounded-xl p-6 md:p-8 shadow-lg border border-gray-200 dark:border-gray-800 transition-all hover:shadow-xl hover:scale-[1.02] ${
+                className={`bg-white dark:bg-black/60 rounded-xl p-6 md:p-8 shadow-lg border border-gray-200 dark:border-gray-800 transition-all hover:shadow-xl ${
                   article.featured ? 'ring-2 ring-purple-500/50' : ''
                 }`}
               >
