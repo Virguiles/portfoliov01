@@ -7,8 +7,6 @@ import Favicon from "./components/Favicon";
 import Footer from "./components/Footer";
 import Header from "./components/Navbar";
 import Script from "next/script";
-import CriticalCSS from "./components/CriticalCSS";
-import ResourceHints from "./components/ResourceHints";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,8 +83,6 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <Favicon />
-        <CriticalCSS />
-        <ResourceHints />
         {/*
           Optimisations des connexions et des polices.
           - Pré-connexion à l'API Microlink pour accélérer le chargement des aperçus de liens.
@@ -94,6 +90,7 @@ export default function RootLayout({
             `next/font` gère automatiquement l'optimisation des polices auto-hébergées,
             rendant ces optimisations manuelles inutiles et potentiellement contre-productives.
         */}
+        <link rel="preconnect" href="https://api.microlink.io" crossOrigin="anonymous" />
         {/* Google Tag Manager - Configuration unifiée pour éviter la duplication */}
         <Script id="google-tag-manager" strategy="lazyOnload">
           {`
