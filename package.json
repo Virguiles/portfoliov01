@@ -12,7 +12,8 @@
     "lint": "next lint",
     "generate-favicon": "node scripts/generate-favicon.js",
     "convert-images": "node scripts/convert-images.mjs",
-    "copy-locales": "cp -r public/locales .next/"
+    "copy-locales": "cp -r public/locales .next/",
+    "analyze-performance": "node scripts/analyze-performance.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.5",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@netlify/plugin-nextjs": "^5.10.7",
+    "@next/bundle-analyzer": "^15.5.2",
     "@types/i18next-browser-languagedetector": "^2.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
