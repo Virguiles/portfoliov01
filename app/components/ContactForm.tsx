@@ -2,14 +2,31 @@
 
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { useTranslation } from "react-i18next";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { ConfettiSideCannons } from "@/components/magicui/ConfettiSideCannons";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { ShineBorder } from "@/components/ui/shine-border";
 
 export default function ContactForm() {
-  const { t } = useTranslation();
+  const { t } = useSSRTranslation({
+    "contactform.title_start": "Prendre",
+    "contactform.title_highlight": "contact",
+    "contactform.subtitle": "Je ferai de mon mieux pour vous répondre dès que possible.",
+    "contactform.location": "Guadeloupe (F.W.I), France",
+    "contactform.fields.name": "Nom complet",
+    "contactform.fields.email": "Email",
+    "contactform.fields.message": "Message",
+    "contactform.placeholders.name": "Votre nom",
+    "contactform.placeholders.email": "votre@email.com",
+    "contactform.placeholders.message": "Votre message...",
+    "contactform.submit": "Envoyer le message",
+    "contactform.submitting": "Envoi en cours...",
+    "contactform.success_title": "Message envoyé !",
+    "contactform.success_text": "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
+    "contactform.error": "Une erreur s'est produite lors de l'envoi",
+    "contactform.honeypot": "Ne pas remplir ce champ si vous êtes humain:"
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState, useRef, useCallback, useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { usePathname } from "next/navigation";
 import i18n from "@/i18n";
 import { ModeToggle } from "./ModeToggle";
@@ -14,7 +14,12 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const dropdownRef = useRef<HTMLLIElement>(null);
-    const { t } = useTranslation();
+    const { t } = useSSRTranslation({
+        "developer": "DEVELOPPEUR / DESIGNER UI/UX",
+        "about": "à propos",
+        "projects": "mes projets",
+        "contact": "contact"
+    });
     const pathname = usePathname();
 
     // Optimisation : mémorisation des traductions pour éviter les re-renders inutiles

@@ -2,11 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { FiArrowRight, FiCalendar, FiClock, FiUser } from "react-icons/fi";
 
 export default function BlogPage() {
-  const { ready } = useTranslation();
+  const { isI18nReady } = useSSRTranslation();
 
   const articles = [
     {
@@ -47,7 +47,7 @@ export default function BlogPage() {
     }
   ];
 
-  if (!ready) {
+  if (!isI18nReady) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">

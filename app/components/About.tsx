@@ -8,7 +8,12 @@ import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
 export default function TextPresentation() {
   const fallbackValues = {
     "about": "à propos",
-    "about_text": "Je suis Virgile Popote, développeur web freelance en Guadeloupe, spécialisé dans la création de sites internet modernes et performants.\n\nMon rôle : concevoir des sites vitrines et applications web sur-mesure, pensés pour être esthétiques, rapides et optimisés SEO.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui mettent en valeur votre marque et transforment vos visiteurs en clients.\n\nPassionné par le digital, j'accompagne entrepreneurs, associations et startups pour développer leur présence en ligne et se démarquer de la concurrence.\n\n👉 Vous cherchez un partenaire fiable pour votre projet web ? Contactez-moi et donnons vie à votre idée."
+    "about_text": "Je suis Virgile Popote, développeur web freelance en Guadeloupe, spécialisé dans la création de sites internet modernes et performants.\n\nMon rôle : concevoir des sites vitrines et applications web sur-mesure, pensés pour être esthétiques, rapides et optimisés SEO.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui mettent en valeur votre marque et transforment vos visiteurs en clients.\n\nPassionné par le digital, j'accompagne entrepreneurs, associations et startups pour développer leur présence en ligne et se démarquer de la concurrence.\n\n👉 Vous cherchez un partenaire fiable pour votre projet web ? Contactez-moi et donnons vie à votre idée.",
+    "tech_links.linkedin": "https://www.linkedin.com/in/virgile-popote-1b1165227/",
+    "tech_links.ruby_on_rails": "https://rubyonrails.org/",
+    "tech_links.react": "https://react.dev/",
+    "tech_links.javascript": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+    "tech_links.tailwind_css": "https://tailwindcss.com/"
   };
 
   const { t, isMounted } = useSSRTranslation(fallbackValues);

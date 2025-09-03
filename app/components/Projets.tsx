@@ -2,13 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { FiExternalLink } from "react-icons/fi";
 import { SectionHeader } from "./ui/section-header";
 import { SectionWrapper } from "./ui/section-wrapper";
 
 export default function Projets() {
-  const { t, ready } = useTranslation();
+  const { t, isI18nReady } = useSSRTranslation({
+    "projets.title": "mes projets",
+    "projets.voir": "Voir le projet →",
+    "projets.items.0.titre": "Mobile-food.ch",
+    "projets.items.0.description": "Plateforme pour trouver des food trucks et traiteurs en Suisse. Trouvez facilement des services de restauration mobile pour tous types d'événements.",
+    "projets.items.1.titre": "CRM pour startup",
+    "projets.items.1.description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente."
+  });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -16,7 +23,7 @@ export default function Projets() {
   }, []);
 
   // Attendre que les traductions soient prêtes et que le composant soit monté côté client
-  if (!ready || !mounted) {
+  if (!isI18nReady || !mounted) {
     return (
       <section className="py-16 px-4 sm:px-6 bg-white/10 dark:bg-black/60">
         <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
