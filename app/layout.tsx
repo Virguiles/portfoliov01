@@ -37,8 +37,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Création site internet Guadeloupe – Virgile Popote, développeur web freelance",
-  description: "Développeur web freelance en Guadeloupe. Création de sites vitrines, e-commerce et sur-mesure pour entreprises et entrepreneurs. Contactez-moi pour booster votre présence en ligne.",
+  title: "Développeur web freelance en Guadeloupe | Virgile Popote",
+  description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur-mesure. Boostez votre présence en ligne avec un site performant.",
   keywords: "développeur web, freelance, Guadeloupe, création site internet, site vitrine, e-commerce, next.js, développeur frontend",
   authors: [{ name: "Virgile Popote", url: "https://virgile.site" }],
   creator: "Virgile Popote",
@@ -120,8 +120,8 @@ export default function RootLayout({
         </Script>
 
         {/* Balises Open Graph */}
-        <meta property="og:title" content="Création site internet Guadeloupe – Virgile Popote, développeur web freelance" />
-        <meta property="og:description" content="Développeur web freelance en Guadeloupe. Création de sites vitrines, e-commerce et sur-mesure pour entreprises et entrepreneurs." />
+        <meta property="og:title" content="Développeur web freelance en Guadeloupe | Virgile Popote" />
+        <meta property="og:description" content="Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur-mesure. Boostez votre présence en ligne avec un site performant." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://virgile.site/" />
         <meta property="og:image" content="https://virgile.site/og-image.jpg" />
