@@ -81,9 +81,9 @@ const Competences = React.memo(() => {
                 </div>
                 {/* Carte de présentation de la compétence */}
                 <div className="w-full dark:bg-black/70 rounded-xl p-4 md:p-6 h-[160px] flex flex-col justify-start">
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-0 text-black dark:text-white text-center min-h-[40px] flex items-center justify-center">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-0 text-black dark:text-white text-center min-h-[40px] flex items-center justify-center">
                         {skills[activeTab].title}
-                    </h2>
+                    </h3>
                     <p className="text-gray-700 dark:text-gray-200 max-w-xl text-base md:text-lg text-center leading-relaxed mx-auto">
                         {skills[activeTab].description}
                     </p>

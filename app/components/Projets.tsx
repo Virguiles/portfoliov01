@@ -91,13 +91,13 @@ export default function Projets() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-black dark:text-white text-xl md:text-2xl font-bold hover:underline mb-1"
                     >
-                      {projet.titre}
+                      <h3 className="text-xl md:text-2xl font-bold">{projet.titre}</h3>
                       <FiExternalLink className="inline-block text-lg" />
                     </a>
                   ) : (
-                    <span className="text-black dark:text-white text-xl md:text-2xl font-bold mb-1">
+                    <h3 className="text-black dark:text-white text-xl md:text-2xl font-bold mb-1">
                       {projet.titre}
-                    </span>
+                    </h3>
                   )}
                   <p className="text-gray-700 dark:text-gray-200 text-base md:text-lg leading-relaxed mb-2 max-w-xl">
                     {projet.description}
