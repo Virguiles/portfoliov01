@@ -59,7 +59,7 @@ export default function Footer() {
             </svg>
           </Link>
           <Link
-            href="mailto:virgilepopote@gmail.com"
+            href="mailto:hello@virgilepopote.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Email"
