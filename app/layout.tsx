@@ -6,6 +6,7 @@ import I18nProvider from "./components/i18nProvider";
 import Favicon from "./components/Favicon";
 import Footer from "./components/Footer";
 import Header from "./components/Navbar";
+import MouseHalo from "./components/MouseHalo";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -245,6 +246,7 @@ export default function RootLayout({
             <I18nProvider>
               <Header />
               {children}
+              <MouseHalo />
             </I18nProvider>
             <Footer />
           </ThemeProvider>
