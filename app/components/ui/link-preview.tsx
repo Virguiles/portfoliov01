@@ -68,7 +68,8 @@ export const LinkPreview = ({
 
   return (
     <>
-      {isMounted ? (
+      {/* Préchargement des images pour éviter les CLS */}
+      {isMounted && !isStatic ? (
         <span className="hidden">
           <Image
             src={src}
@@ -76,6 +77,7 @@ export const LinkPreview = ({
             height={height}
             alt="hidden image"
             unoptimized
+            priority={false}
           />
         </span>
       ) : null}
@@ -121,12 +123,14 @@ export const LinkPreview = ({
                 className="shadow-xl rounded-xl"
                 style={{
                   x: translateX,
+                  width: `${width}px`,
+                  height: `${height}px`,
                 }}
               >
                 <a
                   href={url}
                   className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
-                  style={{ fontSize: 0 }}
+                  style={{ fontSize: 0, width: `${width}px`, height: `${height}px` }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -137,6 +141,7 @@ export const LinkPreview = ({
                     className="rounded-lg"
                     alt="preview image"
                     unoptimized
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </a>
               </motion.div>

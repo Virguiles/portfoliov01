@@ -1,6 +1,6 @@
 "use client"
 
-import { LinkPreview } from "./ui/link-preview";
+import { OptimizedLink } from "./ui/optimized-link";
 import { SectionHeader } from "./ui/section-header";
 import { SectionWrapper } from "./ui/section-wrapper";
 import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
@@ -22,26 +22,16 @@ export default function TextPresentation() {
 
   // Fonction pour rendre le texte avec les liens interactifs
   const renderTextWithLinks = (text: string) => {
-    if (!isMounted) {
-      // Version SSR sans liens
-      return text.split('\n\n').map((paragraph, index) => (
-        <div key={index} className="mb-4 last:mb-0">
-          {paragraph}
-        </div>
-      ));
-    }
+    // Mots-clés à transformer en liens
+    const techKeywords = [
+      { key: 'Virgile Popote', linkKey: 'linkedin' },
+      { key: 'Ruby on Rails', linkKey: 'ruby_on_rails' },
+      { key: 'React', linkKey: 'react' },
+      { key: 'JavaScript', linkKey: 'javascript' },
+      { key: 'Tailwind CSS', linkKey: 'tailwind_css' }
+    ];
 
-    // Version avec liens interactifs
     return text.split('\n\n').map((paragraph, index) => {
-      // Mots-clés à transformer en liens
-      const techKeywords = [
-        { key: 'Virgile Popote', linkKey: 'linkedin' },
-        { key: 'Ruby on Rails', linkKey: 'ruby_on_rails' },
-        { key: 'React', linkKey: 'react' },
-        { key: 'JavaScript', linkKey: 'javascript' },
-        { key: 'Tailwind CSS', linkKey: 'tailwind_css' }
-      ];
-
       // Remplacer chaque mot-clé par un composant LinkPreview
       const processParagraph = (text: string) => {
         let result: (string | React.ReactElement)[] = [text];
@@ -59,13 +49,14 @@ export default function TextPresentation() {
                   if (part.toLowerCase() === key.toLowerCase()) {
                     const url = t(`tech_links.${linkKey}`);
                     newResult.push(
-                      <LinkPreview
+                      <OptimizedLink
                         key={`${index}-${partIndex}-${linkKey}`}
                         url={url}
                         className="font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 underline-offset-2 transition-colors duration-200"
+                        isStatic={!isMounted}
                       >
                         {part}
-                      </LinkPreview>
+                      </OptimizedLink>
                     );
                   } else if (part) {
                     newResult.push(part);
@@ -97,10 +88,10 @@ export default function TextPresentation() {
 
   return (
     <SectionWrapper background="dark:bg-black/60">
-      <div id="about">
+      <div id="about" style={{ minHeight: '500px' }}>
         <SectionHeader title={aboutText} />
         {/* Carte de présentation */}
-        <div className="w-full dark:bg-black/70 rounded-xl p-6 md:p-10">
+        <div className="w-full dark:bg-black/70 rounded-xl p-6 md:p-10" style={{ minHeight: '400px' }}>
           <div className="text-base md:text-lg text-gray-700 dark:text-gray-200 text-center md:text-left leading-relaxed font-semibold">
             {renderTextWithLinks(aboutTextContent)}
           </div>

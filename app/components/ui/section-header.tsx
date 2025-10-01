@@ -14,7 +14,7 @@ export function SectionHeader({
   accentClassName = ""
 }: SectionHeaderProps) {
   return (
-    <div className={`w-full flex flex-col items-center ${className}`}>
+    <div className={`w-full flex flex-col items-center ${className}`} style={{ minHeight: '80px' }}>
       <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center text-black dark:text-white tracking-tight ${titleClassName}`}>
         {title}
       </h2>

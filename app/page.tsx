@@ -9,9 +9,9 @@ const Skills = lazy(() => import("./components/Skills"));
 const Projets = lazy(() => import("./components/Projets"));
 const ContactForm = lazy(() => import("./components/ContactForm"));
 
-// Composant de chargement optimisé
+// Composant de chargement optimisé avec dimensions fixes pour éviter les CLS
 const LoadingFallback = () => (
-  <div className="flex items-center justify-center min-h-[200px]">
+  <div className="flex items-center justify-center min-h-[500px] w-full">
     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
   </div>
 );
@@ -24,7 +24,7 @@ export default function Home() {
           <Suspense fallback={<LoadingFallback />}>
             <HeroSection />
           </Suspense>
-          <section id="about" className="scroll-mt-20">
+          <section id="about" className="scroll-mt-20" style={{ minHeight: '600px' }}>
             <Suspense fallback={<LoadingFallback />}>
               <About />
             </Suspense>

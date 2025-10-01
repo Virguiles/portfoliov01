@@ -16,7 +16,7 @@ export function SectionWrapper({
   background = "bg-white/10 dark:bg-black/60"
 }: SectionWrapperProps) {
   return (
-    <section className={`${padding} ${background} ${className}`}>
+    <section className={`${padding} ${background} ${className}`} style={{ minHeight: '400px' }}>
       <div className={`${maxWidth} mx-auto flex flex-col items-center gap-8`}>
         {children}
       </div>
