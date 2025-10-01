@@ -12,21 +12,29 @@ import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
+  adjustFontFallback: false,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false, // Éviter le préchargement de trop de polices
+  fallback: ['monospace'],
+  adjustFontFallback: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: true, // Seule police préchargée car principale
   fallback: ['system-ui', 'sans-serif'],
   weight: ['400', '500', '600', '700'],
-  adjustFontFallback: false, // Désactiver pour éviter les layout shifts
+  adjustFontFallback: false,
 });
 
 export const viewport: Viewport = {
@@ -87,11 +95,16 @@ export default function RootLayout({
         {/*
           Optimisations des connexions et des polices.
           - Pré-connexion à l'API Microlink pour accélérer le chargement des aperçus de liens.
-          - Les pré-connexions à Google Fonts et les préchargements manuels de polices ont été supprimés.
-            `next/font` gère automatiquement l'optimisation des polices auto-hébergées,
-            rendant ces optimisations manuelles inutiles et potentiellement contre-productives.
+          - Pré-connexion à Google Fonts pour accélérer le chargement des polices.
+          - Préchargement des CSS critiques pour réduire le blocage du rendu.
         */}
         <link rel="preconnect" href="https://api.microlink.io" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Préchargement des CSS critiques pour réduire le blocage du rendu */}
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+        <link rel="preload" href="/_next/static/css/app/globals.css" as="style" />
         {/* Google Tag Manager - Configuration unifiée pour éviter la duplication */}
         <Script id="google-tag-manager" strategy="lazyOnload">
           {`

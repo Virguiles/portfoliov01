@@ -7,6 +7,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
+    optimizePackageImports: ['@/components', '@/lib'],
   },
   // SWC est activé par défaut dans Next.js 15
   images: {
@@ -55,6 +56,14 @@ const nextConfig = {
           name: 'i18n',
           chunks: 'all',
           priority: 10,
+        },
+        // Chunk pour les CSS critiques
+        criticalCSS: {
+          test: /\.css$/,
+          name: 'critical-css',
+          chunks: 'initial',
+          priority: 20,
+          enforce: true,
         },
       };
     }
