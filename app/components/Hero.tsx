@@ -33,7 +33,7 @@ export default function HeroSection() {
                 <div className="w-full max-w-4xl px-4 sm:px-2">
 					<h1 className="sr-only">Développeur web freelance en Guadeloupe</h1>
                     <div style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <h2 className="text-center text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight whitespace-pre-line">
+                        <h2 className="hero-title text-center text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight whitespace-pre-line">
                             {`${heroCreativeText}\n${heroDesignerText}\n${heroAndText}\n${heroDeveloperText}\n${heroWebText}`}
                         </h2>
                     </div>

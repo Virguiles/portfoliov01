@@ -8,6 +8,9 @@ const nextConfig = {
     optimizeCss: true,
     scrollRestoration: true,
     optimizePackageImports: ['@/components', '@/lib'],
+    // Optimisations pour améliorer le LCP
+    optimizeServerReact: true,
+    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
   },
   // SWC est activé par défaut dans Next.js 15
   images: {

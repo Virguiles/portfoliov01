@@ -3,9 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optimisation du chargement des CSS non-critiques */
+/* Optimisation du chargement des CSS non-critiques - chargement différé */
 @media (prefers-reduced-motion: no-preference) {
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+}
+
+/* Chargement différé des animations pour améliorer le LCP */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-aurora {
+    animation: aurora 20s ease-in-out infinite;
+  }
 }
 
 /* Optimisations pour réduire le CLS (Cumulative Layout Shift) */
@@ -68,6 +75,14 @@ html, body {
   contain-intrinsic-size: auto;
   text-rendering: optimizeSpeed;
   font-display: swap;
+}
+
+/* Optimisation du titre principal pour le LCP */
+.hero-title {
+  font-display: swap;
+  text-rendering: optimizeSpeed;
+  contain: layout style paint;
+  will-change: auto;
 }
 
 /* Optimisation du chargement des polices */

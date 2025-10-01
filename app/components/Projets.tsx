@@ -80,7 +80,10 @@ export default function Projets() {
                       height={140}
                       sizes="(max-width: 768px) 100vw, 192px"
                       className="rounded-md w-full h-36 object-contain border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-                      loading="lazy"
+                      loading={idx === 0 ? "eager" : "lazy"}
+                      priority={idx === 0} // Priorité pour la première image
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                       onError={(e) => {
                         const target = e.currentTarget as HTMLImageElement;
                         if (projet.fallbackImage && target.src !== projet.fallbackImage) {

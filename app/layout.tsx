@@ -13,7 +13,7 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false, // Optimisé : pas de préchargement pour réduire la chaîne critique
   fallback: ['system-ui', 'sans-serif'],
   adjustFontFallback: false,
 });
@@ -98,15 +98,22 @@ export default function RootLayout({
           - Pré-connexion à Google Fonts pour accélérer le chargement des polices.
           - Préchargement des CSS critiques pour réduire le blocage du rendu.
         */}
+        {/* Preconnect hints optimisés pour les domaines critiques */}
         <link rel="preconnect" href="https://api.microlink.io" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Préchargement des polices critiques pour améliorer le LCP */}
+        <link rel="preload" href="https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT1YhSmWJmOtjI.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="https://fonts.gstatic.com/s/geist/v1/GeistVF.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
         {/* Préchargement des CSS critiques pour réduire le blocage du rendu */}
         <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
         <link rel="preload" href="/_next/static/css/app/globals.css" as="style" />
         {/* Google Tag Manager - Configuration unifiée pour éviter la duplication */}
-        <Script id="google-tag-manager" strategy="lazyOnload">
+        <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -116,11 +123,12 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Service Worker pour le caching offline */}
-        <Script id="register-sw" strategy="afterInteractive">
+        {/* Service Worker pour le caching offline - chargement différé */}
+        <Script id="register-sw" strategy="lazyOnload">
           {`
             if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
+              // Délai pour ne pas impacter le LCP
+              setTimeout(function() {
                 navigator.serviceWorker.register('/sw.js')
                   .then(function(registration) {
                     console.log('SW registered: ', registration);
@@ -128,7 +136,7 @@ export default function RootLayout({
                   .catch(function(registrationError) {
                     console.log('SW registration failed: ', registrationError);
                   });
-              });
+              }, 2000);
             }
           `}
         </Script>
