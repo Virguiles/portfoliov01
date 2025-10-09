@@ -48,16 +48,20 @@
   "projets": {
     "title": "mes projets",
     "voir": "Voir le projet →",
-    "items": [
-      {
+    "items": {
+      "0": {
         "titre": "Mobile-food.ch",
         "description": "Plateforme pour trouver des food trucks et traiteurs en Suisse. Trouvez facilement des services de restauration mobile pour tous types d'événements."
       },
-      {
+      "1": {
         "titre": "CRM pour startup",
         "description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente."
+      },
+      "2": {
+        "titre": "Gestion automatisée d'Airbnb avec n8n",
+        "description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb."
       }
-    ]
+    }
   },
   "contactform": {
     "title": "Prendre contact ?",

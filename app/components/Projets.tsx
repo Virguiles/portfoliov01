@@ -14,7 +14,9 @@ export default function Projets() {
     "projets.items.0.titre": "Mobile-food.ch",
     "projets.items.0.description": "Plateforme pour trouver des food trucks et traiteurs en Suisse. Trouvez facilement des services de restauration mobile pour tous types d'événements.",
     "projets.items.1.titre": "CRM pour startup",
-    "projets.items.1.description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente."
+    "projets.items.1.description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente.",
+    "projets.items.2.titre": "Gestion automatisée d'Airbnb avec n8n",
+    "projets.items.2.description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb."
   });
   const [mounted, setMounted] = useState(false);
 
@@ -56,6 +58,13 @@ export default function Projets() {
       lien: "#",
       image: "/images/logo-mobilefoodch-inline.svg",
       technologies: ["Ruby on Rails", "TailwindCSS"],
+    },
+    {
+      titre: t("projets.items.2.titre", "Gestion automatisée d'Airbnb avec n8n"),
+      description: t("projets.items.2.description", "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb."),
+      lien: "#",
+      image: "/images/n8n-logo.svg?v=4",
+      technologies: ["n8n", "JavaScript", "Google Gemini API", "WhatsApp Cloud API"],
     }
   ];
 
