@@ -10,22 +10,11 @@ interface I18nProviderProps {
 
 export default function I18nProvider({ children }: I18nProviderProps) {
   useEffect(() => {
-    // Initialisation asynchrone d'i18n
+    // Initialisation asynchrone d'i18n si nécessaire
     const initI18n = async () => {
       try {
-        if (!i18n.isInitialized || !i18n.services) {
+        if (!i18n.isInitialized) {
           await i18n.init();
-        }
-
-        // Attendre que les traductions soient chargées
-        if (i18n.services && i18n.services.backendConnector) {
-          await new Promise((resolve) => {
-            i18n.on('loaded', () => {
-              resolve(void 0);
-            });
-            // Timeout de sécurité au cas où l'événement 'loaded' ne se déclenche pas
-            setTimeout(resolve, 1000);
-          });
         }
       } catch (error) {
         console.error('Erreur lors de l\'initialisation i18n:', error);

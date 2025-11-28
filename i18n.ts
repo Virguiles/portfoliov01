@@ -1,12 +1,26 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import HttpBackend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+
+// Importation directe des fichiers de traduction
+import commonFr from './public/locales/fr/common.json';
+import commonEn from './public/locales/en/common.json';
+
+// Ressources de traduction
+const resources = {
+  fr: {
+    common: commonFr,
+  },
+  en: {
+    common: commonEn,
+  },
+};
 
 // Configuration i18n unifiée
 const i18nConfig = {
+  resources,
   fallbackLng: 'fr',
-  debug: false,
+  debug: process.env.NODE_ENV === 'development',
   interpolation: {
     escapeValue: false,
   },
@@ -20,45 +34,15 @@ const i18nConfig = {
     caches: ['localStorage'],
   },
   load: 'languageOnly' as const,
-  preload: ['fr', 'en'],
-  initImmediate: false,
-  missingKeyHandler: (lngs: readonly string[], namespace: string, key: string, fallbackValue: string) => {
-    console.warn(`Missing translation key: ${key} for languages: ${lngs.join(', ')}`);
-  },
+  // Pas de preload nécessaire car les ressources sont bundlées
 };
 
-// Configuration unique pour tous les environnements
+// Initialisation unique
 if (!i18n.isInitialized) {
-  if (typeof window === 'undefined') {
-    // Côté serveur - utiliser les ressources statiques
-    i18n
-      .use(initReactI18next)
-      .init({
-        ...i18nConfig,
-        lng: 'fr',
-        resources: {
-          fr: {
-            common: require('./public/locales/fr/common.json')
-          },
-          en: {
-            common: require('./public/locales/en/common.json')
-          }
-        },
-      });
-  } else {
-    // Côté client - utiliser HttpBackend
-    i18n
-      .use(HttpBackend)
-      .use(LanguageDetector)
-      .use(initReactI18next)
-      .init({
-        ...i18nConfig,
-        lng: 'fr',
-        backend: {
-          loadPath: '/locales/{{lng}}/common.json',
-        },
-      });
-  }
+  i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init(i18nConfig);
 }
 
 export default i18n;
