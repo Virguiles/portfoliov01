@@ -83,7 +83,7 @@ export default function ContactForm() {
         <div className="mb-10 md:mb-0 min-w-0 w-full">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8 leading-tight text-black dark:text-white max-w-full break-words whitespace-normal text-left">
             <span className="inline-flex items-center gap-2 whitespace-nowrap">
-              {t("contactform.title_start")} <AuroraText colors={["#0516FC","#7928CA", "#0070F3", "#783BB1"]} speed={2}>{t("contactform.title_highlight")}</AuroraText> <WordRotate words={["\uD83D\uDC4D", "😊", "👋"]} />
+              {t("contactform.title_start")} <AuroraText colors={["#0516FC", "#7928CA", "#0070F3", "#783BB1"]} speed={2}>{t("contactform.title_highlight")}</AuroraText> <WordRotate words={["\uD83D\uDC4D", "😊", "👋"]} />
             </span>
           </h2>
           <p className="text-gray-400 mb-8 sm:mb-10 text-sm sm:text-base md:text-lg max-w-prose">
@@ -93,7 +93,7 @@ export default function ContactForm() {
             <li className="flex items-center gap-3">
               <span className="text-purple-400">
                 {/* Icône localisation */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 2a6 6 0 0 0-6 6c0 4.418 5.25 9.25 5.472 9.46a1 1 0 0 0 1.056 0C10.75 17.25 16 12.418 16 8a6 6 0 0 0-6-6zm0 8.5A2.5 2.5 0 1 1 10 5a2.5 2.5 0 0 1 0 5.5z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 2a6 6 0 0 0-6 6c0 4.418 5.25 9.25 5.472 9.46a1 1 0 0 0 1.056 0C10.75 17.25 16 12.418 16 8a6 6 0 0 0-6-6zm0 8.5A2.5 2.5 0 1 1 10 5a2.5 2.5 0 0 1 0 5.5z" /></svg>
               </span>
               {t("contactform.location")}
             </li>
@@ -147,6 +147,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-black dark:text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200"
                   placeholder={t("contactform.placeholders.name")}
+                  suppressHydrationWarning
                 />
               </div>
               <div>
@@ -163,6 +164,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className="w-full max-w-full bg-transparent border-0 border-b-2 border-purple-400 focus:border-purple-300 focus:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 text-black dark:text-white placeholder-gray-500 py-2 px-0 text-base transition-all duration-200"
                   placeholder={t("contactform.placeholders.email")}
+                  suppressHydrationWarning
                 />
               </div>
               <div>

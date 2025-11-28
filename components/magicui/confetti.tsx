@@ -6,6 +6,11 @@ import type {
   Options as ConfettiOptions,
 } from "canvas-confetti";
 import confetti from "canvas-confetti";
+
+// Vérification de sécurité pour canvas-confetti
+const isConfettiAvailable = () => {
+  return typeof confetti === 'function' && confetti.create;
+};
 import type { ReactNode } from "react";
 import React, {
   createContext,
@@ -49,13 +54,23 @@ const ConfettiComponent = forwardRef<ConfettiRef, Props>((props, ref) => {
     (node: HTMLCanvasElement) => {
       if (node !== null) {
         if (instanceRef.current) return;
-        instanceRef.current = confetti.create(node, {
-          ...globalOptions,
-          resize: true,
-        });
+        try {
+          if (isConfettiAvailable()) {
+            instanceRef.current = confetti.create(node, {
+              ...globalOptions,
+              resize: true,
+            });
+          }
+        } catch (error) {
+          console.error("Confetti create error:", error);
+        }
       } else {
         if (instanceRef.current) {
-          instanceRef.current.reset();
+          try {
+            instanceRef.current.reset();
+          } catch (error) {
+            console.error("Confetti reset error:", error);
+          }
           instanceRef.current = null;
         }
       }
@@ -66,7 +81,9 @@ const ConfettiComponent = forwardRef<ConfettiRef, Props>((props, ref) => {
   const fire = useCallback(
     async (opts = {}) => {
       try {
-        await instanceRef.current?.({ ...options, ...opts });
+        if (instanceRef.current && typeof instanceRef.current === 'function') {
+          await instanceRef.current({ ...options, ...opts });
+        }
       } catch (error) {
         console.error("Confetti error:", error);
       }
@@ -125,13 +142,16 @@ const ConfettiButtonComponent = ({
       const rect = event.currentTarget.getBoundingClientRect();
       const x = rect.left + rect.width / 2;
       const y = rect.top + rect.height / 2;
-      await confetti({
-        ...options,
-        origin: {
-          x: x / window.innerWidth,
-          y: y / window.innerHeight,
-        },
-      });
+
+      if (isConfettiAvailable()) {
+        await confetti({
+          ...options,
+          origin: {
+            x: x / window.innerWidth,
+            y: y / window.innerHeight,
+          },
+        });
+      }
     } catch (error) {
       console.error("Confetti button error:", error);
     }

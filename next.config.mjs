@@ -1,8 +1,59 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export', // Commenté pour le développement local
   // distDir: 'out', // Default for static export
   reactStrictMode: true,
+
+  // Configuration pour résoudre les problèmes de cache Firefox
+  ...(process.env.NODE_ENV === 'development' && {
+    headers: async () => [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, must-revalidate, max-age=0',
+          },
+          {
+            key: 'Pragma',
+            value: 'no-cache',
+          },
+          {
+            key: 'Expires',
+            value: '0',
+          },
+        ],
+      },
+      // Headers spécifiques pour les ressources statiques
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, must-revalidate, max-age=0',
+          },
+        ],
+      },
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, must-revalidate, max-age=0',
+          },
+        ],
+      },
+      {
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, must-revalidate, max-age=0',
+          },
+        ],
+      },
+    ],
+  }),
   // Optimisations de performance
   experimental: {
     optimizeCss: true,
@@ -14,15 +65,30 @@ const nextConfig = {
   },
   // SWC est activé par défaut dans Next.js 15
   images: {
-    unoptimized: true, // Garder unoptimized pour l'export statique
+    // unoptimized: true, // Commenté pour le développement local
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400, // 24h au lieu de 60s
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
-      "images.pexels.com",
-      "images.unsplash.com",
-      "i.gifer.com",
-      "i.giphy.com"
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.gifer.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.giphy.com',
+      },
     ],
   },
   trailingSlash: true,

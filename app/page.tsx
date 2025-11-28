@@ -1,13 +1,15 @@
 "use client";
 
-import { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
+import dynamic from "next/dynamic";
+import HeroSection from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projets from "./components/Projets";
 
-// Lazy loading des composants lourds
-const HeroSection = lazy(() => import("./components/Hero"));
-const About = lazy(() => import("./components/About"));
-const Skills = lazy(() => import("./components/Skills"));
-const Projets = lazy(() => import("./components/Projets"));
-const ContactForm = lazy(() => import("./components/ContactForm"));
+const ContactForm = dynamic(() => import("./components/ContactForm"), {
+  ssr: false,
+});
 
 // Composant de chargement optimisé avec dimensions fixes pour éviter les CLS
 const LoadingFallback = () => (
@@ -21,22 +23,14 @@ export default function Home() {
     <>
       <div className="relative z-10 pt-16 bg-gray-50 dark:bg-black">
         <section id="hero" className="scroll-mt-20">
-          <Suspense fallback={<LoadingFallback />}>
-            <HeroSection />
-          </Suspense>
+          <HeroSection />
           <section id="about" className="scroll-mt-20" style={{ minHeight: '600px' }}>
-            <Suspense fallback={<LoadingFallback />}>
-              <About />
-            </Suspense>
+            <About />
           </section>
         </section>
-        <Suspense fallback={<LoadingFallback />}>
-          <Skills />
-        </Suspense>
+        <Skills />
         <section id="projets" className="scroll-mt-20">
-          <Suspense fallback={<LoadingFallback />}>
-            <Projets />
-          </Suspense>
+          <Projets />
         </section>
         <section id="blog" className="py-20 px-4 scroll-mt-20">
           <div className="max-w-3xl mx-auto text-center">
@@ -59,10 +53,10 @@ export default function Home() {
         <section id="contact" className="py-20 px-4 scroll-mt-20">
           {/* Formulaire caché pour Netlify Forms (détection build) */}
           <form name="Contact" data-netlify="true" hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <textarea name="message"></textarea>
-            <input name="bot-field" />
+            <input type="text" name="name" suppressHydrationWarning />
+            <input type="email" name="email" suppressHydrationWarning />
+            <textarea name="message" suppressHydrationWarning></textarea>
+            <input name="bot-field" suppressHydrationWarning />
           </form>
           <Suspense fallback={<LoadingFallback />}>
             <ContactForm />
