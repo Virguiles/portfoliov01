@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { FiExternalLink } from "react-icons/fi";
@@ -8,7 +8,7 @@ import { SectionHeader } from "./ui/section-header";
 import { SectionWrapper } from "./ui/section-wrapper";
 
 export default function Projets() {
-  const { t, isI18nReady } = useSSRTranslation({
+  const { t } = useSSRTranslation({
     "projets.title": "mes projets",
     "projets.voir": "Voir le projet →",
     "projets.items.0.titre": "Mobile-food.ch",
@@ -18,30 +18,7 @@ export default function Projets() {
     "projets.items.2.titre": "Gestion automatisée d'Airbnb avec n8n",
     "projets.items.2.description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb."
   });
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Attendre que les traductions soient prêtes et que le composant soit monté côté client
-  if (!isI18nReady || !mounted) {
-    return (
-      <section className="py-16 px-4 sm:px-6 bg-white/10 dark:bg-black/60">
-        <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
-          <div className="w-full flex flex-col items-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 mt-4 text-center text-black dark:text-white tracking-tight">
-              Mes Projets
-            </h2>
-            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4" />
-          </div>
-          <div className="w-full flex flex-col items-center">
-            <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 w-full rounded-xl"></div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   const projects = [
     {
@@ -71,78 +48,78 @@ export default function Projets() {
   return (
     <SectionWrapper>
       <SectionHeader title={t("projets.title", "Mes Projets")} />
-        {/* Liste des projets */}
-        <div className="w-full flex flex-col">
-          {projects.map((projet, idx) => {
-            const isLienValide = projet.lien && projet.lien !== "#";
-            return (
-              <div
-                key={idx}
-                className="flex flex-col md:flex-row items-center gap-6 rounded-xl dark:bg-black/70 p-4 md:p-6 transition-all hover:bg-purple-500/10 dark:hover:bg-purple-500/10"
-              >
-                {projet.image && (
-                  <div className="flex-shrink-0 w-full md:w-48 mb-2 md:mb-0">
-                    <Image
-                      src={projet.image}
-                      alt={projet.titre}
-                      width={192}
-                      height={140}
-                      sizes="(max-width: 768px) 100vw, 192px"
-                      className="rounded-md w-full h-36 object-contain border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-                      loading={idx === 0 ? "eager" : "lazy"}
-                      priority={idx === 0} // Priorité pour la première image
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                      onError={(e) => {
-                        const target = e.currentTarget as HTMLImageElement;
-                        if (projet.fallbackImage && target.src !== projet.fallbackImage) {
-                          target.src = projet.fallbackImage;
-                        }
-                      }}
-                    />
-                  </div>
-                )}
-                <div className="flex flex-col flex-1 justify-center items-center md:items-start text-center md:text-left">
-                  {isLienValide ? (
-                    <a
-                      href={projet.lien}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-black dark:text-white text-xl md:text-2xl font-bold hover:underline mb-1"
-                    >
-                      <h3 className="text-xl md:text-2xl font-bold">{projet.titre}</h3>
-                      <FiExternalLink className="inline-block text-lg" />
-                    </a>
-                  ) : (
-                    <h3 className="text-black dark:text-white text-xl md:text-2xl font-bold mb-1">
-                      {projet.titre}
-                    </h3>
-                  )}
-                  <p className="text-gray-700 dark:text-gray-200 text-base md:text-lg leading-relaxed mb-2 max-w-xl">
-                    {projet.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-                    {projet.technologies.map((tech, i) => (
-                      <span key={i} className="bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium opacity-70">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  {isLienValide && (
-                    <a
-                      href={projet.lien}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-3 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium transition-colors"
-                    >
-                      {t("projets.voir")}
-                    </a>
-                  )}
+      {/* Liste des projets */}
+      <div className="w-full flex flex-col">
+        {projects.map((projet, idx) => {
+          const isLienValide = projet.lien && projet.lien !== "#";
+          return (
+            <div
+              key={idx}
+              className="flex flex-col md:flex-row items-center gap-6 rounded-xl dark:bg-black/70 p-4 md:p-6 transition-all hover:bg-purple-500/10 dark:hover:bg-purple-500/10"
+            >
+              {projet.image && (
+                <div className="flex-shrink-0 w-full md:w-48 mb-2 md:mb-0">
+                  <Image
+                    src={projet.image}
+                    alt={projet.titre}
+                    width={192}
+                    height={140}
+                    sizes="(max-width: 768px) 100vw, 192px"
+                    className="rounded-md w-full h-36 object-contain border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    priority={idx === 0} // Priorité pour la première image
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      if (projet.fallbackImage && target.src !== projet.fallbackImage) {
+                        target.src = projet.fallbackImage;
+                      }
+                    }}
+                  />
                 </div>
+              )}
+              <div className="flex flex-col flex-1 justify-center items-center md:items-start text-center md:text-left">
+                {isLienValide ? (
+                  <a
+                    href={projet.lien}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-black dark:text-white text-xl md:text-2xl font-bold hover:underline mb-1"
+                  >
+                    <h3 className="text-xl md:text-2xl font-bold">{projet.titre}</h3>
+                    <FiExternalLink className="inline-block text-lg" />
+                  </a>
+                ) : (
+                  <h3 className="text-black dark:text-white text-xl md:text-2xl font-bold mb-1">
+                    {projet.titre}
+                  </h3>
+                )}
+                <p className="text-gray-700 dark:text-gray-200 text-base md:text-lg leading-relaxed mb-2 max-w-xl">
+                  {projet.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                  {projet.technologies.map((tech, i) => (
+                    <span key={i} className="bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium opacity-70">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {isLienValide && (
+                  <a
+                    href={projet.lien}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-3 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium transition-colors"
+                  >
+                    {t("projets.voir")}
+                  </a>
+                )}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
+      </div>
     </SectionWrapper>
   );
 }
