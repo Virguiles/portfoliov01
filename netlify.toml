@@ -1,5 +1,6 @@
 [build]
   command = "npm run build"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -8,13 +9,7 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Règle pour permettre l'accès aux fichiers de traduction
-[[redirects]]
-  from = "/locales/*"
-  to = "/locales/:splat"
-  status = 200
-
-# Règle générale pour les autres chemins
+# Domain redirects
 [[redirects]]
   from = "https://virgilepopote.com/*"
   to = "https://virgile.site/:splat"
@@ -38,12 +33,6 @@
   to = "https://virgile.site/:splat"
   status = 301
   force = true
-
-# SPA redirect rule for client-side routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 [[headers]]
   for = "/*"
