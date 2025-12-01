@@ -9,8 +9,8 @@ const GA_ID = "G-SX2M7CKH0L";
 // Fonction pour mettre à jour le consentement Google Analytics
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
     consentGrantedAnalytics?: () => void;
     consentGrantedAdStorage?: () => void;
     consentGrantedAdUserData?: () => void;
