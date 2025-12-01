@@ -110,7 +110,36 @@ export default function RootLayout({
 
         {/* Préchargement des CSS géré par Next.js */}
         {/* Préchargement des CSS géré par Next.js */}
-        {/* Google Tag Manager - Géré par le composant CookieConsent */}
+
+        {/* Google Tag Manager - Scripts dans le head pour garantir le chargement sur toutes les pages */}
+        <Script id="gtag-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            // Définir les consentements par défaut à 'denied' pour le Consent Mode v2
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied',
+              'wait_for_update': 500
+            });
+
+            gtag('js', new Date());
+            gtag('config', 'G-SX2M7CKH0L');
+          `}
+        </Script>
+
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5VTGKQFS');
+          `}
+        </Script>
 
         {/* Service Worker pour le caching offline - chargement différé */}
         <Script id="register-sw" strategy="lazyOnload">
@@ -240,7 +269,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased bg-white dark:bg-black`}
         suppressHydrationWarning
       >
-        {/* Google Tag Manager (noscript) supprimé pour conformité RGPD (nécessite JS pour le consentement) */}
+        {/* Google Tag Manager (noscript) - Nécessaire pour GTM même si le consentement est géré par JS */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5VTGKQFS"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <div className="flex flex-col min-h-screen">
           <ThemeProvider
             attribute="class"

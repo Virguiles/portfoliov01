@@ -1,10 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Script from "next/script";
-
-const GTM_ID = "GTM-5VTGKQFS";
-const GA_ID = "G-SX2M7CKH0L";
 
 // Fonction pour mettre à jour le consentement Google Analytics
 declare global {
@@ -63,39 +59,6 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* 1. Initialisation : Consentement par défaut à 'denied' (DOIT être le premier script) */}
-      <Script id="gtag-init" strategy="beforeInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-
-          // Définir les consentements par défaut à 'denied' pour le Consent Mode v2
-          gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied',
-            'wait_for_update': 500
-          });
-
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}');
-        `}
-      </Script>
-
-      {/* 2. Google Tag Manager (Script principal)
-          Il doit être chargé pour écouter l'événement 'update', même si le consentement est 'denied' au départ.
-      */}
-      <Script id="google-tag-manager" strategy="afterInteractive">
-        {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','${GTM_ID}');
-        `}
-      </Script>
-
       {consent === null && (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg animate-slide-up">
           <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4">
