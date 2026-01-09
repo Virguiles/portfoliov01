@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 
 const iconClass =
   "w-6 h-6 fill-gray-400 hover:fill-black dark:hover:fill-purple-500 transition-colors duration-200";
@@ -9,6 +12,12 @@ const emailIconClass =
 
 export default function Footer() {
   const annee = new Date().getFullYear();
+  const { t } = useSSRTranslation({
+    "footer.website_creation": "Création site internet en Guadeloupe",
+    "footer.made_with": "Ce site est fait avec",
+    "footer.by_me": "par moi"
+  });
+
   return (
     <footer className="w-full border-t border-gray-800 py-6 px-4">
       {/* Layout responsive : colonne sur mobile, ligne sur desktop */}
@@ -78,18 +87,13 @@ export default function Footer() {
           href="/guadeloupe"
           className="text-xs md:text-sm text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors text-center"
         >
-          Création site internet en Guadeloupe
+          {t("footer.website_creation")}
         </Link>
 
         {/* Copyright */}
         <div className="flex flex-col items-center">
           <span className="text-black dark:text-gray-300 text-xs md:text-sm font-[var(--font-jetbrains-mono)] text-center leading-tight">
-            © {annee} This website is made with {'💜'} by{' '}
-            <Link
-              href="/#about"
-            >
-              me
-            </Link>
+            © {annee} {t("footer.made_with")} {'💜'} {t("footer.by_me")}
           </span>
         </div>
       </div>

@@ -290,8 +290,8 @@ export default function RootLayout({
               {children}
               <CookieConsent />
               <MouseHalo />
+              <Footer />
             </I18nProvider>
-            <Footer />
           </ThemeProvider>
         </div>
       </body>

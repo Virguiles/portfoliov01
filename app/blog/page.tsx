@@ -3,49 +3,29 @@
 import React from "react";
 import Link from "next/link";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
+import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiCalendar, FiClock, FiUser } from "react-icons/fi";
+import { blogPosts } from "@/lib/blog/posts";
 
 export default function BlogPage() {
-  const { isI18nReady } = useSSRTranslation();
+  const { isI18nReady, t } = useSSRTranslation({
+    "blog.title": "blog & conseils",
+    "blog.subtitle": "Découvrez mes conseils pour développer votre présence en ligne en Guadeloupe. Des articles pratiques pour améliorer votre visibilité et attirer plus de clients.",
+    "blog.breadcrumb_home": "accueil",
+    "blog.breadcrumb_blog": "blog",
+    "blog.featured_article": "article recommandé",
+    "blog.read_full_article": "Lire l'article complet",
+    "blog.need_help_title": "Besoin d'aide pour votre projet web ?",
+    "blog.need_help_text": "Ces articles vous ont donné des idées ? Parlons de votre projet et de comment je peux vous aider à le concrétiser.",
+    "blog.discuss_project": "Discutons de votre projet",
+    "blog.keyword": "Mot-clé"
+  });
 
-  const articles = [
-    {
-      slug: "faire-site-internet-guadeloupe",
-      title: "Faire un site internet en Guadeloupe : Guide complet 2025",
-      excerpt: "Guide complet pour faire un site internet en Guadeloupe. Découvrez les étapes, coûts et conseils pour créer un site web professionnel qui attire des clients locaux.",
-      readTime: "8 min",
-      date: "2025-03-12",
-      keywords: ["faire site internet", "Guadeloupe", "guide complet", "développeur web freelance", "coût site web"],
-      featured: true
-    },
-    {
-      slug: "creer-site-vitrine-guadeloupe",
-      title: "Créer un site vitrine en Guadeloupe : 5 conseils pour réussir votre présence en ligne",
-      excerpt: "Découvrez les étapes essentielles pour créer un site vitrine efficace qui vous permettra d&apos;être visible et de développer votre activité en Guadeloupe.",
-      readTime: "5 min",
-      date: "2025-04-28",
-      keywords: ["site vitrine", "Guadeloupe", "création site internet", "développeur web"],
-      featured: false
-    },
-    {
-      slug: "ux-design-experience-utilisateur",
-      title: "UX Design : pourquoi l'expérience utilisateur est la clé d'un site internet efficace",
-      excerpt: "L'UX design n'est pas qu'une tendance, c'est un facteur clé de succès pour votre site web. Apprenez pourquoi et comment l'optimiser.",
-      readTime: "6 min",
-      date: "2025-02-08",
-      keywords: ["UX design", "expérience utilisateur", "site web intuitif", "conversion"],
-      featured: false
-    },
-    {
-      slug: "seo-local-guadeloupe",
-      title: "SEO local en Guadeloupe : comment apparaître sur Google quand vos clients vous cherchent",
-      excerpt: "Optimisez votre visibilité locale en Guadeloupe avec des techniques SEO adaptées à votre territoire et à vos clients.",
-      readTime: "7 min",
-      date: "2025-05-15",
-      keywords: ["SEO Guadeloupe", "référencement local", "Google My Business", "visibilité locale"],
-      featured: false
-    }
-  ];
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language || 'fr';
+  const dateLocale = currentLanguage === 'en' ? 'en-US' : 'fr-FR';
+
+  const articles = blogPosts;
 
   if (!isI18nReady) {
     return (
@@ -73,12 +53,12 @@ export default function BlogPage() {
             <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  accueil
+                  {t("blog.breadcrumb_home")}
                 </Link>
               </li>
               <li className="flex items-center">
                 <span className="mx-2">/</span>
-                <span className="text-gray-800 dark:text-gray-300 font-medium">blog</span>
+                <span className="text-gray-800 dark:text-gray-300 font-medium">{t("blog.breadcrumb_blog")}</span>
               </li>
             </ol>
           </nav>
@@ -86,12 +66,11 @@ export default function BlogPage() {
           {/* En-tête du blog - style harmonisé avec le reste de l'app */}
           <div className="text-center mb-16">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 mt-4 text-center text-black dark:text-white tracking-tight">
-              blog & conseils
+              {t("blog.title")}
             </h1>
             <div className="h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mx-auto mb-6" />
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Découvrez mes conseils pour développer votre présence en ligne en Guadeloupe.
-              Des articles pratiques pour améliorer votre visibilité et attirer plus de clients.
+              {t("blog.subtitle")}
             </p>
           </div>
 
@@ -106,7 +85,7 @@ export default function BlogPage() {
               >
                 {article.featured && (
                   <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    ⭐ article recommandé
+                    ⭐ {t("blog.featured_article")}
                   </div>
                 )}
 
@@ -115,12 +94,12 @@ export default function BlogPage() {
                     href={`/blog/${article.slug}`}
                     className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                   >
-                    {article.title}
+                    {currentLanguage === 'en' ? article.titleEn : article.title}
                   </Link>
                 </h2>
 
                 <p className="text-gray-600 dark:text-gray-300 text-lg mb-6 leading-relaxed">
-                  {article.excerpt}
+                  {currentLanguage === 'en' ? article.excerptEn : article.excerpt}
                 </p>
 
                 {/* Métadonnées */}
@@ -131,7 +110,7 @@ export default function BlogPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <FiCalendar className="w-4 h-4" />
-                    <span>{new Date(article.date).toLocaleDateString('fr-FR', {
+                    <span>{new Date(article.date).toLocaleDateString(dateLocale, {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
@@ -145,11 +124,11 @@ export default function BlogPage() {
 
                 {/* Mots-clés */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {article.keywords.map((keyword, i) => (
+                  {(currentLanguage === 'en' ? article.keywordsEn : article.keywords).map((keyword, i) => (
                     <span
                       key={i}
                       className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-default"
-                      title={`Mot-clé : ${keyword}`}
+                      title={`${t("blog.keyword")} : ${keyword}`}
                     >
                       #{keyword}
                     </span>
@@ -161,7 +140,7 @@ export default function BlogPage() {
                   href={`/blog/${article.slug}`}
                   className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium transition-colors group"
                 >
-                  Lire l&apos;article complet
+                  {t("blog.read_full_article")}
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </article>
@@ -171,16 +150,16 @@ export default function BlogPage() {
           {/* Call to action - style harmonisé */}
           <div className="mt-16 text-center bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-8 border border-purple-200 dark:border-purple-800">
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
-              Besoin d&apos;aide pour votre projet web ?
+              {t("blog.need_help_title")}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Ces articles vous ont donné des idées ? Parlons de votre projet et de comment je peux vous aider à le concrétiser.
+              {t("blog.need_help_text")}
             </p>
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
-              Discutons de votre projet
+              {t("blog.discuss_project")}
               <FiArrowRight className="w-4 h-4" />
             </Link>
           </div>

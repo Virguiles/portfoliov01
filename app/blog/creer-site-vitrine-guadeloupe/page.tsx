@@ -3,10 +3,23 @@
 import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiAlertTriangle, FiExternalLink } from "react-icons/fi";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
+import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function ArticleSiteVitrine() {
+  const { t } = useSSRTranslation({
+    "blog.back_to_blog": "Retour au blog",
+    "blog.discuss_project": "Discutons de votre projet",
+    "blog.see_my_work": "Voir mes réalisations",
+    "blog.related_articles": "Articles complémentaires"
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug("creer-site-vitrine-guadeloupe"))) }}
+      />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}
@@ -15,7 +28,7 @@ export default function ArticleSiteVitrine() {
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
-            Retour au blog
+            {t("blog.back_to_blog")}
           </Link>
 
           {/* En-tête de l'article */}
@@ -196,14 +209,14 @@ export default function ArticleSiteVitrine() {
                 href="/#contact"
                 className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                Discutons de votre projet
+                {t("blog.discuss_project")}
                 <FiExternalLink className="w-4 h-4" />
               </Link>
               <Link
                 href="/#projets"
                 className="inline-flex items-center gap-2 border border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                Voir mes réalisations
+                {t("blog.see_my_work")}
               </Link>
             </div>
           </div>
@@ -211,7 +224,7 @@ export default function ArticleSiteVitrine() {
           {/* Liens vers d'autres articles */}
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
             <h3 className="text-xl font-bold text-black dark:text-white mb-6">
-              Articles complémentaires
+              {t("blog.related_articles")}
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               <Link

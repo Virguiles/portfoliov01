@@ -3,10 +3,21 @@
 import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiTarget, FiTrendingUp, FiUsers, FiExternalLink, FiCalendar, FiClock, FiUser } from "react-icons/fi";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
+import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function FaireSiteInternetGuadeloupePage() {
+  const { t } = useSSRTranslation({
+    "blog.back_to_home": "Retour à l'accueil",
+    "cta.start_project": "Démarrons votre projet"
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug("faire-site-internet-guadeloupe"))) }}
+      />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}
@@ -15,7 +26,7 @@ export default function FaireSiteInternetGuadeloupePage() {
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
-            Retour à l&apos;accueil
+            {t("blog.back_to_home")}
           </Link>
 
           {/* En-tête de la page */}
@@ -364,7 +375,7 @@ export default function FaireSiteInternetGuadeloupePage() {
                   href="/#contact"
                   className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors"
                 >
-                  Démarrons votre projet
+                  {t("cta.start_project")}
                   <FiExternalLink className="w-5 h-5" />
                 </Link>
               </div>

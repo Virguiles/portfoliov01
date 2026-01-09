@@ -18,7 +18,11 @@ export default function Header() {
         "developer": "DEVELOPPEUR / DESIGNER UI/UX",
         "about": "à propos",
         "projects": "mes projets",
-        "contact": "contact"
+        "contact": "contact",
+        "navbar.blog": "blog",
+        "navbar.open_menu": "Ouvrir le menu",
+        "navbar.change_language": "Changer de langue",
+        "navbar.choose_language": "Choisir la langue"
     });
     const pathname = usePathname();
 
@@ -27,10 +31,14 @@ export default function Header() {
         developer: t("developer"),
         about: t("about"),
         projects: t("projects"),
-        contact: t("contact")
+        contact: t("contact"),
+        blog: t("navbar.blog"),
+        openMenu: t("navbar.open_menu"),
+        changeLanguage: t("navbar.change_language"),
+        chooseLanguage: t("navbar.choose_language")
     }), [t]);
 
-    const { developer: developerText, about: aboutText, projects: projectsText, contact: contactText } = translations;
+    const { developer: developerText, about: aboutText, projects: projectsText, contact: contactText, blog: blogText, openMenu: openMenuText, changeLanguage: changeLanguageText, chooseLanguage: chooseLanguageText } = translations;
 
     // Optimisation du LCP - Initialisation
     useEffect(() => {
@@ -193,7 +201,7 @@ export default function Header() {
                 <button
                     className="md:hidden navbar-button flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
                     onClick={toggleMobileMenu}
-                    aria-label="Ouvrir le menu"
+                    aria-label={openMenuText}
                     aria-expanded={mobileMenuOpen}
                 >
                     <span className={`${hamburgerLineClassName} mb-1 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
@@ -227,8 +235,9 @@ export default function Header() {
                                 href="/blog"
                                 className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500"
                                 onClick={handleNavigation}
+                                suppressHydrationWarning
                             >
-                                blog
+                                {blogText}
                             </Link>
                         </li>
                         <li>
@@ -249,7 +258,7 @@ export default function Header() {
                                 type="button"
                                 onClick={toggleDropdown}
                                 className="navbar-button group flex items-center justify-center w-10 h-10 rounded-full hover:bg-gradient-to-br hover:from-purple-500/20 hover:to-pink-500/20 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 ease-out transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
-                                aria-label="Changer de langue"
+                                aria-label={changeLanguageText}
                             >
                                 <Globe className="w-5 h-5 text-gray-700 dark:text-gray-200 group-hover:text-purple-400 transition-colors duration-300" />
                             </button>
@@ -257,7 +266,7 @@ export default function Header() {
                                 <div className="z-50 absolute right-0 mt-3 w-48 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 border border-gray-200/20 dark:border-gray-700/20 rounded-xl shadow-2xl shadow-purple-500/10 overflow-hidden transform transition-all duration-300 ease-out">
                                     <div className="p-2">
                                         <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 px-3">
-                                            Choisir la langue
+                                            {chooseLanguageText}
                                         </div>
                                         <div className="space-y-1">
                                             <button
@@ -309,8 +318,9 @@ export default function Header() {
                                     href="/blog"
                                     className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500"
                                     onClick={handleNavigation}
+                                    suppressHydrationWarning
                                 >
-                                    blog
+                                    {blogText}
                                 </Link>
                             </li>
                             <li>
@@ -331,7 +341,7 @@ export default function Header() {
                                     type="button"
                                     onClick={toggleDropdown}
                                     className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-gradient-to-br hover:from-purple-500/20 hover:to-pink-500/20 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 ease-out transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
-                                    aria-label="Changer de langue"
+                                    aria-label={changeLanguageText}
                                 >
                                     <Globe className="w-5 h-5 text-gray-700 dark:text-gray-200 group-hover:text-purple-400 transition-colors duration-300" />
                                 </button>
@@ -339,7 +349,7 @@ export default function Header() {
                                     <div className="z-50 absolute right-0 mt-3 w-48 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 border border-gray-200/20 dark:border-gray-700/20 rounded-xl shadow-2xl shadow-purple-500/10 overflow-hidden transform transition-all duration-300 ease-out">
                                         <div className="p-2">
                                             <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 px-3">
-                                                Choisir la langue
+                                                {chooseLanguageText}
                                             </div>
                                             <div className="space-y-1">
                                                 <button

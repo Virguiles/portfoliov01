@@ -16,11 +16,20 @@ export default function Projets() {
     "projets.items.1.titre": "CRM pour startup",
     "projets.items.1.description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente.",
     "projets.items.2.titre": "Gestion automatisée d'Airbnb avec n8n",
-    "projets.items.2.description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb."
+    "projets.items.2.description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb.",
+    "projets.items.3.titre": "Gwad'Alerte",
+    "projets.items.3.description": "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."
   });
 
 
   const projects = [
+    {
+      titre: t("projets.items.3.titre", "Gwad'Alerte"),
+      description: t("projets.items.3.description", "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."),
+      lien: "https://gwadalerte.netlify.app/",
+      image: "/images/gwadalerte.png",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "API Integration", "Web Scraping", "Redis"],
+    },
     {
       titre: t("projets.items.0.titre", "Mobile-food.ch"),
       description: t("projets.items.0.description", "Plateforme innovante dédiée à la recherche de food trucks et traiteurs en Suisse."),
@@ -40,7 +49,7 @@ export default function Projets() {
       titre: t("projets.items.2.titre", "Gestion automatisée d'Airbnb avec n8n"),
       description: t("projets.items.2.description", "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb."),
       lien: "#",
-      image: "/images/n8n-logo.svg?v=4",
+      image: "/images/n8n-logo.svg",
       technologies: ["n8n", "JavaScript", "Google Gemini API", "WhatsApp Cloud API"],
     }
   ];

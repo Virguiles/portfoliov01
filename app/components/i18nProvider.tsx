@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../../i18n';
 
@@ -9,21 +9,8 @@ interface I18nProviderProps {
 }
 
 export default function I18nProvider({ children }: I18nProviderProps) {
-  useEffect(() => {
-    // Initialisation asynchrone d'i18n si nécessaire
-    const initI18n = async () => {
-      try {
-        if (!i18n.isInitialized) {
-          await i18n.init();
-        }
-      } catch (error) {
-        console.error('Erreur lors de l\'initialisation i18n:', error);
-      }
-    };
-
-    initI18n();
-  }, []);
-
+  // i18n est déjà initialisé dans i18n.ts, pas besoin de réinitialiser
+  // Le I18nextProvider va simplement fournir l'instance i18n au contexte React
   return (
     <I18nextProvider i18n={i18n}>
       {children}

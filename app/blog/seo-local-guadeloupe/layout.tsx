@@ -1,4 +1,15 @@
 import type { Metadata } from "next";
+import { buildMetadataForPost, getPostBySlug } from "@/lib/blog/posts";
+
+export const generateMetadata = (): Metadata => {
+  const post = getPostBySlug("seo-local-guadeloupe");
+  return buildMetadataForPost(post);
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
+}
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "SEO local en Guadeloupe : comment apparaître sur Google quand vos clients vous cherchent",

@@ -62,8 +62,7 @@
         "description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb."
       },
       "3": {
-        "titre": "Gwad'Alerte",
-        "description": "Application web interactive pour visualiser en temps réel les données environnementales de la Guadeloupe : qualité de l'air, météo, vigilance et tours d'eau."
+        "description": "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."
       }
     }
   },

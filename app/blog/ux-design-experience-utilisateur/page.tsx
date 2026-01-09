@@ -3,11 +3,24 @@
 import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiTrendingUp, FiSmartphone, FiZap, FiUsers } from "react-icons/fi";
-
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
+import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function ArticleUXDesign() {
+  const { t } = useSSRTranslation({
+    "blog.back_to_blog": "Retour au blog",
+    "cta.lets_talk": "Parlons de votre projet",
+    "blog.see_my_work": "Voir mes réalisations",
+    "blog.previous_article": "Article précédent",
+    "blog.next_article": "Article suivant"
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug("ux-design-experience-utilisateur"))) }}
+      />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}
@@ -16,7 +29,7 @@ export default function ArticleUXDesign() {
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
-            Retour au blog
+            {t("blog.back_to_blog")}
           </Link>
 
           {/* En-tête de l'article */}
@@ -279,13 +292,13 @@ export default function ArticleUXDesign() {
                 href="/#contact"
                 className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                Parlons de votre projet
+                {t("cta.lets_talk")}
               </Link>
               <Link
                 href="/#projets"
                 className="inline-flex items-center gap-2 border border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                Voir mes réalisations
+                {t("blog.see_my_work")}
               </Link>
             </div>
           </div>
@@ -298,13 +311,13 @@ export default function ArticleUXDesign() {
                 className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
               >
                 <FiArrowLeft className="w-4 h-4" />
-                Article précédent : Site vitrine en Guadeloupe
+                {t("blog.previous_article")} : Site vitrine en Guadeloupe
               </Link>
               <Link
                 href="/blog/seo-local-guadeloupe"
                 className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
               >
-                Article suivant : SEO local en Guadeloupe
+                {t("blog.next_article")} : SEO local en Guadeloupe
                 <FiArrowLeft className="w-4 h-4 rotate-180" />
               </Link>
             </div>

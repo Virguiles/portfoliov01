@@ -62,8 +62,7 @@
         "description": "Intelligent assistant connected to WhatsApp to automate the management of multiple Airbnb apartments. The bot analyzes messages, understands questions and responds automatically in French based on Airbnb iCal calendars."
       },
       "3": {
-        "titre": "Gwad'Alerte",
-        "description": "Interactive web application to visualize real-time environmental data from Guadeloupe: air quality, weather, alerts and water schedules."
+        "description": "Citizen dashboard aggregating environmental data (Air, Weather, Water) via API integration and official data scraping."
       }
     }
   },

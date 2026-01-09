@@ -1,31 +1,38 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog/posts";
+
+const baseUrl = "https://virgile.site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://virgile.site'
+  const now = new Date();
 
-  // Routes statiques
-  const routes = [
-    '',
-    '/blog',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }))
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guadeloupe`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
 
-  // Articles de blog (à dynamiser plus tard si besoin via une API ou CMS)
-  const blogPosts = [
-    'ux-design-experience-utilisateur',
-    'creer-site-vitrine-guadeloupe',
-    'faire-site-internet-guadeloupe',
-    'seo-local-guadeloupe',
-  ].map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt || post.date),
+    changeFrequency: "monthly",
     priority: 0.7,
-  }))
+  }));
 
-  return [...routes, ...blogPosts]
+  return [...staticRoutes, ...blogRoutes];
 }

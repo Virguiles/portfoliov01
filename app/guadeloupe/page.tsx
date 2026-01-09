@@ -3,8 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCheckCircle, FiExternalLink } from "react-icons/fi";
+import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 
 export default function GuadeloupePage() {
+  const { t } = useSSRTranslation({
+    "blog.back_to_home": "Retour à l'accueil",
+    "cta.discuss_project": "Discutons de votre projet"
+  });
+
   return (
     <>
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
@@ -15,7 +21,7 @@ export default function GuadeloupePage() {
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
-            Retour à l&apos;accueil
+            {t("blog.back_to_home")}
           </Link>
 
           {/* En-tête de la page */}
@@ -191,7 +197,7 @@ export default function GuadeloupePage() {
                   href="/#contact"
                   className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors"
                 >
-                  Discutons de votre projet
+                  {t("cta.discuss_project")}
                   <FiExternalLink className="w-5 h-5" />
                 </Link>
               </div>
