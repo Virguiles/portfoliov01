@@ -28,7 +28,7 @@ export default function Projets() {
       description: t("projets.items.3.description", "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."),
       lien: "https://gwadalerte.netlify.app/",
       image: "/images/gwadalerte.png",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "API Integration", "Web Scraping", "Redis"],
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "API Integration", "Web Scraping"],
     },
     {
       titre: t("projets.items.0.titre", "Mobile-food.ch"),

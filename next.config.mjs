@@ -56,7 +56,6 @@ const nextConfig = {
   }),
   // Optimisations de performance
   experimental: {
-    optimizeCss: true,
     scrollRestoration: true,
     optimizePackageImports: ['@/components', '@/lib'],
     // Optimisations pour améliorer le LCP
