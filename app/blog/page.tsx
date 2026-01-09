@@ -79,9 +79,8 @@ export default function BlogPage() {
             {articles.map((article) => (
               <article
                 key={article.slug}
-                className={`bg-white dark:bg-black/60 rounded-xl p-6 md:p-8 shadow-lg border border-gray-200 dark:border-gray-800 transition-all hover:shadow-xl ${
-                  article.featured ? 'ring-2 ring-purple-500/50' : ''
-                }`}
+                className={`bg-white dark:bg-black/60 rounded-xl p-6 md:p-8 shadow-lg border border-gray-200 dark:border-gray-800 transition-all hover:shadow-xl ${article.featured ? 'ring-2 ring-purple-500/50' : ''
+                  }`}
               >
                 {article.featured && (
                   <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-sm font-medium mb-4">
@@ -124,7 +123,7 @@ export default function BlogPage() {
 
                 {/* Mots-clés */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {(currentLanguage === 'en' ? article.keywordsEn : article.keywords).map((keyword, i) => (
+                  {((currentLanguage === "en" ? article.keywordsEn : article.keywords) ?? []).map((keyword, i) => (
                     <span
                       key={i}
                       className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-default"
