@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 
 const iconClass =
@@ -11,7 +12,12 @@ const emailIconClass =
   "w-8 h-8 text-gray-400 hover:text-black dark:hover:text-purple-500 transition-colors duration-200";
 
 export default function Footer() {
-  const annee = new Date().getFullYear();
+  const [annee, setAnnee] = useState<number | null>(null);
+
+  useEffect(() => {
+    setAnnee(new Date().getFullYear());
+  }, []);
+
   const { t } = useSSRTranslation({
     "footer.website_creation": "Création site internet en Guadeloupe",
     "footer.made_with": "Ce site est fait avec",
@@ -76,8 +82,8 @@ export default function Footer() {
           >
             {/* Email */}
             <svg viewBox="0 0 24 24" className={`${emailIconClass} w-5 h-5 md:w-6 md:h-6`} xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
             </svg>
           </Link>
         </div>
@@ -93,7 +99,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="flex flex-col items-center">
           <span className="text-black dark:text-gray-300 text-xs md:text-sm font-[var(--font-jetbrains-mono)] text-center leading-tight">
-            © {annee} {t("footer.made_with")} {'💜'} {t("footer.by_me")}
+            © {annee || new Date().getFullYear()} {t("footer.made_with")} {'💜'} {t("footer.by_me")}
           </span>
         </div>
       </div>

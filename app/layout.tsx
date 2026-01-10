@@ -141,10 +141,10 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Service Worker pour le caching offline - chargement différé */}
+        {/* Service Worker pour le caching offline - chargement différé uniquement en production */}
         <Script id="register-sw" strategy="lazyOnload">
           {`
-            if ('serviceWorker' in navigator) {
+            if ('serviceWorker' in navigator && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
               // Délai pour ne pas impacter le LCP
               setTimeout(function() {
                 navigator.serviceWorker.register('/sw.js')
@@ -155,6 +155,14 @@ export default function RootLayout({
                     console.log('SW registration failed: ', registrationError);
                   });
               }, 2000);
+            } else if ('serviceWorker' in navigator) {
+              // En développement, on désenregistre les SW existants pour éviter les problèmes de cache
+              navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                  registration.unregister();
+                  console.log('SW unregistered in development');
+                }
+              });
             }
           `}
         </Script>

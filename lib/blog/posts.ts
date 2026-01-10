@@ -120,6 +120,37 @@ export const blogPosts: BlogPost[] = [
     ],
     section: "SEO",
   },
+  {
+    slug: "utiliser-api-scraping-pdf-gwadalerte",
+    title: "Utilisation d'API et scraping de PDF : L'exemple Gwad'Alerte",
+    titleEn: "API Usage and PDF Scraping: The Gwad'Alerte Example",
+    description: "Comment transformer des PDF inaccessibles en API exploitable. Étude de cas sur les tours d'eau de la SMGEAG et le projet Gwad'Alerte.",
+    excerpt: "Découvrez comment Gwad'Alerte transforme les communiqués PDF de la SMGEAG en données structurées pour informer les Guadeloupéens sur les tours d'eau.",
+    excerptEn: "Discover how Gwad'Alerte transforms SMGEAG PDF announcements into structured data to inform Guadeloupeans about water cuts.",
+    date: "2026-01-09",
+    updatedAt: "2026-01-09",
+    readTime: "6 min",
+    keywords: [
+      "Scraping PDF",
+      "API",
+      "Guadeloupe",
+      "SMGEAG",
+      "Gwad'Alerte",
+      "Open Data",
+      "Développement Web",
+    ],
+    keywordsEn: [
+      "PDF Scraping",
+      "API",
+      "Guadeloupe",
+      "SMGEAG",
+      "Gwad'Alerte",
+      "Open Data",
+      "Web Development",
+    ],
+    section: "Développement web",
+    featured: true,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost => {

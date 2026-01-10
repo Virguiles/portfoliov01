@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export function useSSRTranslation(fallbackValues: Record<string, string> = {}) {
   const { t, i18n, ready } = useTranslation();
@@ -25,7 +25,7 @@ export function useSSRTranslation(fallbackValues: Record<string, string> = {}) {
     };
   }, [i18n]);
 
-  const getTranslatedValue = (key: string, fallback?: string) => {
+  const getTranslatedValue = useCallback((key: string, fallback?: string) => {
     const fallbackValue = fallback || fallbackValues[key] || key;
 
     // Utiliser ready de react-i18next qui est plus fiable
@@ -36,7 +36,7 @@ export function useSSRTranslation(fallbackValues: Record<string, string> = {}) {
     }
 
     return fallbackValue;
-  };
+  }, [ready, isMounted, t, fallbackValues]);
 
   return {
     t: getTranslatedValue,
