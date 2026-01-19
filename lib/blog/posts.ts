@@ -127,8 +127,8 @@ export const blogPosts: BlogPost[] = [
     description: "Comment transformer des PDF inaccessibles en API exploitable. Étude de cas sur les tours d'eau de la SMGEAG et le projet Gwad'Alerte.",
     excerpt: "Découvrez comment Gwad'Alerte transforme les communiqués PDF de la SMGEAG en données structurées pour informer les Guadeloupéens sur les tours d'eau.",
     excerptEn: "Discover how Gwad'Alerte transforms SMGEAG PDF announcements into structured data to inform Guadeloupeans about water cuts.",
-    date: "2026-01-09",
-    updatedAt: "2026-01-09",
+    date: "2026-01-04",
+    updatedAt: "2026-01-04",
     readTime: "6 min",
     keywords: [
       "Scraping PDF",
