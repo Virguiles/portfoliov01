@@ -1,8 +1,9 @@
 # Portfolio - Virgile Popote
 
+> Modern portfolio built with Next.js, showcasing web development projects and technical expertise.
+
 > Portfolio moderne construit avec Next.js, présentant des projets de développement web et une expertise technique.
 
-![Portfolio Screenshot](lien-vers-screenshot.png)
 
 🔗 **[Live Demo](https://virgile.site)**
 
@@ -12,82 +13,82 @@
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **i18n:** i18next / react-i18next
-- **Thème:** next-themes (mode sombre/clair)
+- **Theme:** next-themes (dark/light mode)
 - **UI Components:** Radix UI
 - **Deployment:** Netlify
-- **Performance:** Optimisations images (AVIF/WebP), code splitting, compression
+- **Performance:** Image optimizations (AVIF/WebP), code splitting, compression
 
 ## Features
 
-- ⚡ Performance optimisée (code splitting, lazy loading, optimisations webpack)
-- 📱 Design entièrement responsive
-- 🌙 Mode sombre/clair avec transition fluide
-- 🌍 Internationalisation FR/EN (i18next)
-- 🎨 Animations modernes (Framer Motion, particles)
-- 📝 Blog intégré avec articles SEO optimisés
-- 📧 Formulaire de contact Netlify Forms
-- 🔍 SEO optimisé (sitemap, robots.txt, meta tags)
-- 🎯 Optimisations Core Web Vitals
-- 🚀 Server-side rendering pour des performances optimales
+- ⚡ Optimized performance (code splitting, lazy loading, webpack optimizations)
+- 📱 Fully responsive design
+- 🌙 Dark/light mode with smooth transitions
+- 🌍 Internationalization FR/EN (i18next)
+- 🎨 Modern animations (Framer Motion, particles)
+- 📝 Integrated blog with SEO-optimized articles
+- 📧 Netlify Forms contact form
+- 🔍 SEO optimized (sitemap, robots.txt, meta tags)
+- 🎯 Core Web Vitals optimizations
+- 🚀 Server-side rendering for optimal performance
 
 ## Local Development
 
 ```bash
-# Installation des dépendances
+# Install dependencies
 npm install
 
-# Démarrer le serveur de développement
+# Start development server
 npm run dev
 
-# Ouvrir http://localhost:3000 dans votre navigateur
+# Open http://localhost:3000 in your browser
 ```
 
-### Scripts disponibles
+### Available Scripts
 
 ```bash
-# Développement avec nettoyage du cache
+# Development with cache cleanup
 npm run dev:clean
 
-# Développement avec nettoyage du cache Firefox
+# Development with Firefox cache cleanup
 npm run dev:firefox
 
-# Build de production
+# Production build
 npm run build
 
-# Démarrer le serveur de production
+# Start production server
 npm start
 
 # Linter
 npm run lint
 
-# Convertir les images (exécuté automatiquement avant le build)
+# Convert images (automatically executed before build)
 npm run convert-images
 
-# Générer les favicons
+# Generate favicons
 npm run generate-favicon
 ```
 
 ## Highlights
 
-- **Server-side rendering** : Utilisation du Next.js App Router pour des performances optimales
-- **Optimisations de performance** : Bundle splitting personnalisé, optimisation des images (AVIF/WebP), compression
-- **Animations et transitions** : Animations fluides avec Framer Motion et effets de particules personnalisés
-- **Intégration Netlify Forms** : Formulaire de contact fonctionnel avec validation
-- **Configuration multi-langue** : Support complet français/anglais avec détection automatique de la langue
-- **SEO avancé** : Sitemap dynamique, robots.txt, meta tags optimisés pour chaque page
-- **Accessibilité** : Composants accessibles avec Radix UI et navigation au clavier
+- **Server-side rendering**: Using Next.js App Router for optimal performance
+- **Performance optimizations**: Custom bundle splitting, image optimization (AVIF/WebP), compression
+- **Animations and transitions**: Smooth animations with Framer Motion and custom particle effects
+- **Netlify Forms integration**: Functional contact form with validation
+- **Multi-language configuration**: Full French/English support with automatic language detection
+- **Advanced SEO**: Dynamic sitemap, robots.txt, optimized meta tags for each page
+- **Accessibility**: Accessible components with Radix UI and keyboard navigation
 
-## Structure du projet
+## Project Structure
 
 ```
 portfoliov01/
-├── app/                    # Pages et composants Next.js App Router
-│   ├── blog/              # Articles de blog
-│   ├── components/        # Composants réutilisables
-│   └── page.tsx           # Page d'accueil
-├── components/            # Composants partagés
-├── lib/                   # Utilitaires et hooks
-├── locales/               # Fichiers de traduction i18n
-├── public/                # Assets statiques
-└── scripts/               # Scripts utilitaires
+├── app/                    # Next.js App Router pages and components
+│   ├── blog/              # Blog articles
+│   ├── components/        # Reusable components
+│   └── page.tsx           # Home page
+├── components/            # Shared components
+├── lib/                   # Utilities and hooks
+├── locales/               # i18n translation files
+├── public/                # Static assets
+└── scripts/               # Utility scripts
 ```
