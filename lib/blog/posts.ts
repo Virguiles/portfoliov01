@@ -151,6 +151,34 @@ export const blogPosts: BlogPost[] = [
     section: "Développement web",
     featured: true,
   },
+  {
+    slug: "tableau-de-bord-environnemental-guadeloupe-nextjs",
+    title: "Tableau de bord environnemental Guadeloupe : La puissance de Next.js",
+    titleEn: "Environmental Dashboard in Guadeloupe: The Power of Next.js",
+    description: "Comment j'ai conçu un tableau de bord environnemental pour la Guadeloupe en utilisant Next.js pour optimiser les performances et le SEO local.",
+    excerpt: "Découvrez GwadAlerte, un projet de monitoring environnemental en Guadeloupe conçu avec Next.js pour offrir une expérience fluide et un référencement local optimal.",
+    excerptEn: "Discover GwadAlerte, an environmental monitoring project in Guadeloupe built with Next.js for a fluid experience and optimal local SEO.",
+    date: "2026-04-16",
+    updatedAt: "2026-04-16",
+    readTime: "5 min",
+    keywords: [
+      "tableau de bord environnemental",
+      "Guadeloupe",
+      "Next.js",
+      "GwadAlerte",
+      "développement sur-mesure",
+      "écologie numérique",
+    ],
+    keywordsEn: [
+      "environmental dashboard",
+      "Guadeloupe",
+      "Next.js",
+      "GwadAlerte",
+      "custom development",
+    ],
+    section: "Étude de cas",
+    featured: true,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost => {

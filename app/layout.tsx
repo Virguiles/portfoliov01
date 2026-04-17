@@ -82,6 +82,28 @@ export const metadata: Metadata = {
     title: "Portfolio de Virgile",
     statusBarStyle: "black-translucent",
   },
+  openGraph: {
+    title: "Développeur web freelance en Guadeloupe | Virgile Popote",
+    description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur-mesure. Boostez votre présence en ligne avec un site performant.",
+    url: "https://virgile.site/",
+    siteName: "Virgile Popote",
+    images: [
+      {
+        url: "https://virgile.site/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aperçu du portfolio de Virgile Popote", // A beautiful preview
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Développeur web freelance en Guadeloupe | Virgile Popote",
+    description: "Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur-mesure. Boostez votre présence en ligne avec un site performant.",
+    images: ["https://virgile.site/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -167,12 +189,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Balises Open Graph */}
-        <meta property="og:title" content="Développeur web freelance en Guadeloupe | Virgile Popote" />
-        <meta property="og:description" content="Développeur web freelance en Guadeloupe. Je crée des sites vitrines, e-commerce et sur-mesure. Boostez votre présence en ligne avec un site performant." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://virgile.site/" />
-        <meta property="og:image" content="https://virgile.site/og-image.jpg" />
 
 
         {/* Liens sociaux pour SEO */}
