@@ -20,7 +20,9 @@ export default function Footer() {
 
   const { t } = useSSRTranslation({
     "footer.website_creation": "Expert en création de sites internet en Guadeloupe",
-    "footer.developed_by": "Développé par Virgile Popote"
+    "footer.developed_by": "Développé par Virgile Popote",
+    "legal.mentions_legales": "Mentions Légales",
+    "legal.confidentialite": "Données Personnelles"
   });
 
   return (
@@ -106,6 +108,23 @@ export default function Footer() {
         >
           {t("footer.website_creation")}
         </Link>
+
+        {/* Liens Légaux - France Num Conformité */}
+        <div className="flex items-center gap-4 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+          <Link
+            href="/mentions-legales"
+            className="hover:text-purple-500 transition-colors"
+          >
+            {t("legal.mentions_legales")}
+          </Link>
+          <span className="text-gray-800 dark:text-zinc-800">|</span>
+          <Link
+            href="/confidentialite"
+            className="hover:text-purple-500 transition-colors"
+          >
+            {t("legal.confidentialite")}
+          </Link>
+        </div>
 
         {/* Copyright */}
         <div className="flex flex-col items-center">
