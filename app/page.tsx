@@ -4,6 +4,7 @@ import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 import HeroSection from "./components/Hero";
 import About from "./components/About";
+import Services from "./components/Services";
 import Skills from "./components/Skills";
 import Projets from "./components/Projets";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
@@ -35,6 +36,7 @@ export default function Home() {
             <About />
           </section>
         </section>
+        <Services />
         <Skills />
         <section id="projets" className="scroll-mt-20">
           <Projets />

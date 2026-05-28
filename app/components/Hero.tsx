@@ -11,7 +11,8 @@ export default function HeroSection() {
     "hero_designer": "DESIGNER",
     "hero_and": "&",
     "hero_developer": "DÉVELOPPEUR",
-    "hero_web": "WEB"
+    "hero_web": "WEB",
+    "hero_subtitle": "J'accompagne les TPE/PME dans leur transformation numérique grâce à des sites web performants, un référencement local efficace et des outils sur mesure."
   };
 
   const { t } = useSSRTranslation(fallbackValues);
@@ -21,6 +22,7 @@ export default function HeroSection() {
   const heroAndText = t("hero_and");
   const heroDeveloperText = t("hero_developer");
   const heroWebText = t("hero_web");
+  const heroSubtitleText = t("hero_subtitle");
 
   return (
     <div className="relative min-h-[100svh] h-[100svh] w-full" style={{ contain: 'layout style paint' }}>
@@ -38,7 +40,7 @@ export default function HeroSection() {
             </h2>
           </div>
           <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-white/80 text-center max-w-2xl mx-auto font-light leading-relaxed">
-            Je transforme vos idées en produits web performants — du design à la mise en ligne.
+            {heroSubtitleText}
           </p>
         </div>
       </div>

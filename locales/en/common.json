@@ -10,13 +10,42 @@
   "hero_and": "&",
   "hero_developer": "DEVELOPER",
   "hero_web": "WEB",
-  "about_text": "I am Virgile Popote, a freelance web developer in Guadeloupe, specialized in creating modern and high-performing websites.\n\nMy role: designing custom showcase websites and web applications, designed to be aesthetic, fast and SEO optimized.\n\nThanks to my skills in UI/UX design and development (Ruby on Rails, React, JavaScript, Tailwind CSS), I create intuitive platforms that showcase your brand and convert your visitors into customers.\n\nPassionate about digital, I support entrepreneurs, associations and startups in developing their online presence and standing out from the competition.\n\n👉 Looking for a reliable partner for your web project? Contact me and let's bring your idea to life.",
+  "hero_subtitle": "I support SMEs in their digital transformation with high-performing websites, effective local SEO, and custom tools.",
+  "about_text": "I am Virgile Popote, a freelance web developer and digital transformation partner for SMEs. Specialized in creating modern and high-performing web solutions, I work locally in Guadeloupe and worldwide remotely.\n\nMy role: designing custom showcase websites and web applications, designed to be aesthetic, fast, fully SEO-optimized, and aligned with your business growth goals.\n\nThanks to my skills in UI/UX design and development (Ruby on Rails, React, JavaScript, Tailwind CSS), I create intuitive platforms that showcase your brand, automate your internal processes, and convert your visitors into clients.\n\nKnown for my practical support and listening skills, I help companies, merchants, freelancers, and startups digitalize their operations from end to end and maximize their business benefits.\n\n👉 Looking for a trusted partner to accelerate your digital transition? Contact me and let's bring your project to life.",
   "tech_links": {
     "linkedin": "https://www.linkedin.com/in/virgile-popote-1b1165227/",
     "ruby_on_rails": "https://rubyonrails.org/",
     "react": "https://react.dev/",
     "javascript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     "tailwind_css": "https://tailwindcss.com/"
+  },
+  "services": {
+    "title": "my services for SMEs",
+    "subtitle": "Concrete digital solutions to accelerate your growth and simplify your daily operations.",
+    "web": {
+      "title": "Visibility & Web (Showcase & SEO)",
+      "desc": "Design of fast, modern, and SEO-optimized websites (local and national). Perfect for attracting new customers consistently.",
+      "benefit": "Goal: More leads & maximum online visibility",
+      "f1": "100% custom high-end showcase websites",
+      "f2": "Local SEO optimization (Google Maps & local search)",
+      "f3": "Optimal loading speed & Mobile-first performance"
+    },
+    "ecommerce": {
+      "title": "Online Stores & Conversion",
+      "desc": "Creation of high-performing Shopify or custom e-commerce stores, designed to offer smooth buying journeys and boost your online sales 24/7.",
+      "benefit": "Goal: Increase sales & revenue",
+      "f1": "Seamless user experience optimized for sales",
+      "f2": "Secure payment integrations (Stripe, credit cards) & subscriptions",
+      "f3": "Easy stock, inventory, and order management"
+    },
+    "automation": {
+      "title": "Automation & Custom Tools",
+      "desc": "Development of internal tools, custom CRMs, and intelligent integrations (n8n, AI) to eliminate repetitive tasks and streamline your workflows.",
+      "benefit": "Goal: Time saved & higher productivity",
+      "f1": "Advanced automation workflows (n8n, Make, Zapier)",
+      "f2": "AI integrations to speed up repetitive daily tasks",
+      "f3": "Fully custom connected CRM & business tools"
+    }
   },
   "competences": {
     "title": "my skills",
@@ -51,18 +80,19 @@
     "items": {
       "0": {
         "titre": "Mobile-food.ch",
-        "description": "Platform for finding food trucks and caterers in Switzerland. Easily find mobile catering services for all types of events."
+        "description": "Creation of a matchmaking platform for food trucks and caterers in Switzerland. A turnkey solution boosting the online visibility of independent caterers and simplifying booking for customers."
       },
       "1": {
-        "titre": "CRM for startup",
-        "description": "A CRM for a startup that allows you to manage leads and sales opportunities."
+        "titre": "Custom CRM for SMEs",
+        "description": "Development of a custom Customer Relationship Management (CRM) tool. Optimizes lead tracking, automates follow-ups, and structures the sales pipeline to maximize conversion rates."
       },
       "2": {
-        "titre": "Automated Airbnb Management with n8n",
-        "description": "Intelligent assistant connected to WhatsApp to automate the management of multiple Airbnb apartments. The bot analyzes messages, understands questions and responds automatically in French based on Airbnb iCal calendars."
+        "titre": "Airbnb & WhatsApp Automation (n8n)",
+        "description": "Automated conciergerie assistant connected to WhatsApp. Intelligently analyzes guest messages and replies in real time. Benefit: 10 hours of administrative work saved per week for the host."
       },
       "3": {
-        "description": "Citizen dashboard aggregating environmental data (Air, Weather, Water) via API integration and official data scraping."
+        "titre": "Local Environmental Dashboard",
+        "description": "Intelligent aggregator of public environmental data (Air, Weather, Water) via APIs and web scraping. Designed to facilitate local decision-making with a clear, user-friendly interface."
       }
     }
   },

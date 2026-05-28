@@ -10,13 +10,42 @@
   "hero_and": "&",
   "hero_developer": "DÉVELOPPEUR",
   "hero_web": "WEB",
-  "about_text": "Je suis Virgile Popote, développeur web freelance en Guadeloupe, spécialisé dans la création de sites internet modernes et performants.\n\nMon rôle : concevoir des sites vitrines et applications web sur-mesure, pensés pour être esthétiques, rapides et optimisés SEO.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui mettent en valeur votre marque et transforment vos visiteurs en clients.\n\nPassionné par le digital, j'accompagne entrepreneurs, associations et startups pour développer leur présence en ligne et se démarquer de la concurrence.\n\n👉 Vous cherchez un partenaire fiable pour votre projet web ? Contactez-moi et donnons vie à votre idée.",
+  "hero_subtitle": "J'accompagne les TPE/PME dans leur transformation numérique grâce à des sites web performants, un référencement local efficace et des outils sur mesure.",
+  "about_text": "Je suis Virgile Popote, développeur web freelance et partenaire de la transition numérique des TPE et PME. Spécialisé dans la création de solutions internet modernes et hautement performantes, j'interviens en Guadeloupe et partout à distance.\n\nMon rôle : concevoir des sites vitrines et des applications web sur-mesure, pensés pour être esthétiques, ultra-rapides, parfaitement optimisés SEO et orientés vers vos objectifs de croissance.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui valorisent votre marque, automatisent vos processus internes et transforment vos visiteurs en clients.\n\nReconnu pour mon accompagnement pragmatique et mon écoute, j'aide les entreprises, commerçants, indépendants et startups à digitaliser leur activité de bout en bout et à en maximiser les bénéfices métier.\n\n👉 Vous cherchez un partenaire de confiance pour accélérer votre transition numérique ? Contactez-moi et donnons vie à votre projet.",
   "tech_links": {
     "linkedin": "https://www.linkedin.com/in/virgile-popote-1b1165227/",
     "ruby_on_rails": "https://rubyonrails.org/",
     "react": "https://react.dev/",
     "javascript": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
     "tailwind_css": "https://tailwindcss.com/"
+  },
+  "services": {
+    "title": "mes services pour les TPE/PME",
+    "subtitle": "Des solutions numériques concrètes pour accélérer votre croissance et simplifier votre quotidien.",
+    "web": {
+      "title": "Visibilité & Web (Showcase & SEO)",
+      "desc": "Conception de sites internet rapides, esthétiques et optimisés pour le référencement local et national. Idéal pour attirer de nouveaux clients de manière régulière.",
+      "benefit": "Objectif : Plus de prospects & visibilité maximale",
+      "f1": "Sites vitrines d'exception 100% sur-mesure",
+      "f2": "Optimisation SEO Local (Google Maps & recherche locale)",
+      "f3": "Vitesse de chargement & Performance mobile optimales"
+    },
+    "ecommerce": {
+      "title": "Boutiques en ligne & Conversion",
+      "desc": "Création de plateformes e-commerce Shopify ou sur-mesure, pensées pour offrir un parcours d'achat fluide et optimiser vos ventes en ligne 24h/24.",
+      "benefit": "Objectif : Hausse du chiffre d'affaires",
+      "f1": "Parcours client fluide et optimisé pour la conversion",
+      "f2": "Paiements sécurisés (Stripe, CB) & abonnements",
+      "f3": "Gestion simplifiée des stocks & commandes"
+    },
+    "automation": {
+      "title": "Automatisation & Outils Métier",
+      "desc": "Développement d'outils internes, CRM personnalisés et automatisations (n8n, IA) pour éliminer les tâches répétitives et vous concentrer sur votre cœur de métier.",
+      "benefit": "Objectif : Gain de temps & productivité accrue",
+      "f1": "Scénarios d'automatisation (n8n, Make, Zapier)",
+      "f2": "Intégration d'IA pour les tâches quotidiennes répétitives",
+      "f3": "CRM & outils métiers sur-mesure connectés"
+    }
   },
   "competences": {
     "title": "mes compétences",
@@ -51,18 +80,19 @@
     "items": {
       "0": {
         "titre": "Mobile-food.ch",
-        "description": "Plateforme pour trouver des food trucks et traiteurs en Suisse. Trouvez facilement des services de restauration mobile pour tous types d'événements."
+        "description": "Création d'une plateforme de mise en relation pour food trucks et traiteurs en Suisse. Solution clé en main augmentant la visibilité commerciale des traiteurs indépendants et simplifiant la prise de contact pour leurs clients."
       },
       "1": {
-        "titre": "CRM pour startup",
-        "description": "Un CRM pour startup permettant de gérer les leads et opportunités de vente."
+        "titre": "CRM pour TPE/Startup",
+        "description": "Développement d'un outil de gestion de la relation client (CRM) sur-mesure. Permet d'optimiser le suivi des prospects, d'automatiser les relances et de structurer le pipeline commercial pour maximiser les taux de conversion."
       },
       "2": {
-        "titre": "Gestion automatisée d'Airbnb avec n8n",
-        "description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb."
+        "titre": "Automatisation Airbnb & WhatsApp (n8n)",
+        "description": "Assistant de conciergerie automatisé connecté à WhatsApp. Analyse intelligemment les messages des voyageurs et répond en temps réel. Bénéfice : 10 heures de gestion administrative économisées par semaine pour l'hôte."
       },
       "3": {
-        "description": "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."
+        "titre": "Tableau de bord de données locales",
+        "description": "Agrégateur intelligent de données publiques (Air, Météo, Eau) via APIs et scraping. Conçu pour faciliter la prise de décision locale et informer le grand public avec une interface claire et intuitive."
       }
     }
   },
