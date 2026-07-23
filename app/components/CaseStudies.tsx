@@ -78,11 +78,26 @@ export default function CaseStudies() {
   return (
     <SectionWrapper background="bg-white dark:bg-black/20">
       <div id="cas-clients" className="scroll-mt-20 max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <SectionHeader title={t("cas_clients.title")} />
-        
-        <p className="text-center text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto -mt-6 mb-16 text-base md:text-lg leading-relaxed">
-          {t("cas_clients.subtitle")}
-        </p>
+        <div className="flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full border border-purple-200/70 dark:border-purple-500/20 bg-purple-50/70 dark:bg-purple-500/10 backdrop-blur-sm"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+            <span className="text-xs font-semibold text-purple-700 dark:text-purple-300 tracking-wider uppercase">
+              Clients accompagnés
+            </span>
+          </motion.div>
+
+          <SectionHeader title={t("cas_clients.title")} />
+
+          <p className="text-center text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto -mt-6 mb-12 md:mb-16 text-base md:text-lg leading-relaxed">
+            {t("cas_clients.subtitle")}
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
           {cases.map((c, idx) => (
