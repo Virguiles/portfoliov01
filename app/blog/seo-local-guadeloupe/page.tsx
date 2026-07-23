@@ -351,7 +351,11 @@ export default function ArticleSEOLocal() {
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Le SEO local en Guadeloupe est une opportunité en or pour les entreprises locales.
+              Le{" "}
+              <Link href="/guadeloupe" className="underline hover:text-purple-600 dark:hover:text-purple-400">
+                SEO local en Guadeloupe
+              </Link>{" "}
+              est une opportunité en or pour les entreprises locales.
               Avec moins de concurrence qu&apos;au niveau national et un trafic local qualifié,
               vous pouvez rapidement vous démarquer et attirer de nouveaux clients.
             </p>
@@ -413,6 +417,17 @@ export default function ArticleSEOLocal() {
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Les 7 étapes pour créer votre site web professionnel
+                </p>
+              </Link>
+              <Link
+                href="/blog/ux-design-experience-utilisateur"
+                className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  UX design : l&apos;expérience utilisateur
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Pourquoi une bonne UX transforme les visiteurs en clients
                 </p>
               </Link>
             </div>

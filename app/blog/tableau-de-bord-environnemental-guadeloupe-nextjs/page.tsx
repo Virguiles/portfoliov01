@@ -62,7 +62,9 @@ export default function ArticleGwadlerteDashboard() {
               {currentLanguage === 'en' ? (
                 <>Designing a high-performance <strong>environmental dashboard</strong> in Guadeloupe requires a robust technical approach combining <strong>Next.js</strong> and React.</>
               ) : (
-                <>Concevoir un <strong>tableau de bord environnemental</strong> performant en Guadeloupe demande une approche technique robuste alliant <strong>Next.js</strong> et React.</>
+                <>Concevoir un <strong>tableau de bord environnemental</strong> performant en{" "}
+                <Link href="/guadeloupe" className="underline hover:text-purple-600 dark:hover:text-purple-400">Guadeloupe</Link>{" "}
+                demande une approche technique robuste alliant <strong>Next.js</strong> et React.</>
               )}
             </p>
 
@@ -183,6 +185,37 @@ export default function ArticleGwadlerteDashboard() {
               >
                 {t("blog.discuss_project")}
                 <FiExternalLink className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Liens vers d'autres articles */}
+          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+            <h3 className="text-xl font-bold text-black dark:text-white mb-6">
+              {t("blog.related_articles")}
+            </h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link
+                href="/blog/utiliser-api-scraping-pdf-gwadalerte"
+                className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  {currentLanguage === 'en' ? "Scraping API for GwadAlerte" : "API de scraping pour GwadAlerte"}
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {currentLanguage === 'en' ? "How the PDF report data is collected and structured" : "Comment les données des signalements PDF sont collectées et structurées"}
+                </p>
+              </Link>
+              <Link
+                href="/blog/faire-site-internet-guadeloupe"
+                className="block p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors border border-purple-200 dark:border-purple-800"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  {currentLanguage === 'en' ? "Complete guide: building a website in Guadeloupe" : "Guide complet : faire un site internet en Guadeloupe"}
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {currentLanguage === 'en' ? "Steps, costs and tips for a professional website" : "Étapes, coûts et conseils pour un site web professionnel"}
+                </p>
               </Link>
             </div>
           </div>

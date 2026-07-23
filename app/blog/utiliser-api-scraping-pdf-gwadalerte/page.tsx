@@ -298,6 +298,17 @@ export default function ArticleApiScraping() {
                   {currentLanguage === 'en' ? "How to appear on Google when your clients search for you" : "Comment apparaître sur Google quand vos clients vous cherchent"}
                 </p>
               </Link>
+              <Link
+                href="/blog/tableau-de-bord-environnemental-guadeloupe-nextjs"
+                className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  {currentLanguage === 'en' ? "Case study: the GwadAlerte dashboard" : "Étude de cas : le dashboard GwadAlerte"}
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {currentLanguage === 'en' ? "Building an environmental monitoring dashboard with Next.js" : "Construire un tableau de bord de suivi environnemental avec Next.js"}
+                </p>
+              </Link>
             </div>
           </div>
         </div>

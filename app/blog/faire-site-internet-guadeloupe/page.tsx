@@ -9,7 +9,8 @@ import { getArticleJsonLd, getBreadcrumbJsonLd, getPostBySlug } from "@/lib/blog
 export default function FaireSiteInternetGuadeloupePage() {
   const { t } = useSSRTranslation({
     "blog.back_to_home": "Retour à l'accueil",
-    "cta.start_project": "Démarrons votre projet"
+    "cta.start_project": "Démarrons votre projet",
+    "blog.related_articles": "Articles complémentaires"
   });
 
   return (
@@ -70,8 +71,10 @@ export default function FaireSiteInternetGuadeloupePage() {
 
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                <strong>Expertise locale :</strong> En tant que développeur web basé en Guadeloupe, je comprends
-                les besoins spécifiques des entreprises locales et les particularités du marché antillais.
+                <strong>Expertise locale :</strong> En tant que{" "}
+                <Link href="/guadeloupe" className="underline hover:text-purple-600 dark:hover:text-purple-400">
+                  développeur web basé en Guadeloupe
+                </Link>, je comprends les besoins spécifiques des entreprises locales et les particularités du marché antillais.
               </p>
             </div>
           </header>
@@ -394,6 +397,37 @@ export default function FaireSiteInternetGuadeloupePage() {
             </section>
 
           </article>
+
+          {/* Liens vers d'autres articles */}
+          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+            <h3 className="text-xl font-bold text-black dark:text-white mb-6">
+              {t("blog.related_articles")}
+            </h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link
+                href="/blog/ux-design-experience-utilisateur"
+                className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  UX design : l&apos;expérience utilisateur
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Pourquoi une bonne UX transforme les visiteurs en clients
+                </p>
+              </Link>
+              <Link
+                href="/blog/utiliser-api-scraping-pdf-gwadalerte"
+                className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  Étude de cas : GwadAlerte
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Scraping et API pour un outil de suivi environnemental en Guadeloupe
+                </p>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
