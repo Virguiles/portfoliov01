@@ -35,9 +35,9 @@ export default function HeroSection() {
         <div className="w-full max-w-4xl px-4 sm:px-2 flex flex-col items-center">
 
           <div style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-            <h2 className="hero-title text-center text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight whitespace-pre-line text-black dark:text-white">
+            <h1 className="hero-title text-center text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight whitespace-pre-line text-black dark:text-white">
               {`${heroCreativeText}\n${heroDesignerText}\n${heroAndText}\n${heroDeveloperText}\n${heroWebText}`}
-            </h2>
+            </h1>
           </div>
           <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-white/80 text-center max-w-2xl mx-auto font-light leading-relaxed">
             {heroSubtitleText}
