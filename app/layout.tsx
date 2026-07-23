@@ -149,7 +149,6 @@ export default function RootLayout({
             });
 
             gtag('js', new Date());
-            gtag('config', 'G-SX2M7CKH0L');
           `}
         </Script>
 
