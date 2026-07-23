@@ -1,5 +1,14 @@
-import { Viewport } from 'next/types';
+import { Metadata, Viewport } from 'next/types';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Page non trouvée | Virgile Popote',
+  description: "La page que vous recherchez n'existe pas ou a été déplacée.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export const viewport: Viewport = {
   themeColor: '#7c3aed',

@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiTrendingUp, FiSmartphone, FiZap, FiUsers } from "react-icons/fi";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
-import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
+import { getArticleJsonLd, getBreadcrumbJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function ArticleUXDesign() {
   const { t } = useSSRTranslation({
@@ -20,6 +20,18 @@ export default function ArticleUXDesign() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug("ux-design-experience-utilisateur"))) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getBreadcrumbJsonLd([
+              { name: "Accueil", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: getPostBySlug("ux-design-experience-utilisateur").title, path: "/blog/ux-design-experience-utilisateur" },
+            ])
+          ),
+        }}
       />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">

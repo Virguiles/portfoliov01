@@ -221,7 +221,6 @@ export default function RootLayout({
                     addressCountry: "FR",
                   },
                   email: "mailto:virgilepopote@gmail.com",
-                  telephone: "+590 690 XX XX XX",
                   priceRange: "€€",
                   sameAs: [
                     "https://github.com/virguiles",

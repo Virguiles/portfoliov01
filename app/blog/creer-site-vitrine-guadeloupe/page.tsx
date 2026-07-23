@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiCheckCircle, FiAlertTriangle, FiExternalLink } from "react-icons/fi";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
-import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
+import { getArticleJsonLd, getBreadcrumbJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function ArticleSiteVitrine() {
   const { t } = useSSRTranslation({
@@ -19,6 +19,18 @@ export default function ArticleSiteVitrine() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug("creer-site-vitrine-guadeloupe"))) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getBreadcrumbJsonLd([
+              { name: "Accueil", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: getPostBySlug("creer-site-vitrine-guadeloupe").title, path: "/blog/creer-site-vitrine-guadeloupe" },
+            ])
+          ),
+        }}
       />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">

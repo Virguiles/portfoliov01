@@ -19,6 +19,7 @@ type LinkPreviewProps = {
   height?: number;
   isStatic?: boolean;
   imageSrc?: string;
+  alt?: string;
 };
 
 export const LinkPreview = ({
@@ -29,7 +30,9 @@ export const LinkPreview = ({
   height = 125,
   isStatic = false,
   imageSrc = "",
+  alt,
 }: LinkPreviewProps) => {
+  const previewAlt = alt || `Aperçu du site ${url}`;
   let src;
   if (!isStatic) {
     const params = encode({
@@ -75,7 +78,7 @@ export const LinkPreview = ({
             src={src}
             width={width}
             height={height}
-            alt="hidden image"
+            alt=""
             unoptimized
             priority={false}
           />
@@ -139,7 +142,7 @@ export const LinkPreview = ({
                     width={width}
                     height={height}
                     className="rounded-lg"
-                    alt="preview image"
+                    alt={previewAlt}
                     unoptimized
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />

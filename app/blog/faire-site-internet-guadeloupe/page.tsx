@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiTarget, FiTrendingUp, FiUsers, FiExternalLink, FiCalendar, FiClock, FiUser } from "react-icons/fi";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
-import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
+import { getArticleJsonLd, getBreadcrumbJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function FaireSiteInternetGuadeloupePage() {
   const { t } = useSSRTranslation({
@@ -17,6 +17,18 @@ export default function FaireSiteInternetGuadeloupePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug("faire-site-internet-guadeloupe"))) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getBreadcrumbJsonLd([
+              { name: "Accueil", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: getPostBySlug("faire-site-internet-guadeloupe").title, path: "/blog/faire-site-internet-guadeloupe" },
+            ])
+          ),
+        }}
       />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">

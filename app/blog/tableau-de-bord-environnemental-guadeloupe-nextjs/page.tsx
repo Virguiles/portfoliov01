@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowLeft, FiCalendar, FiClock, FiUser, FiZap, FiCode, FiLayers, FiExternalLink, FiTrendingUp } from "react-icons/fi";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
-import { getArticleJsonLd, getPostBySlug } from "@/lib/blog/posts";
+import { getArticleJsonLd, getBreadcrumbJsonLd, getPostBySlug } from "@/lib/blog/posts";
 
 export default function ArticleGwadlerteDashboard() {
   const { t, i18n } = useSSRTranslation({
@@ -22,6 +22,18 @@ export default function ArticleGwadlerteDashboard() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getArticleJsonLd(getPostBySlug(slug))) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getBreadcrumbJsonLd([
+              { name: "Accueil", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: getPostBySlug(slug).title, path: `/blog/${slug}` },
+            ])
+          ),
+        }}
       />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">

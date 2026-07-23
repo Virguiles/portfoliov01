@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiCalendar, FiClock, FiUser } from "react-icons/fi";
-import { blogPosts } from "@/lib/blog/posts";
+import { blogPosts, getBreadcrumbJsonLd } from "@/lib/blog/posts";
 
 export default function BlogPage() {
   const { isI18nReady, t } = useSSRTranslation({
@@ -46,6 +46,17 @@ export default function BlogPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getBreadcrumbJsonLd([
+              { name: "Accueil", path: "/" },
+              { name: "Blog", path: "/blog" },
+            ])
+          ),
+        }}
+      />
       <div className="min-h-screen bg-gray-50 dark:bg-black pt-20">
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Breadcrumb navigation */}
