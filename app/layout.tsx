@@ -56,10 +56,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://virgile.site"),
   alternates: {
     canonical: '/',
-    languages: {
-      'fr': '/',
-      'en-US': '/en',
-    },
   },
   robots: {
     index: true,
