@@ -63,7 +63,7 @@ export default function ArticleUXDesign() {
               </div>
               <div className="flex items-center gap-2">
                 <FiCalendar className="w-4 h-4" />
-                <span>8 février 2025</span>
+                <span>Mis à jour le 23 juillet 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <FiClock className="w-4 h-4" />

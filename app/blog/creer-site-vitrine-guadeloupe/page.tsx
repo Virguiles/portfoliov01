@@ -56,7 +56,7 @@ export default function ArticleSiteVitrine() {
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              En 2025, avoir un site vitrine professionnel n&apos;est plus une option pour les entreprises en Guadeloupe.
+              En 2026, avoir un site vitrine professionnel n&apos;est plus une option pour les entreprises en Guadeloupe.
               C&apos;est un outil essentiel pour attirer de nouveaux clients et développer votre activité locale.
             </p>
 
@@ -68,7 +68,7 @@ export default function ArticleSiteVitrine() {
               </div>
               <div className="flex items-center gap-2">
                 <FiCalendar className="w-4 h-4" />
-                <span>28 avril 2025</span>
+                <span>Mis à jour le 23 juillet 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <FiClock className="w-4 h-4" />
@@ -90,7 +90,7 @@ export default function ArticleSiteVitrine() {
             </div>
 
             <h2 className="text-3xl font-bold text-black dark:text-white mb-6 mt-12">
-              1. Pourquoi un site vitrine est indispensable en 2025
+              1. Pourquoi un site vitrine est indispensable en 2026
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">

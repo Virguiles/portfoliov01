@@ -88,9 +88,9 @@ export const blogPosts: BlogPost[] = [
     description:
       "Découvrez comment créer un site vitrine efficace en Guadeloupe. 5 conseils pratiques pour développer votre activité locale et attirer de nouveaux clients.",
     excerpt:
-      "En 2025, avoir un site vitrine professionnel n'est plus une option pour les entreprises en Guadeloupe. Voici 5 conseils clés pour réussir votre présence en ligne.",
+      "En 2026, avoir un site vitrine professionnel n'est plus une option pour les entreprises en Guadeloupe. Voici 5 conseils clés pour réussir votre présence en ligne.",
     date: "2025-04-28",
-    updatedAt: "2025-04-28",
+    updatedAt: "2026-07-23",
     readTime: "5 min",
     keywords: [
       "site vitrine",
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "L'UX design est un facteur clé de succès pour votre site web. Découvrez comment une bonne expérience utilisateur peut transformer vos conversions et fidéliser vos clients.",
     date: "2025-02-08",
-    updatedAt: "2025-02-08",
+    updatedAt: "2026-07-23",
     readTime: "6 min",
     keywords: ["UX design", "expérience utilisateur", "site web", "conversion", "UI/UX"],
     keywordsEn: ["UX design", "user experience", "website", "conversion"],
@@ -134,7 +134,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Être visible localement en Guadeloupe est crucial pour votre business. Découvrez comment optimiser votre site pour apparaître dans les recherches locales et attirer des clients.",
     date: "2025-05-15",
-    updatedAt: "2025-05-15",
+    updatedAt: "2026-07-23",
     readTime: "7 min",
     keywords: [
       "SEO Guadeloupe",
