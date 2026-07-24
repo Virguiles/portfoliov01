@@ -4,15 +4,7 @@ import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 import HeroSection from "./components/Hero";
 import About from "./components/About";
-import Services from "./components/Services";
-import CaseStudies from "./components/CaseStudies";
-import Skills from "./components/Skills";
-import Projets from "./components/Projets";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
-
-const ContactForm = dynamic(() => import("./components/ContactForm"), {
-  ssr: false,
-});
 
 // Composant de chargement optimisé avec dimensions fixes pour éviter les CLS
 const LoadingFallback = () => (
@@ -20,6 +12,24 @@ const LoadingFallback = () => (
     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
   </div>
 );
+
+// Sections sous la ligne de flottaison : code-splittées pour alléger le JS
+// exécuté au chargement initial (SSR conservé pour le SEO).
+const Services = dynamic(() => import("./components/Services"), {
+  loading: LoadingFallback,
+});
+const CaseStudies = dynamic(() => import("./components/CaseStudies"), {
+  loading: LoadingFallback,
+});
+const Skills = dynamic(() => import("./components/Skills"), {
+  loading: LoadingFallback,
+});
+const Projets = dynamic(() => import("./components/Projets"), {
+  loading: LoadingFallback,
+});
+const ContactForm = dynamic(() => import("./components/ContactForm"), {
+  ssr: false,
+});
 
 export default function Home() {
   const { t } = useSSRTranslation({

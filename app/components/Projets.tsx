@@ -109,7 +109,7 @@ export default function Projets() {
                 </p>
                 <div className="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
                   {projet.technologies.map((tech, i) => (
-                    <span key={i} className="bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium opacity-70">
+                    <span key={i} className="bg-purple-200 dark:bg-purple-900 text-purple-900 dark:text-purple-200 px-3 py-1 rounded-full text-xs font-medium">
                       {tech}
                     </span>
                   ))}
