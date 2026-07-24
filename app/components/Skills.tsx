@@ -94,9 +94,9 @@ const Competences = React.memo(() => {
                 <div className="w-full grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-4 md:gap-8">
                     {categories.map((category) => (
                         <div key={category.title} className="flex flex-col items-center">
-                            <h4 className="text-[10px] md:text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2 sm:mb-3 font-semibold text-center w-full">
+                            <p className="text-[10px] md:text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2 sm:mb-3 font-semibold text-center w-full">
                                 {category.title}
-                            </h4>
+                            </p>
                             <div className="flex gap-2">
                                 {category.skills.map((skill) => {
                                     const isActive = skill.id === activeSkillId;

@@ -11,7 +11,6 @@ const STATIC_ASSETS = [
   '/favicon.png',
   '/favicon.svg',
   '/site.webmanifest',
-  '/_next/static/css/app/layout.css',
 ];
 
 // Installation du Service Worker
