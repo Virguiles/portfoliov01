@@ -97,7 +97,7 @@ export default function ArticlePrixSiteInternet() {
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-white dark:bg-black/60 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
                 <h4 className="text-lg font-semibold text-black dark:text-white mb-2">Site vitrine simple</h4>
-                <p className="text-2xl font-bold text-purple-600 mb-3">à partir de 800€</p>
+                <p className="text-2xl font-bold text-purple-600 mb-3">à partir de 300€</p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Quelques pages (accueil, services, contact), design adapté à votre identité, optimisé mobile
                   et référencement de base.

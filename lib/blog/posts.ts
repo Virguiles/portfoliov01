@@ -54,14 +54,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "faire-site-internet-guadeloupe",
-    title: "Faire un site internet en Guadeloupe : Guide complet 2025",
-    titleEn: "Building a website in Guadeloupe: Complete Guide 2025",
+    title: "Faire un site internet en Guadeloupe : Guide complet 2026",
+    titleEn: "Building a website in Guadeloupe: Complete Guide 2026",
     description:
       "Guide complet pour faire un site internet en Guadeloupe. Étapes, coûts et conseils pour créer un site web professionnel qui attire des clients locaux.",
     excerpt:
       "Vous cherchez à faire un site internet en Guadeloupe ? Découvrez comment créer un site web professionnel qui attire des clients locaux et booste votre visibilité en ligne.",
     date: "2025-03-12",
-    updatedAt: "2025-03-12",
+    updatedAt: "2026-07-23",
     readTime: "8 min",
     keywords: [
       "faire site internet",

@@ -45,7 +45,7 @@ export default function FaireSiteInternetGuadeloupePage() {
           {/* En-tête de la page */}
           <header className="mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
-              Faire un site internet en Guadeloupe : Guide complet 2025
+              Faire un site internet en Guadeloupe : Guide complet 2026
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
@@ -61,7 +61,7 @@ export default function FaireSiteInternetGuadeloupePage() {
               </div>
               <div className="flex items-center gap-2">
                 <FiCalendar className="w-4 h-4" />
-                <span>12 mars 2025</span>
+                <span>Mis à jour le 23 juillet 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <FiClock className="w-4 h-4" />
@@ -85,7 +85,7 @@ export default function FaireSiteInternetGuadeloupePage() {
             {/* Introduction */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
-                Pourquoi faire un site internet en Guadeloupe en 2025 ?
+                Pourquoi faire un site internet en Guadeloupe en 2026 ?
               </h2>
 
               <div className="grid gap-6 md:grid-cols-3 mb-8">
