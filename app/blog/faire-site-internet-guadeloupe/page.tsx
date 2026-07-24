@@ -426,6 +426,17 @@ export default function FaireSiteInternetGuadeloupePage() {
                   Scraping et API pour un outil de suivi environnemental en Guadeloupe
                 </p>
               </Link>
+              <Link
+                href="/blog/combien-coute-site-internet-guadeloupe"
+                className="block p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors border border-purple-200 dark:border-purple-800"
+              >
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                  Combien coûte un site internet en Guadeloupe ?
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Guide des tarifs 2026 par type de site
+                </p>
+              </Link>
             </div>
           </div>
         </div>

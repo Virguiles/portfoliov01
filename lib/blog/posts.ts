@@ -23,6 +23,36 @@ const defaultOgImage = `${baseUrl}/og-image.jpg`;
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "combien-coute-site-internet-guadeloupe",
+    title: "Combien coûte un site internet en Guadeloupe ? Guide des tarifs 2026",
+    titleEn: "How much does a website cost in Guadeloupe? 2026 Pricing Guide",
+    description:
+      "Combien coûte un site internet en Guadeloupe ? Fourchettes de prix par type de site, facteurs qui font varier le tarif et pièges du low-cost à éviter.",
+    excerpt:
+      "Site vitrine, e-commerce ou sur-mesure : découvrez les fourchettes de prix d'un site internet en Guadeloupe, ce qui fait varier le tarif, et pourquoi le low-cost coûte souvent plus cher au final.",
+    excerptEn:
+      "Showcase site, e-commerce or custom build: discover website pricing ranges in Guadeloupe, what drives the cost, and why the cheapest option often costs more in the end.",
+    date: "2026-07-23",
+    updatedAt: "2026-07-23",
+    readTime: "9 min",
+    keywords: [
+      "prix site internet",
+      "tarif site web",
+      "Guadeloupe",
+      "budget site internet",
+      "devis site web",
+      "coût site vitrine",
+    ],
+    keywordsEn: [
+      "website price",
+      "website cost",
+      "Guadeloupe",
+      "website budget",
+      "website quote",
+    ],
+    section: "Développement web",
+  },
+  {
     slug: "faire-site-internet-guadeloupe",
     title: "Faire un site internet en Guadeloupe : Guide complet 2025",
     titleEn: "Building a website in Guadeloupe: Complete Guide 2025",
