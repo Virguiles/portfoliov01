@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Développeur web freelance basé en Guadeloupe. Création de sites vitrines et applications sur-mesure, optimisation SEO local pour entreprises, artisans et PME guadeloupéennes.",
   alternates: {
-    canonical: "/guadeloupe",
+    canonical: "/guadeloupe/",
   },
   openGraph: {
     title: "Développeur web freelance en Guadeloupe | Sites internet SEO local",
     description:
       "Création de sites internet modernes et optimisés SEO pour les entreprises en Guadeloupe. Sites vitrines, applications sur-mesure et référencement local.",
-    url: "https://virgile.site/guadeloupe",
+    url: "https://virgile.site/guadeloupe/",
     type: "website",
     locale: "fr_FR",
     siteName: "Virgile Popote - Développeur Web Guadeloupe",

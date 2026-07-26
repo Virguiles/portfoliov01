@@ -14,31 +14,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}/blog/`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/guadeloupe`,
+      url: `${baseUrl}/guadeloupe/`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/projets/gwadalerte`,
+      url: `${baseUrl}/projets/gwadalerte/`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/mentions-legales`,
+      url: `${baseUrl}/mentions-legales/`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.2,
     },
     {
-      url: `${baseUrl}/confidentialite`,
+      url: `${baseUrl}/confidentialite/`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.2,
@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: `${baseUrl}/blog/${post.slug}/`,
     lastModified: new Date(post.updatedAt || post.date),
     changeFrequency: "monthly",
     priority: 0.7,

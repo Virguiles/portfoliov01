@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Mentions légales du portfolio de Virgile Popote, développeur web freelance en Guadeloupe : éditeur du site, hébergement et informations légales.",
   alternates: {
-    canonical: "/mentions-legales",
+    canonical: "/mentions-legales/",
   },
   robots: {
     index: true,

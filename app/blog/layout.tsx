@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Blog - Conseils développement web en Guadeloupe | Virgile Popote",
   description: "Découvrez mes conseils pour développer votre présence en ligne en Guadeloupe. Articles sur la création de sites web, le SEO local et l'UX design.",
   alternates: {
-    canonical: "/blog",
+    canonical: "/blog/",
   },
   openGraph: {
     title: "Blog - Conseils développement web en Guadeloupe",
     description: "Conseils pratiques pour améliorer votre visibilité en ligne en Guadeloupe. Création de sites web, SEO local et UX design.",
-    url: "https://virgile.site/blog",
+    url: "https://virgile.site/blog/",
     type: "website",
     locale: "fr_FR",
     siteName: "Virgile Popote - Développeur Web Guadeloupe",

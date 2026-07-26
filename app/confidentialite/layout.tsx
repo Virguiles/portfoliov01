@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Politique de confidentialité du portfolio de Virgile Popote, développeur web freelance en Guadeloupe : données collectées, cookies et droits des utilisateurs.",
   alternates: {
-    canonical: "/confidentialite",
+    canonical: "/confidentialite/",
   },
   robots: {
     index: true,

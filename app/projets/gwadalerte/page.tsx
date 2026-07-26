@@ -4,10 +4,13 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'GwadAlerte : Tableau de bord environnemental Guadeloupe Next.js',
   description: 'Découvrez GwadAlerte, un tableau de bord environnemental conçu pour la Guadeloupe, développé avec Next.js pour suivre les signalements de qualité de vie.',
+  alternates: {
+    canonical: '/projets/gwadalerte/',
+  },
   openGraph: {
     title: 'GwadAlerte : Tableau de bord environnemental Guadeloupe',
     description: 'Tableau de bord environnemental Next.js pour suivre les alertes et signalements en Guadeloupe.',
-    url: 'https://virgile.site/projets/gwadalerte',
+    url: 'https://virgile.site/projets/gwadalerte/',
     images: [
       {
         url: 'https://virgile.site/og-image.jpg',

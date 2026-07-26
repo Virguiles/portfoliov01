@@ -220,7 +220,7 @@ export const getPostBySlug = (slug: string): BlogPost => {
 };
 
 export const buildMetadataForPost = (post: BlogPost, locale: Locale = "fr"): Metadata => {
-  const url = `${baseUrl}/blog/${post.slug}`;
+  const url = `${baseUrl}/blog/${post.slug}/`;
   const title = locale === "en" && post.titleEn ? post.titleEn : post.title;
   const description = locale === "en" && post.excerptEn ? post.excerptEn : post.description;
 
@@ -229,7 +229,7 @@ export const buildMetadataForPost = (post: BlogPost, locale: Locale = "fr"): Met
     description,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: `/blog/${post.slug}/`,
     },
     robots: {
       index: true,
@@ -284,7 +284,7 @@ export const buildMetadataForPost = (post: BlogPost, locale: Locale = "fr"): Met
 };
 
 export const getArticleJsonLd = (post: BlogPost) => {
-  const url = `${baseUrl}/blog/${post.slug}`;
+  const url = `${baseUrl}/blog/${post.slug}/`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
