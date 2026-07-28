@@ -75,7 +75,12 @@ export default function Projets() {
                     alt={projet.titre}
                     width={192}
                     height={140}
-                    sizes="(max-width: 768px) 100vw, 192px"
+                    // La vignette est plafonnée à h-36 (144 px) avec object-contain :
+                    // quelle que soit la largeur du conteneur, la zone réellement
+                    // peinte vaut 144 px × ratio, soit ~290 px au maximum pour ces
+                    // visuels. Le « 100vw » d'avant faisait télécharger les variantes
+                    // 1920/3840 px pour une image affichée en ~260 px.
+                    sizes="(max-width: 768px) 300px, 192px"
                     className="rounded-md w-full h-36 object-contain border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
                     loading={idx === 0 ? "eager" : "lazy"}
                     priority={idx === 0} // Priorité pour la première image

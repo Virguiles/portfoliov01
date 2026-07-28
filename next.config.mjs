@@ -125,14 +125,11 @@ const nextConfig = {
           chunks: 'all',
           priority: 10,
         },
-        // Chunk pour les CSS critiques
-        criticalCSS: {
-          test: /\.css$/,
-          name: 'critical-css',
-          chunks: 'initial',
-          priority: 20,
-          enforce: true,
-        },
+        // Pas de cacheGroup pour le CSS : forcer un chunk 'critical-css' écrasait
+        // le découpage CSS de Next, qui continuait de référencer le nom de dev
+        // (_next/static/css/app/layout.css). Ce fichier n'existe pas dans le
+        // build de prod, d'où un 404 renvoyé en text/plain et l'erreur console
+        // « Refused to apply style ». Next gère déjà ce découpage correctement.
       };
     }
     return config;
