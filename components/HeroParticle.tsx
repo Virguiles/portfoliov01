@@ -12,10 +12,22 @@ export function HeroParticle() {
 
   useEffect(() => {
     setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
-    // Délai pour permettre au LCP de se charger en premier
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
   }, [resolvedTheme]);
+
+  useEffect(() => {
+    // Le canvas de particules est purement décoratif : on attend que le thread
+    // principal soit au repos plutôt qu'un délai fixe de 100 ms, qui tombait en
+    // plein milieu de l'hydratation sur mobile et retardait le LCP.
+    if (typeof window === "undefined") return;
+
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(() => setIsVisible(true), { timeout: 3000 });
+      return () => window.cancelIdleCallback(id);
+    }
+
+    const timer = setTimeout(() => setIsVisible(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Ne pas rendre les particules si pas visible pour améliorer le LCP
   if (!isVisible) {

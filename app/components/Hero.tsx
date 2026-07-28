@@ -2,7 +2,6 @@
 
 import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
 import { lazy, Suspense } from "react";
-import { BlurFade } from "../../components/magicui/blur-fade";
 
 const HeroParticle = lazy(() => import("../../components/HeroParticle").then(m => ({ default: m.HeroParticle })));
 
@@ -37,22 +36,29 @@ export default function HeroSection() {
 
           <div style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
             {/* Titre en cascade : chaque ligne entre légèrement décalée, ce qui
-                donne le rythme d'entrée « Magic UI » sans coûter de layout. */}
+                donne le rythme d'entrée « Magic UI » sans coûter de layout.
+                L'animation est en CSS pur (.hero-fade) et non en framer-motion :
+                le hero contient l'élément LCP, il ne doit pas attendre
+                l'hydratation de React pour devenir visible. */}
             <h1 className="hero-title text-center text-4xl sm:text-5xl lg:text-6xl font-bold leading-[0.95] text-black dark:text-white">
               {[heroCreativeText, heroDesignerText, heroAndText, heroDeveloperText, heroWebText].map(
                 (line, i) => (
-                  <BlurFade key={i} inView={false} delay={i * 0.08} yOffset={8} className="block">
+                  <span
+                    key={i}
+                    className="hero-fade block"
+                    style={{ animationDelay: `${i * 0.06}s` }}
+                  >
                     {line}
-                  </BlurFade>
+                  </span>
                 )
               )}
             </h1>
           </div>
-          <BlurFade inView={false} delay={0.48} yOffset={8}>
+          <div className="hero-fade" style={{ animationDelay: "0.24s" }}>
             <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-white/80 text-center max-w-2xl mx-auto font-light leading-relaxed">
               {heroSubtitleText}
             </p>
-          </BlurFade>
+          </div>
         </div>
       </div>
     </div>

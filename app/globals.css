@@ -11,6 +11,29 @@
   .animate-aurora {
     animation: aurora 20s ease-in-out infinite;
   }
+
+  /* Entrée « blur fade » du hero, en CSS pur.
+     L'équivalent framer-motion partait de opacity: 0 et n'était levé qu'une
+     fois React hydraté : l'élément LCP (le sous-titre) restait invisible ~3,8 s
+     sur mobile. Ici l'animation démarre dès l'application de la feuille de
+     style, donc au premier paint. Hors de ce media query, le texte est
+     simplement visible : aucun risque de contenu masqué sans animation. */
+  .hero-fade {
+    animation: hero-fade 0.4s ease-out backwards;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 /* Optimisations pour réduire le CLS (Cumulative Layout Shift) */

@@ -6,7 +6,7 @@ import I18nProvider from "./components/i18nProvider";
 import Favicon from "./components/Favicon";
 import Footer from "./components/Footer";
 import Header from "./components/Navbar";
-import MouseHalo from "./components/MouseHalo";
+import MouseHaloGate from "./components/MouseHaloGate";
 import Script from "next/script";
 import CookieConsent from "./components/CookieConsent";
 
@@ -120,25 +120,26 @@ export default function RootLayout({
           - Pré-connexion à Google Fonts pour accélérer le chargement des polices.
           - Préchargement des CSS critiques pour réduire le blocage du rendu.
         */}
-        {/* Preconnect hints optimisés pour les domaines critiques */}
+        {/* Preconnect hints optimisés pour les domaines critiques.
+            On ne préconnecte qu'aux domaines réellement contactés : les polices
+            sont auto-hébergées par next/font, donc pas de fonts.googleapis.com. */}
         <link rel="preconnect" href="https://api.microlink.io" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
         {/* Préchargement des polices géré par Next.js Fonts */}
 
         {/* Préchargement des CSS géré par Next.js */}
-        {/* Préchargement des CSS géré par Next.js */}
 
-        {/* Google Tag Manager - Scripts dans le head pour garantir le chargement sur toutes les pages */}
-        <Script id="gtag-init" strategy="beforeInteractive">
-          {`
+        {/* Consent Mode v2 : ce shim doit exister avant tout push dataLayer et
+            avant le chargement de GTM. Inline brut (≈300 octets, zéro requête)
+            plutôt que <Script beforeInteractive>, qui passerait par le loader
+            de Next et retarderait l'hydratation. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-
-            // Définir les consentements par défaut à 'denied' pour le Consent Mode v2
+            window.gtag = gtag;
             gtag('consent', 'default', {
               'ad_storage': 'denied',
               'ad_user_data': 'denied',
@@ -146,17 +147,32 @@ export default function RootLayout({
               'analytics_storage': 'denied',
               'wait_for_update': 500
             });
-
             gtag('js', new Date());
-          `}
-        </Script>
+          `,
+          }}
+        />
 
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        {/* GTM pèse ~280 Ko et bloquait le thread principal pendant le rendu
+            initial. On l'injecte une fois le navigateur au repos (ou à la
+            première interaction, selon ce qui arrive en premier), ce qui le
+            sort complètement du chemin critique sans perdre de mesure. */}
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            (function(w,d,s,l,i){
+              var loaded=false;
+              function load(){
+                if(loaded)return;loaded=true;
+                w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],j=d.createElement(s),
+                dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+              }
+              ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){
+                w.addEventListener(e,load,{once:true,passive:true});
+              });
+              if('requestIdleCallback' in w){w.requestIdleCallback(load,{timeout:4000});}
+              else{setTimeout(load,3000);}
             })(window,document,'script','dataLayer','GTM-5VTGKQFS');
           `}
         </Script>
@@ -310,7 +326,7 @@ export default function RootLayout({
               <Header />
               {children}
               <CookieConsent />
-              <MouseHalo />
+              <MouseHaloGate />
               <Footer />
             </I18nProvider>
           </ThemeProvider>
