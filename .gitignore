@@ -42,3 +42,10 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# secrets
+client_secret_*.json
+
+# skills d'agent installées localement (réinstallables via skills-lock.json)
+.agents/
+.claude/
