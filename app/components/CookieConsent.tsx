@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 
 // Fonction pour mettre à jour le consentement Google Analytics
@@ -13,6 +14,9 @@ declare global {
 
 export default function CookieConsent() {
   const [consent, setConsent] = useState<boolean | null>(null);
+  // Le bandeau n'apparaît qu'une fois le hero lu : il ne parasite pas la
+  // première impression et arrive quand l'utilisateur commence à explorer.
+  const [visible, setVisible] = useState(false);
   const { t } = useSSRTranslation({
     "cookies.title": "Nous respectons votre vie privée",
     "cookies.description": "Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience. Vous pouvez accepter ou refuser ces cookies.",
@@ -30,6 +34,12 @@ export default function CookieConsent() {
       setConsent(null);
     }
   }, []);
+
+  useEffect(() => {
+    if (consent !== null) return;
+    const timer = setTimeout(() => setVisible(true), 2500);
+    return () => clearTimeout(timer);
+  }, [consent]);
 
   // Mettre à jour le consentement quand l'utilisateur change son choix
   useEffect(() => {
@@ -65,33 +75,40 @@ export default function CookieConsent() {
   };
 
   return (
-    <>
-      {consent === null && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg animate-slide-up">
-          <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-gray-700 dark:text-gray-300">
-              <p className="font-medium mb-1">{t("cookies.title")}</p>
-              <p>
-                {t("cookies.description")}
-              </p>
-            </div>
-            <div className="flex gap-3 shrink-0">
-              <button
-                onClick={handleDecline}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-md transition-colors"
-              >
-                {t("cookies.decline")}
-              </button>
-              <button
-                onClick={handleAccept}
-                className="px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 rounded-md shadow-sm transition-colors"
-              >
-                {t("cookies.accept")}
-              </button>
-            </div>
+    <AnimatePresence>
+      {consent === null && visible && (
+        <motion.div
+          role="dialog"
+          aria-live="polite"
+          aria-label={t("cookies.title")}
+          initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          exit={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="fixed bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto z-50 w-auto sm:w-full sm:max-w-sm rounded-xl border border-gray-200 dark:border-white/10 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md p-3 sm:p-4 shadow-xl"
+        >
+          <p className="text-[13px] sm:text-sm font-medium text-gray-900 dark:text-white mb-1">
+            {t("cookies.title")}
+          </p>
+          <p className="text-[11px] sm:text-xs leading-snug sm:leading-relaxed text-gray-600 dark:text-gray-400">
+            {t("cookies.description")}
+          </p>
+          <div className="mt-3 flex gap-2">
+            <button
+              onClick={handleAccept}
+              className="flex-1 px-3 py-2 text-[11px] sm:text-xs font-medium text-white bg-violet-600 hover:bg-violet-700 rounded-lg transition-colors"
+            >
+              {t("cookies.accept")}
+            </button>
+            <button
+              onClick={handleDecline}
+              className="flex-1 px-3 py-2 text-[11px] sm:text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 dark:text-gray-300 dark:bg-white/10 dark:hover:bg-white/20 rounded-lg transition-colors"
+            >
+              {t("cookies.decline")}
+            </button>
           </div>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   );
 }

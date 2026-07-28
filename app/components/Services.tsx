@@ -6,6 +6,7 @@ import { SectionWrapper } from "./ui/section-wrapper";
 import { useSSRTranslation } from "../../lib/hooks/useSSRTranslation";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function Services() {
   const fallbackValues = {
@@ -110,12 +111,14 @@ export default function Services() {
       <div id="services" className="scroll-mt-20 max-w-4xl mx-auto w-full">
         <SectionHeader title={t("services.title")} />
 
-        <p className="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto -mt-6 mb-12 text-base md:text-lg leading-relaxed">
-          {t("services.subtitle")}
-        </p>
+        <BlurFade delay={0.15}>
+          <p className="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto -mt-6 mb-12 text-base md:text-lg leading-relaxed">
+            {t("services.subtitle")}
+          </p>
+        </BlurFade>
 
         {/* Origin UI Inspired Accordion Container */}
-        <div className="border border-gray-200/80 dark:border-zinc-800/80 rounded-3xl bg-white/70 dark:bg-zinc-950/50 backdrop-blur-xl shadow-xl overflow-hidden">
+        <BlurFade delay={0.22} className="border border-gray-200/80 dark:border-zinc-800/80 rounded-3xl bg-white/70 dark:bg-zinc-950/50 backdrop-blur-xl shadow-xl overflow-hidden">
           {servicesData.map((service, index) => {
             const isOpen = openIndex === index;
 
@@ -201,7 +204,7 @@ export default function Services() {
               </div>
             );
           })}
-        </div>
+        </BlurFade>
       </div>
     </SectionWrapper>
   );

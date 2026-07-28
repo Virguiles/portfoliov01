@@ -6,6 +6,7 @@ import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { FiExternalLink } from "react-icons/fi";
 import { SectionHeader } from "./ui/section-header";
 import { SectionWrapper } from "./ui/section-wrapper";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function Projets() {
   const { t } = useSSRTranslation({
@@ -62,8 +63,9 @@ export default function Projets() {
         {projects.map((projet, idx) => {
           const isLienValide = projet.lien && projet.lien !== "#";
           return (
-            <div
+            <BlurFade
               key={idx}
+              delay={idx * 0.08}
               className="flex flex-col md:flex-row items-center gap-6 rounded-xl dark:bg-black/70 p-4 md:p-6 transition-all hover:bg-purple-500/10 dark:hover:bg-purple-500/10"
             >
               {projet.image && (
@@ -125,7 +127,7 @@ export default function Projets() {
                   </a>
                 )}
               </div>
-            </div>
+            </BlurFade>
           );
         })}
       </div>

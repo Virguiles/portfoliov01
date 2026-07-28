@@ -76,7 +76,7 @@ export default function CaseStudies() {
   ];
 
   return (
-    <SectionWrapper background="bg-white dark:bg-black/20">
+    <SectionWrapper maxWidth="max-w-6xl" background="bg-white dark:bg-black/20">
       <div id="cas-clients" className="scroll-mt-20 max-w-6xl mx-auto w-full px-4 sm:px-6">
         <div className="flex flex-col items-center">
           <motion.div
@@ -159,12 +159,14 @@ export default function CaseStudies() {
                   {t("cas_clients.resultat_label")}
                 </h4>
                 
-                <div className="flex items-baseline gap-2">
+                {/* flex-wrap + min-w-0 : le libellé passe à la ligne au lieu
+                    de déborder de la carte (qui est en overflow-hidden). */}
+                <div className="flex flex-wrap items-baseline gap-x-2 min-w-0">
                   <span className="text-3xl md:text-4xl font-black tracking-tight">{c.stat}</span>
-                  <span className="text-sm font-semibold text-white/90">{c.statSub}</span>
+                  <span className="text-sm font-semibold text-white/90 min-w-0 break-words">{c.statSub}</span>
                 </div>
-                
-                <p className="text-xs md:text-sm text-white/90 font-medium leading-normal mt-2">
+
+                <p className="text-xs md:text-sm text-white/90 font-medium leading-normal mt-2 break-words">
                   {c.result}
                 </p>
               </div>
