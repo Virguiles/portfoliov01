@@ -28,7 +28,8 @@ export default function Projets() {
       titre: t("projets.items.3.titre", "Gwad'Alerte"),
       description: t("projets.items.3.description", "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."),
       lien: "https://gwadalerte.netlify.app/",
-      image: "/images/gwadalerte.png",
+      image: "/images/gwadalerte.webp",
+      fallbackImage: "/images/gwadalerte.png",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "API Integration", "Web Scraping"],
     },
     {
