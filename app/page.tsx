@@ -4,7 +4,9 @@ import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 import HeroSection from "./components/Hero";
 import About from "./components/About";
+import Link from "next/link";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
+import { blogPosts } from "@/lib/blog/posts";
 
 // Composant de chargement optimisé avec dimensions fixes pour éviter les CLS
 const LoadingFallback = () => (
@@ -62,12 +64,33 @@ export default function Home() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               {t("blog.subtitle")}
             </p>
-            <a
-              href="/blog"
+            {/* La section ne pointait que vers /blog : les articles n'avaient
+                aucun lien entrant depuis la page la plus forte du site. On
+                expose les trois plus récents pour ouvrir un chemin de crawl
+                direct et transmettre de la popularité interne. */}
+            <ul className="grid gap-4 sm:grid-cols-3 mb-10 text-left">
+              {blogPosts.slice(0, 3).map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}/`}
+                    className="block h-full rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900 p-4 hover:border-purple-500 dark:hover:border-purple-500 transition-colors"
+                  >
+                    <span className="block font-semibold text-black dark:text-white mb-1">
+                      {post.title}
+                    </span>
+                    <span className="block text-sm text-gray-600 dark:text-gray-400">
+                      {post.readTime}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/blog/"
               className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               {t("blog.read_blog")}
-            </a>
+            </Link>
           </div>
         </section>
         <section id="contact" className="py-20 px-4 scroll-mt-20">

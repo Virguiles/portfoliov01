@@ -12,6 +12,7 @@ export default function HeroSection() {
     "hero_and": "&",
     "hero_developer": "DÉVELOPPEUR",
     "hero_web": "WEB",
+    "hero_location": "FREELANCE EN GUADELOUPE",
     "hero_subtitle": "J'accompagne les TPE/PME dans leur transformation numérique grâce à des sites web performants, un référencement local efficace et des outils sur mesure."
   };
 
@@ -22,6 +23,7 @@ export default function HeroSection() {
   const heroAndText = t("hero_and");
   const heroDeveloperText = t("hero_developer");
   const heroWebText = t("hero_web");
+  const heroLocationText = t("hero_location");
   const heroSubtitleText = t("hero_subtitle");
 
   return (
@@ -52,6 +54,16 @@ export default function HeroSection() {
                   </span>
                 )
               )}
+              {/* Le H1 portait uniquement « CREATIVE DESIGNER & DÉVELOPPEUR WEB »,
+                  sans le métier ni la zone géographique visés en recherche.
+                  Cette ligne rend l'intention locale explicite pour Google
+                  comme pour le visiteur, sans casser la cascade au-dessus. */}
+              <span
+                className="hero-fade block mt-3 text-base sm:text-lg lg:text-xl font-medium tracking-[0.2em] text-neutral-600 dark:text-white/70"
+                style={{ animationDelay: "0.3s" }}
+              >
+                {heroLocationText}
+              </span>
             </h1>
           </div>
           <div className="hero-fade" style={{ animationDelay: "0.24s" }}>

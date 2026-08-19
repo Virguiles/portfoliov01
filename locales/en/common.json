@@ -10,6 +10,7 @@
   "hero_and": "&",
   "hero_developer": "DEVELOPER",
   "hero_web": "WEB",
+  "hero_location": "FREELANCE IN GUADELOUPE",
   "hero_subtitle": "I support SMEs in their digital transformation with high-performing websites, effective local SEO, and custom tools.",
   "about_text": "I am Virgile Popote, a freelance web developer and digital transformation partner for SMEs. Specialized in creating modern and high-performing web solutions, I work locally in Guadeloupe and worldwide remotely.\n\nMy role: designing custom showcase websites and web applications, designed to be aesthetic, fast, fully SEO-optimized, and aligned with your business growth goals.\n\nThanks to my skills in UI/UX design and development (Ruby on Rails, React, JavaScript, Tailwind CSS), I create intuitive platforms that showcase your brand, automate your internal processes, and convert your visitors into clients.\n\nKnown for my practical support and listening skills, I help companies, merchants, freelancers, and startups digitalize their operations from end to end and maximize their business benefits.\n\n👉 Looking for a trusted partner to accelerate your digital transition? Contact me and let's bring your project to life.",
   "tech_links": {
@@ -94,7 +95,8 @@
         "titre": "Local Environmental Dashboard",
         "description": "Intelligent aggregator of public environmental data (Air, Weather, Water) via APIs and web scraping. Designed to facilitate local decision-making with a clear, user-friendly interface."
       }
-    }
+    },
+    "etude_de_cas": "Read the case study"
   },
   "contactform": {
     "title": "Get in touch?",

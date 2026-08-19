@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useSSRTranslation } from "@/lib/hooks/useSSRTranslation";
 import { FiExternalLink } from "react-icons/fi";
 import { SectionHeader } from "./ui/section-header";
@@ -19,6 +20,7 @@ export default function Projets() {
     "projets.items.2.titre": "Gestion automatisée d'Airbnb avec n8n",
     "projets.items.2.description": "Assistant intelligent connecté à WhatsApp pour automatiser la gestion de plusieurs appartements Airbnb. Le bot analyse les messages, comprend les questions et répond automatiquement en français en se basant sur les calendriers iCal Airbnb.",
     "projets.items.3.titre": "Gwad'Alerte",
+    "projets.etude_de_cas": "Lire l'étude de cas",
     "projets.items.3.description": "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."
   });
 
@@ -28,6 +30,9 @@ export default function Projets() {
       titre: t("projets.items.3.titre", "Gwad'Alerte"),
       description: t("projets.items.3.description", "Tableau de bord citoyen centralisant les données environnementales (Air, Météo, Eau) via agrégation d'APIs et scraping de données officielles."),
       lien: "https://gwadalerte.netlify.app/",
+      // Étude de cas hébergée sur le site : sans ce lien, /projets/gwadalerte/
+      // n'existait que dans le sitemap, sans aucun lien entrant interne.
+      etudeDeCas: "/projets/gwadalerte/",
       image: "/images/gwadalerte.webp",
       fallbackImage: "/images/gwadalerte.png",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "API Integration", "Web Scraping"],
@@ -131,6 +136,14 @@ export default function Projets() {
                   >
                     {t("projets.voir")}
                   </a>
+                )}
+                {projet.etudeDeCas && (
+                  <Link
+                    href={projet.etudeDeCas}
+                    className="inline-flex items-center gap-2 mt-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium transition-colors"
+                  >
+                    {t("projets.etude_de_cas", "Lire l'étude de cas")}
+                  </Link>
                 )}
               </div>
             </BlurFade>

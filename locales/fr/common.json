@@ -10,6 +10,7 @@
   "hero_and": "&",
   "hero_developer": "DÉVELOPPEUR",
   "hero_web": "WEB",
+  "hero_location": "FREELANCE EN GUADELOUPE",
   "hero_subtitle": "J'accompagne les TPE/PME dans leur transformation numérique grâce à des sites web performants, un référencement local efficace et des outils sur mesure.",
   "about_text": "Je suis Virgile Popote, développeur web freelance et partenaire de la transition numérique des TPE et PME. Spécialisé dans la création de solutions internet modernes et hautement performantes, j'interviens en Guadeloupe et partout à distance.\n\nMon rôle : concevoir des sites vitrines et des applications web sur-mesure, pensés pour être esthétiques, ultra-rapides, parfaitement optimisés SEO et orientés vers vos objectifs de croissance.\n\nGrâce à mes compétences en UI/UX design et en développement (Ruby on Rails, React, JavaScript, Tailwind CSS), je crée des plateformes intuitives qui valorisent votre marque, automatisent vos processus internes et transforment vos visiteurs en clients.\n\nReconnu pour mon accompagnement pragmatique et mon écoute, j'aide les entreprises, commerçants, indépendants et startups à digitaliser leur activité de bout en bout et à en maximiser les bénéfices métier.\n\n👉 Vous cherchez un partenaire de confiance pour accélérer votre transition numérique ? Contactez-moi et donnons vie à votre projet.",
   "tech_links": {
@@ -94,7 +95,8 @@
         "titre": "Tableau de bord de données locales",
         "description": "Agrégateur intelligent de données publiques (Air, Météo, Eau) via APIs et scraping. Conçu pour faciliter la prise de décision locale et informer le grand public avec une interface claire et intuitive."
       }
-    }
+    },
+    "etude_de_cas": "Lire l'étude de cas"
   },
   "contactform": {
     "title": "Prendre contact ?",
