@@ -37,7 +37,7 @@ export default function ArticleUXDesign() {
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
@@ -319,14 +319,14 @@ export default function ArticleUXDesign() {
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col sm:flex-row justify-between gap-4">
               <Link
-                href="/blog/creer-site-vitrine-guadeloupe"
+                href="/blog/creer-site-vitrine-guadeloupe/"
                 className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
               >
                 <FiArrowLeft className="w-4 h-4" />
                 {t("blog.previous_article")} : Site vitrine en Guadeloupe
               </Link>
               <Link
-                href="/blog/seo-local-guadeloupe"
+                href="/blog/seo-local-guadeloupe/"
                 className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
               >
                 {t("blog.next_article")} : SEO local en Guadeloupe

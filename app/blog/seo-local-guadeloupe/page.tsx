@@ -36,7 +36,7 @@ export default function ArticleSEOLocal() {
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
@@ -352,7 +352,7 @@ export default function ArticleSEOLocal() {
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
               Le{" "}
-              <Link href="/guadeloupe" className="underline hover:text-purple-600 dark:hover:text-purple-400">
+              <Link href="/guadeloupe/" className="underline hover:text-purple-600 dark:hover:text-purple-400">
                 SEO local en Guadeloupe
               </Link>{" "}
               est une opportunité en or pour les entreprises locales.
@@ -398,7 +398,7 @@ export default function ArticleSEOLocal() {
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               <Link
-                href="/blog/creer-site-vitrine-guadeloupe"
+                href="/blog/creer-site-vitrine-guadeloupe/"
                 className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
@@ -409,7 +409,7 @@ export default function ArticleSEOLocal() {
                 </p>
               </Link>
               <Link
-                href="/blog/faire-site-internet-guadeloupe"
+                href="/blog/faire-site-internet-guadeloupe/"
                 className="block p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors border border-purple-200 dark:border-purple-800"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
@@ -420,7 +420,7 @@ export default function ArticleSEOLocal() {
                 </p>
               </Link>
               <Link
-                href="/blog/ux-design-experience-utilisateur"
+                href="/blog/ux-design-experience-utilisateur/"
                 className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">

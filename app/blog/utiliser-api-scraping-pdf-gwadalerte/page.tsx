@@ -38,7 +38,7 @@ export default function ArticleApiScraping() {
         <div className="max-w-4xl mx-auto px-4 py-16">
           {/* Navigation retour */}
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 mb-8 transition-colors"
           >
             <FiArrowLeft className="w-4 h-4" />
@@ -277,7 +277,7 @@ export default function ArticleApiScraping() {
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               <Link
-                href="/blog/creer-site-vitrine-guadeloupe"
+                href="/blog/creer-site-vitrine-guadeloupe/"
                 className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
@@ -288,7 +288,7 @@ export default function ArticleApiScraping() {
                 </p>
               </Link>
               <Link
-                href="/blog/seo-local-guadeloupe"
+                href="/blog/seo-local-guadeloupe/"
                 className="block p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800/50 transition-colors border border-blue-200 dark:border-blue-800"
               >
                 <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
@@ -299,7 +299,7 @@ export default function ArticleApiScraping() {
                 </p>
               </Link>
               <Link
-                href="/blog/tableau-de-bord-environnemental-guadeloupe-nextjs"
+                href="/blog/tableau-de-bord-environnemental-guadeloupe-nextjs/"
                 className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">

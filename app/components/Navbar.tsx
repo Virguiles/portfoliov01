@@ -232,7 +232,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                href="/blog"
+                                href="/blog/"
                                 className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-gray-200 hover:text-purple-500"
                                 onClick={handleNavigation}
                                 suppressHydrationWarning
@@ -315,7 +315,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <Link
-                                    href="/blog"
+                                    href="/blog/"
                                     className="navbar-link text-base font-[var(--font-jetbrains-mono)] text-gray-900 dark:text-white hover:text-purple-500"
                                     onClick={handleNavigation}
                                     suppressHydrationWarning

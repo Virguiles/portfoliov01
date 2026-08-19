@@ -103,7 +103,7 @@ export default function Footer() {
 
         {/* Lien vers Guadeloupe */}
         <Link
-          href="/guadeloupe"
+          href="/guadeloupe/"
           className="text-xs md:text-sm text-gray-700 dark:text-gray-300 hover:text-purple-500 transition-colors text-center"
         >
           {t("footer.website_creation")}
@@ -112,14 +112,14 @@ export default function Footer() {
         {/* Liens Légaux - France Num Conformité */}
         <div className="flex items-center gap-4 text-xs md:text-sm text-gray-700 dark:text-gray-300">
           <Link
-            href="/mentions-legales"
+            href="/mentions-legales/"
             className="hover:text-purple-500 transition-colors"
           >
             {t("legal.mentions_legales")}
           </Link>
           <span className="text-gray-800 dark:text-zinc-800">|</span>
           <Link
-            href="/confidentialite"
+            href="/confidentialite/"
             className="hover:text-purple-500 transition-colors"
           >
             {t("legal.confidentialite")}

@@ -178,7 +178,7 @@ export default function GuadeloupePage() {
               <p className="text-lg text-gray-700 dark:text-gray-300">
                 Je mets en place les bonnes pratiques SEO pour améliorer votre visibilité et attirer plus de clients.
                 Pour aller plus loin, découvrez mon article sur le{" "}
-                <Link href="/blog/seo-local-guadeloupe" className="underline hover:text-purple-600 dark:hover:text-purple-400">
+                <Link href="/blog/seo-local-guadeloupe/" className="underline hover:text-purple-600 dark:hover:text-purple-400">
                   SEO local en Guadeloupe
                 </Link>.
               </p>
@@ -192,7 +192,7 @@ export default function GuadeloupePage() {
 
               <div className="grid gap-4 md:grid-cols-2">
                 <Link
-                  href="/blog/faire-site-internet-guadeloupe"
+                  href="/blog/faire-site-internet-guadeloupe/"
                   className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   <h3 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
@@ -203,7 +203,7 @@ export default function GuadeloupePage() {
                   </p>
                 </Link>
                 <Link
-                  href="/blog"
+                  href="/blog/"
                   className="block p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors border border-purple-200 dark:border-purple-800"
                 >
                   <h3 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">

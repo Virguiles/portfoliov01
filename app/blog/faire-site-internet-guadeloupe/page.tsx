@@ -72,7 +72,7 @@ export default function FaireSiteInternetGuadeloupePage() {
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-lg">
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
                 <strong>Expertise locale :</strong> En tant que{" "}
-                <Link href="/guadeloupe" className="underline hover:text-purple-600 dark:hover:text-purple-400">
+                <Link href="/guadeloupe/" className="underline hover:text-purple-600 dark:hover:text-purple-400">
                   développeur web basé en Guadeloupe
                 </Link>, je comprends les besoins spécifiques des entreprises locales et les particularités du marché antillais.
               </p>
@@ -405,7 +405,7 @@ export default function FaireSiteInternetGuadeloupePage() {
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               <Link
-                href="/blog/ux-design-experience-utilisateur"
+                href="/blog/ux-design-experience-utilisateur/"
                 className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
@@ -416,7 +416,7 @@ export default function FaireSiteInternetGuadeloupePage() {
                 </p>
               </Link>
               <Link
-                href="/blog/utiliser-api-scraping-pdf-gwadalerte"
+                href="/blog/utiliser-api-scraping-pdf-gwadalerte/"
                 className="block p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
@@ -427,7 +427,7 @@ export default function FaireSiteInternetGuadeloupePage() {
                 </p>
               </Link>
               <Link
-                href="/blog/combien-coute-site-internet-guadeloupe"
+                href="/blog/combien-coute-site-internet-guadeloupe/"
                 className="block p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors border border-purple-200 dark:border-purple-800"
               >
                 <h4 className="font-semibold text-purple-600 dark:text-purple-400 mb-2">
