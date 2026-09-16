@@ -205,6 +205,15 @@ export default function RootLayout({
 
 
 
+        {/* Cloudflare Web Analytics : cookieless, ne nécessite pas de consentement RGPD */}
+        <Script
+          id="cloudflare-web-analytics"
+          strategy="afterInteractive"
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "c76718541f354ebebdc062ab959bce5e"}'
+        />
+
         {/* Liens sociaux pour SEO */}
         <link rel="me" href="https://github.com/virguiles" />
         <link rel="me" href="https://bsky.app/profile/virgilepop.bsky.social" />
